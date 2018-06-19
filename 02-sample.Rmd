@@ -1,0 +1,15 @@
+# The survey sample {#sample}
+
+The survey method described here uses a two-stage sample:
+
+* **First-stage:** We take an even (or near-even) spatial sample of communities from all of the communities in the survey area.
+
+* **Second-stage:** We take a sample of eligible individuals from each of the communities identified in the first stage of sampling.
+
+Two-stage sampling is used in many survey methods. A typical example of a survey method that uses a two- stage sample is the SMART method that is commonly used for nutritional anthropometry surveys.
+
+The main difference between the sample taken in S3M based surveys and in SMART type surveys is that S3M based samples used a spatial sample in the first stage whereas SMART type surveys use a proportional to population size (PPS) sample.
+
+The advantages of using a spatial first stage sample is that such a sample allows us to identify where (and why) coverage is good, and where (and why) coverage is poor. This information is essential to improving program coverage and ensuring equitable access to services.
+
+A spatial sample can be used to produce equivalent results to a traditional proportional to population size (PPS) sample as is used in (e.g.) SMART type surveys using a weighted analysis. This means that a spatial sample can be made to act as a PPS sample. A PPS type sample cannot, however, be made to act as a spatial sample.

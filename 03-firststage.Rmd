@@ -1,0 +1,22 @@
+# The first stage sample {#stage1}
+
+## Step 1: Find a map
+
+```{r smallScaleMap, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of Liberia showing counties and settlements", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
+sp::plot(liberia::settlements, pch = 20, cex = 0.3, col = "gray70")
+sp::plot(liberia::counties, lwd = 2, border = "gray50", add = TRUE)
+```
+
+The first step in an S3M survey is to find a map of the survey area.
+
+Try to find a map showing the locations of all towns and villages in the survey area. You may need to update the map to take into account migration and displacement.
+
+If you are surveying a very large area then you will find it useful to have:
+
+* A small scale map of the entire survey area. This map does not need to show the location of all towns and villages in survey area.
+
+* A collection of larger scale maps showing the locations of all towns and villages. This collection of maps should cover the entire survey area.
+
+The small scale map will be useful for identifying initial sampling locations.
+
+The large scale maps will be useful for identifying the precise locations of sampling points and for selecting the communities to be sampled.

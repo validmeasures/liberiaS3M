@@ -1,0 +1,24 @@
+Package: liberiaS3M
+Title: Notes on a design of a simple spatial sampling method (S3M) for assessing 
+    coverage of health and nutrition programmes in Liberia
+Version: 0.1.0
+Authors@R: person("Ernest", "Guevarra", comment = c(ORCID = "0000-0002-4887-4415"), 
+           email = "ernest@guevarra.io", role = c("aut", "cre"))
+Description: The Simple Spatial Survey Method (S3M) was developed from the CSAS 
+    coverage survey method as a response to the widespread adoption of community 
+    management of acute malnutrition (CMAM) by ministries of health. Large-scale 
+    programs need a large-scale survey method and S3M was developed to meet that 
+    need.
+Depends: R (>= 3.0.1)
+Remotes: validmeasures/liberia,
+    validmeasures/spatialsampler
+Imports: bookdown,
+    sp,
+    rgdal,
+    rgeos,
+    raster,
+    maptools,
+    liberia,
+    spatialsampler
+License: AGPL-3
+RoxygenNote: 6.0.1

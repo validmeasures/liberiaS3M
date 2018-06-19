@@ -1,0 +1,31 @@
+--- 
+title: "Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
+author: "Valid International"
+date: "`r Sys.Date()`"
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+documentclass: book
+geometry: margin=2cm
+classoption: a4paper
+bibliography: ["book.bib"]
+biblio-style: "apalike"
+link-citations: TRUE
+links-as-notes: FALSE
+colorlinks: TRUE
+fontsize: 12pt
+url: http\://design.validmeasures.com/liberiaS3M
+cover-image: figures/s3mlogo.png
+description: "Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "figures/"
+)
+```
+
+# Simple Spatial Sampling Method (S3M) {-}
+
+![](figures/s3mlogo.png)

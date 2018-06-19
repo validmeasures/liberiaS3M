@@ -1,0 +1,34 @@
+# Introduction {#introduction}
+
+The Simple Spatial Survey Method (S3M) was developed from the CSAS coverage survey method as a response to the widespread adoption of community management of acute malnutrition (CMAM) by ministries of health. Large-scale programs need a large-scale survey method and S3M was developed to meet that need.
+
+S3M was designed to :
+
+* Be simple enough for MoH, NGO, and UNO personnel without specialist statistical training to perform.
+
+* Provide a general survey method. S3M can be used to survey and map :
+
+* Need for and coverage of selective-entry programs such as CMAM and TSFP as well as universal programs such as EPI, GMP, GFD (general ration), and “blanket” SFP over wide areas.
+
+* Levels of indicators such as those for IYCF, WASH, and period prevalence / cumulative prevalence of ARI, fever, and diarrhoea over wide areas.
+
+This document concentrates on using S3M to assess the need for and coverage of a variety of selective-entry feeding programs. The indicators discussed in this manual are:
+
+* Therapeutic feeding (OTP and TSFP) programs :
+
+* Prevalence of SAM and coverage of treatment of SAM in children aged between 6 and 59
+months.
+
+* Prevalence of MAM and coverage of treatment of MAM in children aged between 6 and 59 months.
+
+* Prevalence of MAM and treatment of MAM and in pregnant and lactating women (PLWs).
+
+* Food-based prevention of malnutrition (FBPM) programs :
+
+* Prevalence of need for and coverage of food-based prevention of malnutrition in younger children at risk of developing MAM and SAM.
+
+* Prevalence of need for and coverage of food-based prevention of malnutrition in pregnant and lactating women (PLWs) at risk of developing MAM and SAM.
+
+* Coverage of screening for all of the above programs.
+
+* Coverage of Behaviour Change Communication (BCC) programs focussing on maternal and child health and nutrition to all principal carers of children (usually their mothers) and all PLWs.
