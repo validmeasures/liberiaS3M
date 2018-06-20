@@ -24,6 +24,13 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "figures/"
 )
+options(stringsAsFactors = FALSE)
+roads <- rgdal::readOGR(dsn = "maps/lbr_rdsl_unmil",
+                        layer = "lbr_rdsl_unmil",
+                        verbose = FALSE)
+poi <- rgdal::readOGR(dsn = "maps/hotosm_liberia_points_of_interest_points_shp",
+                      layer = "hotosm_liberia_points_of_interest_points",
+                      verbose = FALSE)
 ```
 
 # Simple Spatial Sampling Method (S3M) {-}
