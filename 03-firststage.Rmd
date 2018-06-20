@@ -2,10 +2,28 @@
 
 ## Step 1: Find a map
 
-```{r smallScaleMap, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of Liberia showing counties and settlements", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
-sp::plot(liberia::settlements, pch = 20, cex = 0.3, col = "gray70")
+The first step in a S3M survey is to find a map of the survey area. A map showing the locations of all towns and villages in the survey area is essential. Try to find a map showing the locations of all towns and villages in the survey area. You may need to update the map to take into account migration and displacement.
+
+For the coverage survey of 2 counties in Liberia, it will be practical and useful to have:
+
+* A small scale-map (a wide area map but with poor detail) of the entire survey area for each of the 2 counties. If the counties are contiguous (i.e., share borders with each other), the small scale map can be of the two counties together. This map does not need to show the location of all towns and villages in the survey area but it gives a general idea of where the 2 counties are located and main towns and location and roads.
+
+\newpage
+
+```{r smallScaleMap, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of Liberia showing counties, roads and points of interest", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
+sp::plot(roads, col = "gray90")
+sp::plot(poi, pch = 20, cex = 0.3, col = "gray70", add = TRUE)
 sp::plot(liberia::counties, lwd = 2, border = "gray50", add = TRUE)
 ```
+
+\newpage
+
+A collection of larger scale maps (a small area map but with good detail) of each of the five regions of Niger showing the locations of all towns and villages. A large-scale map of Dosso found in Figure 2 is a good example. The Humanitarian Information Centre (HIC) in Niamey is a good resource for obtaining these maps.
+The small-scale map in Figure 1 will be useful for identifying initial sampling locations. The large- scale maps will be useful for identifying the precise location of sampling points and for selecting the communities to be sampled.
+
+
+
+
 
 The first step in an S3M survey is to find a map of the survey area.
 
