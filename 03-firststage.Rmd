@@ -6,35 +6,124 @@ The first step in a S3M survey is to find a map of the survey area. A map showin
 
 For the coverage survey of 2 counties in Liberia, it will be practical and useful to have:
 
-* A small scale-map (a wide area map but with poor detail) of the entire survey area for each of the 2 counties. If the counties are contiguous (i.e., share borders with each other), the small scale map can be of the two counties together. This map does not need to show the location of all towns and villages in the survey area but it gives a general idea of where the 2 counties are located and main towns and location and roads.
+* A small scale-map (a wide area map but with poor detail) of the entire survey area for each of the 2 counties. If the counties are contiguous (i.e., share borders with each other), the small scale map can be of the two counties together. This map does not need to show the location of all towns and villages in the survey area but it gives a general idea of where the 2 counties are located and main towns and locations and roads. Figure \@ref(fig:smallScaleMap) is a small scale map of Liberia showing counties, roads and main towns and locations. Figure \@ref(fig:smallScaleMapCounty) is a small scale map of two counties showing all the districts within the county, roads and main towns and locations.
 
 \newpage
 
 ```{r smallScaleMap, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of Liberia showing counties, roads and points of interest", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
-sp::plot(roads, col = "gray90")
-sp::plot(poi, pch = 20, cex = 0.3, col = "gray70", add = TRUE)
-sp::plot(liberia::counties, lwd = 2, border = "gray50", add = TRUE)
+# Set margins
+par(mar = c(0, 0, 0, 0))
+# Plot map
+sp::plot(liberia::counties, lwd = 2, border = "gray50")
+sp::plot(wca, lwd = 4, border = "black", add = TRUE)
+sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+sp::plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+maps::map.scale()
+legend(x = "topright",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("Country borders", "County borders", "Paved roads", "Primary roads", "Main towns and locations"),
+       pch = c(0, 0, NA, NA, 4),
+       lty = c(NA, NA, 1, 2, NA),
+       lwd = c(3, 2, 2, 1, 2),
+       col = c("black", "gray50", "blue", "blue", "darkgreen"),
+       cex = 1,
+       pt.cex = 2)
+```
+\newpage
+
+```{r, smallScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of two counties in Liberia showing all districts, roads and points of interest", fig.align = "center", fig.width = 6, fig.height = 12, fig.pos = "H", fig.retina = 1}
+# Set margins and plot layout
+par(mar = c(1, 1, 1, 1), mfrow = c(2, 1))
+# Draw first county
+sp::plot(subset(liberia::districts, admin1Name == "Grand Kru"), lwd = 1, border = "gray50")
+sp::plot(liberia::counties, lwd = 1, border = "black", add = TRUE)
+sp::plot(wca, lwd = 4, border = "black", add = TRUE)
+raster::text(x = liberia::counties, 
+             labels = liberia::counties$admin1name, 
+             cex = 2, col = "gray70")
+sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+sp::plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+maps::map.scale(ratio = FALSE)
+# Draw second county
+sp::plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 2, border = "gray50")
+sp::plot(liberia::counties, lwd = 1, border = "black", add = TRUE)
+sp::plot(wca, lwd = 4, border = "black", add = TRUE)
+raster::text(x = liberia::counties, 
+             labels = liberia::counties$admin1name, 
+             cex = 2, col = "gray70")
+sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+sp::plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+maps::map.scale(ratio = FALSE)
+```
+\newpage
+
+* A collection of larger scale maps (a small area map but with good detail) of each of the selected counties and each of the districts within those counties in Liberia. Figure \@ref(fig:largeScaleMapCounty) is a large scale map of Montserrado county showing all districts, roads and all settlements. Figure \@ref(fig:largeScaleMapDistricts) is a collection of large scale maps of each of the districts of Montserrado country showing all roads and all settlements.
+
+&nbsp;
+
+```{r, largeScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Montserrado county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
+par(mar = c(0, 0, 0, 0))
+sp::plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 1, border = "gray50")
+sp::plot(liberia::counties, lwd = 4, border = "black", add = TRUE)
+sp::plot(wca, lwd = 5, border = "black", add = TRUE)
+raster::text(x = subset(liberia::counties, admin1name == "Montserrado"), 
+             labels = subset(liberia::counties, admin1name == "Montserrado")$admin1name, 
+             cex = 4, col = "gray70")
+raster::text(x = subset(liberia::districts, admin1Name == "Montserrado"), 
+             labels = subset(liberia::districts, admin1Name == "Montserrado")$admin2Name, 
+             cex = 1, col = "gray70")
+sp::plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+sp::plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+sp::plot(liberia::settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+maps::map.scale(ratio = FALSE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("Country borders", "County borders", "Paved roads", "Primary roads", "Main towns and locations"),
+       pch = c(0, 0, NA, NA, 4),
+       lty = c(NA, NA, 1, 2, NA),
+       lwd = c(3, 2, 2, 1, 2),
+       col = c("black", "gray50", "blue", "blue", "darkgreen"),
+       cex = 1,
+       pt.cex = 2)
 ```
 
 \newpage
 
-A collection of larger scale maps (a small area map but with good detail) of each of the five regions of Niger showing the locations of all towns and villages. A large-scale map of Dosso found in Figure 2 is a good example. The Humanitarian Information Centre (HIC) in Niamey is a good resource for obtaining these maps.
-The small-scale map in Figure 1 will be useful for identifying initial sampling locations. The large- scale maps will be useful for identifying the precise location of sampling points and for selecting the communities to be sampled.
+```{r, largeScaleMapDistricts, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 5 districts of Montserrado county in Liberia showing roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
+# Set margins and plot layout
+par(mar = c(1, 1, 1, 1), mfrow = c(3, 2))
+# Plot maps
+for(i in subset(liberia::districts, admin1Name == "Montserrado")$admin2Name) {
+  sp::plot(subset(liberia::districts, admin1Name == "Montserrado" & admin2Name == i), lwd = 1, border = "black")
+  sp::plot(liberia::counties, lwd = 2, border = "black", add = TRUE)
+  #sp::plot(wca, lwd = 4, border = "black", add = TRUE)
+  raster::text(x = subset(liberia::districts, admin1Name == "Montserrado" & admin2Name == i), 
+             labels = i, 
+             cex = 3, col = "gray70")
+  sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+  sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+  sp::plot(liberia::settlements, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+  maps::map.scale(ratio = FALSE)
+}
+```
+\newpage
+
+The small-scale maps in Figures \@ref(fig:smallScaleMap) and \@ref(fig:smallScaleMapCounty) will be useful for identifying initial sampling locations. 
+
+The large-scale maps in Figures \@ref(fig:largeScaleMapCounty) and \@ref(fig:largeScaleMapDistricts) will be useful for identifying the precise location of sampling points and for selecting the communities to be sampled.
+
+\newpage
+
+## Step 2: Decide the area to be represented by each sampling point
+
+S3M is primarily an area-based sampling method. Hence, it is a key step to define the geographical area units in which CMAM coverage and IYCF indicators will be assessed.
+The easiest way of thinking about this is as a function of the intended maximum distance (d) of any community from the nearest sampling point (see Figure 3).
 
 
-
-
-
-The first step in an S3M survey is to find a map of the survey area.
-
-Try to find a map showing the locations of all towns and villages in the survey area. You may need to update the map to take into account migration and displacement.
-
-If you are surveying a very large area then you will find it useful to have:
-
-* A small scale map of the entire survey area. This map does not need to show the location of all towns and villages in survey area.
-
-* A collection of larger scale maps showing the locations of all towns and villages. This collection of maps should cover the entire survey area.
-
-The small scale map will be useful for identifying initial sampling locations.
-
-The large scale maps will be useful for identifying the precise locations of sampling points and for selecting the communities to be sampled.
