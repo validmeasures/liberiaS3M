@@ -18,16 +18,28 @@ cover-image: figures/s3mlogo.png
 description: "Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
 ---
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "figures/"
 )
 options(stringsAsFactors = FALSE)
+
+wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
+                      layer = "wca_adm0",
+                      verbose = FALSE)
+
 roads <- rgdal::readOGR(dsn = "maps/lbr_rdsl_unmil",
                         layer = "lbr_rdsl_unmil",
                         verbose = FALSE)
+
+tracks <- subset(roads, CATEGORY %in% c("Track", "Tracks"))
+primary <- subset(roads, CATEGORY == "Primary Routes")
+paved <- subset(roads, CATEGORY == "Paved") 
+
 poi <- rgdal::readOGR(dsn = "maps/hotosm_liberia_points_of_interest_points_shp",
                       layer = "hotosm_liberia_points_of_interest_points",
                       verbose = FALSE)
