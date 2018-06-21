@@ -34,7 +34,7 @@ legend(x = "topright",
 ```
 \newpage
 
-```{r, smallScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of two counties in Liberia showing all districts, roads and points of interest", fig.align = "center", fig.width = 6, fig.height = 12, fig.pos = "H", fig.retina = 1}
+```{r smallScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of two counties in Liberia showing all districts, roads and points of interest", fig.align = "center", fig.width = 6, fig.height = 12, fig.pos = "H", fig.retina = 1}
 # Set margins and plot layout
 par(mar = c(1, 1, 1, 1), mfrow = c(2, 1))
 # Draw first county
@@ -66,7 +66,7 @@ maps::map.scale(ratio = FALSE)
 
 &nbsp;
 
-```{r, largeScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Montserrado county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
+```{r largeScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Montserrado county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
 sp::plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 1, border = "gray50")
 sp::plot(liberia::counties, lwd = 4, border = "black", add = TRUE)
@@ -96,7 +96,7 @@ legend(x = "topleft",
 
 \newpage
 
-```{r, largeScaleMapDistricts, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 5 districts of Montserrado county in Liberia showing roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
+```{r largeScaleMapDistricts, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 5 districts of Montserrado county in Liberia showing roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
 # Set margins and plot layout
 par(mar = c(1, 1, 1, 1), mfrow = c(3, 2))
 # Plot maps
@@ -113,6 +113,7 @@ for(i in subset(liberia::districts, admin1Name == "Montserrado")$admin2Name) {
   maps::map.scale(ratio = FALSE)
 }
 ```
+
 \newpage
 
 The small-scale maps in Figures \@ref(fig:smallScaleMap) and \@ref(fig:smallScaleMapCounty) will be useful for identifying initial sampling locations. 
@@ -123,7 +124,31 @@ The large-scale maps in Figures \@ref(fig:largeScaleMapCounty) and \@ref(fig:lar
 
 ## Step 2: Decide the area to be represented by each sampling point
 
-S3M is primarily an area-based sampling method. Hence, it is a key step to define the geographical area units in which CMAM coverage and IYCF indicators will be assessed.
-The easiest way of thinking about this is as a function of the intended maximum distance (d) of any community from the nearest sampling point (see Figure 3).
+The easiest way of thinking about this is as a function of the intended maximum distance ($d$) of any community from the nearest sampling point (see Figure \@ref(fig:distance).
 
+&nbsp;
+
+```{r distance, echo = FALSE, eval = TRUE, fig.cap = "Conceptual presentation of the area represented by each sampling point", fig.align = "center", fig.pos = "H", fig.retina = 1}
+knitr::include_graphics("figures/step2.png")
+```
+
+&nbsp;
+
+There are other ways of thinking about $d$. These are:
+
+* **The area of each triangular tile**: This can be calculated using the formula:
+
+$$ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 $$
+
+For $d ~ = ~ 10 ~ \text{km}$ the area of each triangular tile will be about:
+
+$$ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 ~ \approx ~ 1.3 ~ \times ~ 100 ~ = ~ 130 ~ \text{km} ^ 2 $$
+
+* **Practicability**: Most of the time spent in the field when doing a survey will be in travelling to and from sampling points. Having many sampling points can make for an expensive and / or lengthy survey. If you know how many sampling points that you can afford to take ($m$) then you can make a **very approximate** estimate of a suitable value for d using the following *rule-of-thumb* formula:
+
+$$ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} $$
+
+The value of d calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.
+
+S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$ to $d ~ = ~ 33 ~ \text{km}$) of values for $d$. A value for $d$ of $10 ~ \text{km}$ or $12 ~ \text{km}$ will probably be small enough in most circumstances.
 
