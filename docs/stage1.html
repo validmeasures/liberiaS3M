@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-06-20">
+<meta name="date" content="2018-06-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -71,6 +71,7 @@
 <li class="chapter" data-level="2" data-path="sample.html"><a href="sample.html"><i class="fa fa-check"></i><b>2</b> The survey sample</a></li>
 <li class="chapter" data-level="3" data-path="stage1.html"><a href="stage1.html"><i class="fa fa-check"></i><b>3</b> The first stage sample</a><ul>
 <li class="chapter" data-level="3.1" data-path="stage1.html"><a href="stage1.html#step-1-find-a-map"><i class="fa fa-check"></i><b>3.1</b> Step 1: Find a map</a></li>
+<li class="chapter" data-level="3.2" data-path="stage1.html"><a href="stage1.html#step-2-decide-the-area-to-be-represented-by-each-sampling-point"><i class="fa fa-check"></i><b>3.2</b> Step 2: Decide the area to be represented by each sampling point</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a></li>
 <li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a></li>
@@ -141,6 +142,32 @@ Figure 3.4: Large scale maps of 5 districts of Montserrado county in Liberia sho
 <p>The large-scale maps in Figures <a href="stage1.html#fig:largeScaleMapCounty">3.3</a> and <a href="stage1.html#fig:largeScaleMapDistricts">3.4</a> will be useful for identifying the precise location of sampling points and for selecting the communities to be sampled.</p>
 
 </div>
+<div id="step-2-decide-the-area-to-be-represented-by-each-sampling-point" class="section level2">
+<h2><span class="header-section-number">3.2</span> Step 2: Decide the area to be represented by each sampling point</h2>
+<p>The easiest way of thinking about this is as a function of the intended maximum distance (<span class="math inline">\(d\)</span>) of any community from the nearest sampling point (see Figure <a href="stage1.html#fig:distance">3.5</a>.</p>
+<p> </p>
+<div class="figure" style="text-align: center"><span id="fig:distance"></span>
+<img src="figures/step2.png" alt="Conceptual presentation of the area represented by each sampling point" width="1200" />
+<p class="caption">
+Figure 3.5: Conceptual presentation of the area represented by each sampling point
+</p>
+</div>
+<p> </p>
+<p>There are other ways of thinking about <span class="math inline">\(d\)</span>. These are:</p>
+<ul>
+<li><strong>The area of each triangular tile</strong>: This can be calculated using the formula:</li>
+</ul>
+<p><span class="math display">\[ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 \]</span></p>
+<p>For <span class="math inline">\(d ~ = ~ 10 ~ \text{km}\)</span> the area of each triangular tile will be about:</p>
+<p><span class="math display">\[ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 ~ \approx ~ 1.3 ~ \times ~ 100 ~ = ~ 130 ~ \text{km} ^ 2 \]</span></p>
+<ul>
+<li><strong>Practicability</strong>: Most of the time spent in the field when doing a survey will be in travelling to and from sampling points. Having many sampling points can make for an expensive and / or lengthy survey. If you know how many sampling points that you can afford to take (<span class="math inline">\(m\)</span>) then you can make a <strong>very approximate</strong> estimate of a suitable value for d using the following <em>rule-of-thumb</em> formula:</li>
+</ul>
+<p><span class="math display">\[ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} \]</span></p>
+<p>The value of d calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.</p>
+<p>S3M surveys have been done using a wide range (i.e. from <span class="math inline">\(d ~ = ~ 8 ~ \text{km}\)</span> to <span class="math inline">\(d ~ = ~ 33 ~ \text{km}\)</span>) of values for <span class="math inline">\(d\)</span>. A value for <span class="math inline">\(d\)</span> of <span class="math inline">\(10 ~ \text{km}\)</span> or <span class="math inline">\(12 ~ \text{km}\)</span> will probably be small enough in most circumstances.</p>
+
+</div>
 </div>
             </section>
 
@@ -189,6 +216,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
