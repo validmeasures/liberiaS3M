@@ -123,6 +123,16 @@ assessing coverage of health and nutrition programmes in Liberia}
   {\end{includegraphics}
   \end{tcolorbox}}
   
+\newenvironment{rmdcalc}
+  {\begin{tcolorbox}[width=\textwidth, 
+                     colback = {white}, 
+                     title = {\textbf{Calculations}}, 
+                     colbacktitle = lightgray,
+                     coltitle = black]
+  \begin{includegraphics}[scale = 1]{pencil.png}}
+  {\end{includegraphics}
+  \end{tcolorbox}}
+  
 \newenvironment{rmdexercise}
   {\begin{tcolorbox}[width=\textwidth, 
                      colback = {white}, 
@@ -579,18 +589,23 @@ will probably be small enough in most circumstances.
 \bottomrule
 \end{longtable}
 
-\BeginKnitrBlock{rmdnote}
-\textbf{Calculations}
-
+\BeginKnitrBlock{rmdcalc}
 Add the distances together:
-\(\sum \text{Distance} ~ = ~ 343 ~ \text{km}\)
+
+\[ \sum \text{Distance} ~ = ~ 343 ~ \text{km} \]
+
+~
 
 Divide the result by the number of paired distances:
-\(\frac{\sum \text{Distance}}{\text{Number of paired distances}} ~ = ~ \frac{343}{24} ~ = ~ 14.29 ~ \text{km}\)
+
+\[ \frac{\sum \text{Distance}}{\text{Number of paired distances}} ~ = ~ \frac{343}{24} ~ = ~ 14.29 ~ \text{km} \]
+
+~
 
 Divide the result by two:
-\(d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km}\)
-\EndKnitrBlock{rmdnote}
+
+\[ d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km} \]
+\EndKnitrBlock{rmdcalc}
 
 This is an estimate of the distance that carers are willing or able to
 walk to access services. Only distances between towns and villages with
