@@ -78,6 +78,7 @@
 <li class="chapter" data-level="3.6" data-path="stage1.html"><a href="stage1.html#step-6-label-each-sampling-point"><i class="fa fa-check"></i><b>3.6</b> Step 6: Label each sampling point</a></li>
 <li class="chapter" data-level="3.7" data-path="stage1.html"><a href="stage1.html#step-7-label-each-triangular-tile"><i class="fa fa-check"></i><b>3.7</b> Step 7: Label each triangular tile</a></li>
 <li class="chapter" data-level="3.8" data-path="stage1.html"><a href="stage1.html#step-8-describe-the-sample-in-numbers"><i class="fa fa-check"></i><b>3.8</b> Step 8: Describe the sample in numbers</a></li>
+<li class="chapter" data-level="3.9" data-path="stage1.html"><a href="stage1.html#step-9-plan-data-collection"><i class="fa fa-check"></i><b>3.9</b> Step 9: Plan data collection</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a></li>
 <li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a></li>
@@ -498,8 +499,107 @@ sampling point.</td>
 data or collected when the sampling
 point is visited.</td>
 </tr>
+<tr class="odd">
+<td><strong>latDegrees</strong></td>
+<td>Latitude of the sampling point</td>
+<td>Optional</td>
+</tr>
+<tr class="even">
+<td><strong>latMinutes</strong></td>
+<td>Minutes of latitude should be recorded
+in decimal minutes</td>
+<td>Optional</td>
+</tr>
+<tr class="odd">
+<td><strong>lonDegrees</strong></td>
+<td>Longitude of the sampling point</td>
+<td>Optional</td>
+</tr>
+<tr class="even">
+<td>**lonMinutes</td>
+<td>Minutes of longitude should be recorded
+in decimal minutes</td>
+<td>Optional</td>
+</tr>
 </tbody>
 </table>
+<p>The PSU file may also contain other columns such as district name, village name, and date visited. These columns may help when describing the sample in survey reports. If (e.g.) the survey area covers many districts then a column giving the district name will be useful if district-level summaries are required.</p>
+<ul>
+<li><strong>The TILE file:</strong> This is a file that links sampling points to tiles. This file has only four columns which must have the exact names:</li>
+</ul>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Column Name</strong></th>
+<th><strong>Contains</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>tile</strong></td>
+<td>Unique identifying label a tile (from <strong>Step 7</strong>)</td>
+</tr>
+<tr class="even">
+<td><strong>psu1</strong></td>
+<td>Identifying label for vertex 1 of the tile.</td>
+</tr>
+<tr class="odd">
+<td><strong>psu2</strong></td>
+<td>Identifying label for vertex 2 of the tile.</td>
+</tr>
+<tr class="even">
+<td><strong>psu3</strong></td>
+<td>Identifying label for vertex 3 of the tile.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the first four rows of the TILE file for the sample shown in the illustration to <strong>Step 7</strong> would be:</p>
+<table style="width:61%;">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>tile</strong></th>
+<th align="center"><strong>psu1</strong></th>
+<th align="center"><strong>psu2</strong></th>
+<th align="center"><strong>psu3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">8</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">8</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">9</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<p>The TILE file is only required if you will be using the simple analysis provided by the <strong>RAnalyticFlow</strong> workflow. More complicated analysis methods may not need a TILE file.</p>
+<p>Both of these files can be created using a spreadsheet package such as Microsoft Excel or OpenOffice Calc but they should be exported as comma-separated-value (CSV) files before use by the <strong>RAnalyticFlow</strong> workflow. Do <strong>not</strong> use commas (i.e. “,”) in any cell when entering data.</p>
+</div>
+<div id="step-9-plan-data-collection" class="section level2">
+<h2><span class="header-section-number">3.9</span> Step 9: Plan data collection</h2>
+<p>Now you have identified the location and number of sampling points you can draw up a project plan (using your favourite or institutional project management tools) and budget. When drawing up the timetable and budget it is common to assume that one team will sample one sampling point in one day.</p>
 
 </div>
 </div>
