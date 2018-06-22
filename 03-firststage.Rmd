@@ -85,7 +85,7 @@ legend(x = "topleft",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
-       legend = c("Country borders", "County borders", "Paved roads", "Primary roads", "Main towns and locations"),
+       legend = c("Country borders", "County borders", "Paved roads", "Primary roads", "All settlements"),
        pch = c(0, 0, NA, NA, 4),
        lty = c(NA, NA, 1, 2, NA),
        lwd = c(3, 2, 2, 1, 2),
@@ -148,7 +148,224 @@ $$ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 ~ \approx ~ 1.3 ~ \times
 
 $$ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} $$
 
-The value of d calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.
+The value of $d$ calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.
 
 S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$ to $d ~ = ~ 33 ~ \text{km}$) of values for $d$. A value for $d$ of $10 ~ \text{km}$ or $12 ~ \text{km}$ will probably be small enough in most circumstances.
 
++----------+---------------+----------+---------------+
+| **Pair** | **Distance**  | **Pair** | **Distance**  |
++:========:+:=============:+:========:+:=============:+
+| 1        | 21 km         | 13       | 13 km         |
++----------+---------------+----------+---------------+
+| 2        | 14 km         | 14       | 11 km         |
++----------+---------------+----------+---------------+
+| 3        | 13 km         | 15       | 12 km         |
++----------+---------------+----------+---------------+
+| 4        | 17 km         | 16       | 15 km         |
++----------+---------------+----------+---------------+
+| 5        | 11 km         | 17       | 13 km         |
++----------+---------------+----------+---------------+
+| 6        | 14 km         | 18       | 16 km         |
++----------+---------------+----------+---------------+
+| 7        | 12 km         | 19       | 18 km         |
++----------+---------------+----------+---------------+
+| 8        | 15 km         | 20       | 13 km         |
++----------+---------------+----------+---------------+
+| 9        | 16 km         | 21       | 8 km          |
++----------+---------------+----------+---------------+
+| 10       | 12 km         | 22       | 16 km         |
++----------+---------------+----------+---------------+
+| 11       | 17 km         | 23       | 18 km         |
++----------+---------------+----------+---------------+
+| 12       | 14 km         | 24       | 14 km         |
++----------+---------------+----------+---------------+
+
+```{block2, type = "rmdnote"}
+**Calculations**
+
+Add the distances together: $\sum \text{Distance} ~ = ~ 343 ~ \text{km}$
+
+Divide the result by the number of paired distances: $\frac{\sum \text{Distance}}{\text{Number of paired distances}} ~ = ~ \frac{343}{24} ~ = ~ 14.29 ~ \text{km}$
+
+Divide the result by two: $d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km}$
+```
+  
+
+This is an estimate of the distance that carers are willing or able to walk to access services. Only distances between towns and villages with markets are use in this calculation.
+
+
+A way of deciding a value for $d$ that is based on the economic geography of the survey area is to set $d$ to one half of the mean distance between neighbouring pairs of communities with substantial markets.
+
+S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$ to $d ~ = ~ 33 ~ \text{km}$) of values for $d$. A value for $d$ of 10 km or 12 km will probably be small enough in most circumstances.
+
+## Step 3: Draw a grid over the map
+
+```{r grid1, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 12 km", fig.align = "center", fig.pos = "H", fig.retina = 1}
+
+
+```
+
+The next step is to draw a grid over the map.
+
+The size of the grid is determined by the distance ($d$) that you decided in **Step 2**.
+
+The grid is rectangular rather than square. This allows us to place sampling points at the centres of hexagons in a hexagonal grid without the need to draw a hexagonal grid (see **Step 4**).
+
+The width of the grid in the east-west ($x$) direction is different from the height of the grid in the north-south ($y$) direction.
+
+The width of the grid in the east-west ($x$) direction is calculated using:
+
+$$ x ~ = ~ \frac{3d}{2} $$
+
+where $d$ is the distance ($d$) that you decided in **Step 2**.
+
+The height of the grid in the north-south (`y`) direction can be calculated using:
+
+$$ y ~ = ~ \frac{\sqrt{3}d}{2} $$
+
+where $d$ is the distance ($d$) that you decided in **Step 2**.
+
+For example, if $d ~ = ~ 10 ~ \text{km}$ then:
+
+$$ x ~ = ~ \frac{3d}{2} ~ = ~ \frac{3 ~ \times ~ 10}{2} ~ = ~ \frac{30}{2} ~ = ~ 15 ~ \text{km} $$
+
+and:
+
+$$ y ~ = ~ \frac{\sqrt{3}d}{2} ~ \approx ~ \frac{1.73 ~ \times ~ 10}{2} ~ \approx ~ \frac{17.3}{2} ~ \approx ~ 8.7 ~ \text{km} $$
+
+The table below shows the grid sizes for different values of $d$:
+
++--------+------------+------------+-----+--------+------------+------------+
+| **d**  | **x**      | **y**      |     | **d**  | **x**      | **y**      |
++=======:+===========:+===========:+=====+=======:+===========:+===========:+
+| 5      | 7.5        | 4.3        |     | 13     | 19.5       | 11.3       |
++--------+------------+------------+-----+--------+------------+------------+
+| 6      | 9.0        | 5.2        |     | 14     | 21.0       | 12.1       |
++--------+------------+------------+-----+--------+------------+------------+
+| 7      | 10.5       | 6.1        |     | 15     | 22.5       | 13.0       |
++--------+------------+------------+-----+--------+------------+------------+
+| 8      | 12.0       | 6.9        |     | 16     | 24.0       | 13.9       |
++--------+------------+------------+-----+--------+------------+------------+
+| 9      | 13,5       | 7.8        |     | 17     | 25.5       | 14.7       |
++--------+------------+------------+-----+--------+------------+------------+
+| 10     | 15.0       | 8.7        |     | 18     | 27.0       | 15.6       |
++--------+------------+------------+-----+--------+------------+------------+
+| 11     | 16.5       | 19.5       |     | 19     | 28.5       | 16.5       |
++--------+------------+------------+-----+--------+------------+------------+
+| 12     | 18.0       | 10.4       |     | 20     | 30.0       | 17.3       |
++--------+------------+------------+-----+--------+------------+------------+
+
+When drawing the grid make sure that it covers the entire survey area.
+
+It is usually best to draw a grid that covers an area that is a little larger than the entire survey area. This helps to ensure that the survey will sample from the entire survey area.
+
+The grid can be drawn using marker pens onto plastic film overlaying the map. This protects the map and allows you to reposition the grid to improve the coverage of the sample should this be needed.
+
+If you are drawing the grid directly onto the map then use a soft pencil (e.g. a *2B* or *#1* pencil). A soft pencil will not damage the surface of the map and is easy to erase using a soft rubber eraser should you make a mistake or need to draw a different grid.
+
+## Step 4: Create an even spread of sampling points
+
+Sampling points are located at the intersections of the rectangular grid in a staggered fashion. Alternate intersections of the grid in the x (east-west) and y (north-south) directions are used :
+
+Note how this process places sampling points at the centres of hexagons in a hexagonal grid without the need to draw a hexagonal grid.
+Make sure that your sample points go right to the edge (or even over the edge) of the survey area. This helps to ensure that the survey will sample from the entire survey area.
+
+## Step 5: Select the communities to sample
+
+Select the community (or communities) closest to the sampling points identified in **Step 4**.
+
+The position of the sampling point is moved to the position of the selected community. This is shown in the
+diagram above.
+
+You may drop sampling points if you find that many sampling points are clustered closely together.
+
+You may move or add sampling points if you find that there are populated areas that do not contain sampling points.
+
+The aim is to create a roughly even spread of sampling points over the entire survey area.
+
+```{block2, type = "rmdwarning"}
+**Caution:** The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
+```
+
+A good way to check if you have an even spread of sampling points over the entire survey area is to do a trial *triangulation* of the selected sampling points. This involves dividing up the survey area into non-overlapping triangles with a sampling point at each vertex.
+
+There will usually be many ways to divide the survey area into triangles. The best triangulation is one that results in small equilateral triangles (i.e. triangles with all sides of equal length) or small and nearly equilateral triangles. Avoid long and narrow triangles. Avoid large triangles.
+
+You can triangulate “by eye” or automatically (i.e. using a computer). If you use a computer to do this then you should use software that produces a *Delaunay triangulation*.
+
+You may drop sampling points if you find that many sampling points are clustered closely together.
+
+You may move or add sampling points if you find that there are populated areas that do not contain sampling points.
+
+The aim is to create a roughly even spread of sampling points over the entire survey area. 
+
+The diagrams above show a trial triangulation with only a few long and narrow triangles :
+
+* One sampling point (labelled x1) has been added to ensure that the sample covers almost the entire survey area.
+
+* Four sampling points (labelled m1, m2, m3, and m4) have been moved to ensure that there are few long and narrow triangles.
+
+**The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.**
+
+The process of selecting communities to sample is:
+
+1. Start by defining the sample using the grid based approach outlined above.
+
+2. Use a trial triangulation. This can be done “by eye” or using a computer. Check for an even spatial sample:
+
+* Most triangles should be short and wide.
+
+* Very few triangles should be long and narrow.
+
+* The triangles should be of roughly equal size.
+
+* The complete set of triangles should cover all (or almost all) of the survey area.
+
+3. Move or add sampling points to improve the sample (i.e. to avoid long and narrow triangles, to avoid large triangles, to make triangles roughly equal in size, and to ensure the sample covers all or almost all of the survey area). Triangulate again. Repeat this process until you are happy with the sample.
+
+**The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.**
+
+## Step 6: Label each sampling point
+
+Give each sampling point a unique identifying label:
+
+* The label may be a number or a name.
+
+* The label must be unique.
+
+* The label is used to identify which community belongs to which sampling point.
+
+These labels are used when collecting, organising, and analysing data.
+
+## Step 7: Label each triangular tile
+
+Give each triangular tile a unique identifying label:
+
+* The label may be a number or a name.
+
+* The label must be unique.
+
+* The label is used to identify which communities belong to which triangular tile.
+
+These labels are used when collecting, organising, and analysing data.
+
+```{block2, type = "rmdnote"}
+This step is only required if you will be using the simple analysis provided by the RAnalyticFlow workflow. More complicated analysis methods will usually not use the tile labels created in this step.
+```
+
+## Step 8: Describe the sample in numbers
+
+To analyse and map data you will need to create two files:
+
+* **The PSU file:** This is a file that describes each sampling point (a sampling point is sometimes called a primary sampling unit or PSU). This file **must** have the following named columns and the names **must** be **exactly** as given here:
+
++--------------------+----------------------------------------+----------------------------------------+
+| **Column Name**    | **Contains**                           | **Notes**                              |
++====================+========================================+========================================+
+| **psu**            | Unique identifying label for a sampling| Must be unique.                        |
+|                    | point (from **Step 6**).               |                                        |
++--------------------+----------------------------------------+----------------------------------------+
+| **pop**            | Population of the community at the     | Can be taken from census or program    |
+|                    | sampling point.                        | data or collected when the sampling    |
+|                    |                                        | point is visited.                      |
++--------------------+----------------------------------------+----------------------------------------+
