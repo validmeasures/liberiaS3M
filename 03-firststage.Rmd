@@ -181,9 +181,13 @@ S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$
 +----------+---------------+----------+---------------+
 
 ```{block2, type = "rmdcalc"}
+Following are steps to estimate value of $d$ based on distances that carers are willing or able to walk to access services.
+
+&nbsp;
+
 Add the distances together: 
   
-  $$ \sum \text{Distance} ~ = ~ 343 ~ \text{km} $$
+$$ \sum \text{Distance} ~ = ~ 343 ~ \text{km} $$
 
 &nbsp;
   
@@ -205,6 +209,8 @@ This is an estimate of the distance that carers are willing or able to walk to a
 A way of deciding a value for $d$ that is based on the economic geography of the survey area is to set $d$ to one half of the mean distance between neighbouring pairs of communities with substantial markets.
 
 S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$ to $d ~ = ~ 33 ~ \text{km}$) of values for $d$. A value for $d$ of 10 km or 12 km will probably be small enough in most circumstances.
+
+\newpage
 
 ## Step 3: Draw a grid over the map
 
@@ -241,6 +247,8 @@ and:
 
 $$ y ~ = ~ \frac{\sqrt{3}d}{2} ~ \approx ~ \frac{1.73 ~ \times ~ 10}{2} ~ \approx ~ \frac{17.3}{2} ~ \approx ~ 8.7 ~ \text{km} $$
 
+\newpage
+
 The table below shows the grid sizes for different values of $d$:
 
 +--------+------------+------------+-----+--------+------------+------------+
@@ -271,12 +279,16 @@ The grid can be drawn using marker pens onto plastic film overlaying the map. Th
 
 If you are drawing the grid directly onto the map then use a soft pencil (e.g. a *2B* or *#1* pencil). A soft pencil will not damage the surface of the map and is easy to erase using a soft rubber eraser should you make a mistake or need to draw a different grid.
 
+\newpage
+
 ## Step 4: Create an even spread of sampling points
 
 Sampling points are located at the intersections of the rectangular grid in a staggered fashion. Alternate intersections of the grid in the x (east-west) and y (north-south) directions are used :
 
 Note how this process places sampling points at the centres of hexagons in a hexagonal grid without the need to draw a hexagonal grid.
 Make sure that your sample points go right to the edge (or even over the edge) of the survey area. This helps to ensure that the survey will sample from the entire survey area.
+
+\newpage
 
 ## Step 5: Select the communities to sample
 
@@ -291,8 +303,8 @@ You may move or add sampling points if you find that there are populated areas t
 
 The aim is to create a roughly even spread of sampling points over the entire survey area.
 
-```{block2, type = "rmdwarning"}
-**Caution:** The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
+```{block2, type = "rmdcaution"}
+The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
 ```
 
 A good way to check if you have an even spread of sampling points over the entire survey area is to do a trial *triangulation* of the selected sampling points. This involves dividing up the survey area into non-overlapping triangles with a sampling point at each vertex.
@@ -333,6 +345,8 @@ The process of selecting communities to sample is:
 
 **The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.**
 
+\newpage
+
 ## Step 6: Label each sampling point
 
 Give each sampling point a unique identifying label:
@@ -344,6 +358,8 @@ Give each sampling point a unique identifying label:
 * The label is used to identify which community belongs to which sampling point.
 
 These labels are used when collecting, organising, and analysing data.
+
+\newpage
 
 ## Step 7: Label each triangular tile
 
@@ -360,6 +376,8 @@ These labels are used when collecting, organising, and analysing data.
 ```{block2, type = "rmdnote"}
 This step is only required if you will be using the simple analysis provided by the RAnalyticFlow workflow. More complicated analysis methods will usually not use the tile labels created in this step.
 ```
+
+\newpage
 
 ## Step 8: Describe the sample in numbers
 
@@ -419,6 +437,8 @@ For example, the first four rows of the TILE file for the sample shown in the il
 The TILE file is only required if you will be using the simple analysis provided by the **RAnalyticFlow** workflow. More complicated analysis methods may not need a TILE file.
 
 Both of these files can be created using a spreadsheet package such as Microsoft Excel or OpenOffice Calc but they should be exported as comma-separated-value (CSV) files before use by the **RAnalyticFlow** workflow. Do **not** use commas (i.e. “,”) in any cell when entering data.
+
+\newpage
 
 ## Step 9: Plan data collection
 
