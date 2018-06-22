@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-06-21">
+<meta name="date" content="2018-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -72,6 +72,12 @@
 <li class="chapter" data-level="3" data-path="stage1.html"><a href="stage1.html"><i class="fa fa-check"></i><b>3</b> The first stage sample</a><ul>
 <li class="chapter" data-level="3.1" data-path="stage1.html"><a href="stage1.html#step-1-find-a-map"><i class="fa fa-check"></i><b>3.1</b> Step 1: Find a map</a></li>
 <li class="chapter" data-level="3.2" data-path="stage1.html"><a href="stage1.html#step-2-decide-the-area-to-be-represented-by-each-sampling-point"><i class="fa fa-check"></i><b>3.2</b> Step 2: Decide the area to be represented by each sampling point</a></li>
+<li class="chapter" data-level="3.3" data-path="stage1.html"><a href="stage1.html#step-3-draw-a-grid-over-the-map"><i class="fa fa-check"></i><b>3.3</b> Step 3: Draw a grid over the map</a></li>
+<li class="chapter" data-level="3.4" data-path="stage1.html"><a href="stage1.html#step-4-create-an-even-spread-of-sampling-points"><i class="fa fa-check"></i><b>3.4</b> Step 4: Create an even spread of sampling points</a></li>
+<li class="chapter" data-level="3.5" data-path="stage1.html"><a href="stage1.html#step-5-select-the-communities-to-sample"><i class="fa fa-check"></i><b>3.5</b> Step 5: Select the communities to sample</a></li>
+<li class="chapter" data-level="3.6" data-path="stage1.html"><a href="stage1.html#step-6-label-each-sampling-point"><i class="fa fa-check"></i><b>3.6</b> Step 6: Label each sampling point</a></li>
+<li class="chapter" data-level="3.7" data-path="stage1.html"><a href="stage1.html#step-7-label-each-triangular-tile"><i class="fa fa-check"></i><b>3.7</b> Step 7: Label each triangular tile</a></li>
+<li class="chapter" data-level="3.8" data-path="stage1.html"><a href="stage1.html#step-8-describe-the-sample-in-numbers"><i class="fa fa-check"></i><b>3.8</b> Step 8: Describe the sample in numbers</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a></li>
 <li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a></li>
@@ -164,8 +170,336 @@ Figure 3.5: Conceptual presentation of the area represented by each sampling poi
 <li><strong>Practicability</strong>: Most of the time spent in the field when doing a survey will be in travelling to and from sampling points. Having many sampling points can make for an expensive and / or lengthy survey. If you know how many sampling points that you can afford to take (<span class="math inline">\(m\)</span>) then you can make a <strong>very approximate</strong> estimate of a suitable value for d using the following <em>rule-of-thumb</em> formula:</li>
 </ul>
 <p><span class="math display">\[ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} \]</span></p>
-<p>The value of d calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.</p>
+<p>The value of <span class="math inline">\(d\)</span> calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.</p>
 <p>S3M surveys have been done using a wide range (i.e. from <span class="math inline">\(d ~ = ~ 8 ~ \text{km}\)</span> to <span class="math inline">\(d ~ = ~ 33 ~ \text{km}\)</span>) of values for <span class="math inline">\(d\)</span>. A value for <span class="math inline">\(d\)</span> of <span class="math inline">\(10 ~ \text{km}\)</span> or <span class="math inline">\(12 ~ \text{km}\)</span> will probably be small enough in most circumstances.</p>
+<table style="width:75%;">
+<colgroup>
+<col width="15%" />
+<col width="22%" />
+<col width="15%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Pair</strong></th>
+<th align="center"><strong>Distance</strong></th>
+<th align="center"><strong>Pair</strong></th>
+<th align="center"><strong>Distance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">21 km</td>
+<td align="center">13</td>
+<td align="center">13 km</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">14 km</td>
+<td align="center">14</td>
+<td align="center">11 km</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">13 km</td>
+<td align="center">15</td>
+<td align="center">12 km</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">17 km</td>
+<td align="center">16</td>
+<td align="center">15 km</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">11 km</td>
+<td align="center">17</td>
+<td align="center">13 km</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">14 km</td>
+<td align="center">18</td>
+<td align="center">16 km</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">12 km</td>
+<td align="center">19</td>
+<td align="center">18 km</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">15 km</td>
+<td align="center">20</td>
+<td align="center">13 km</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">16 km</td>
+<td align="center">21</td>
+<td align="center">8 km</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">12 km</td>
+<td align="center">22</td>
+<td align="center">16 km</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="center">17 km</td>
+<td align="center">23</td>
+<td align="center">18 km</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td align="center">14 km</td>
+<td align="center">24</td>
+<td align="center">14 km</td>
+</tr>
+</tbody>
+</table>
+
+<div class="rmdnote">
+<p><strong>Calculations</strong></p>
+<p>Add the distances together: <span class="math inline">\(\sum \text{Distance} ~ = ~ 343 ~ \text{km}\)</span></p>
+<p>Divide the result by the number of paired distances: <span class="math inline">\(\frac{\sum \text{Distance}}{\text{Number of paired distances}} ~ = ~ \frac{343}{24} ~ = ~ 14.29 ~ \text{km}\)</span></p>
+Divide the result by two: <span class="math inline">\(d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km}\)</span>
+</div>
+
+<p>This is an estimate of the distance that carers are willing or able to walk to access services. Only distances between towns and villages with markets are use in this calculation.</p>
+<p>A way of deciding a value for <span class="math inline">\(d\)</span> that is based on the economic geography of the survey area is to set <span class="math inline">\(d\)</span> to one half of the mean distance between neighbouring pairs of communities with substantial markets.</p>
+<p>S3M surveys have been done using a wide range (i.e. from <span class="math inline">\(d ~ = ~ 8 ~ \text{km}\)</span> to <span class="math inline">\(d ~ = ~ 33 ~ \text{km}\)</span>) of values for <span class="math inline">\(d\)</span>. A value for <span class="math inline">\(d\)</span> of 10 km or 12 km will probably be small enough in most circumstances.</p>
+</div>
+<div id="step-3-draw-a-grid-over-the-map" class="section level2">
+<h2><span class="header-section-number">3.3</span> Step 3: Draw a grid over the map</h2>
+<p>The next step is to draw a grid over the map.</p>
+<p>The size of the grid is determined by the distance (<span class="math inline">\(d\)</span>) that you decided in <strong>Step 2</strong>.</p>
+<p>The grid is rectangular rather than square. This allows us to place sampling points at the centres of hexagons in a hexagonal grid without the need to draw a hexagonal grid (see <strong>Step 4</strong>).</p>
+<p>The width of the grid in the east-west (<span class="math inline">\(x\)</span>) direction is different from the height of the grid in the north-south (<span class="math inline">\(y\)</span>) direction.</p>
+<p>The width of the grid in the east-west (<span class="math inline">\(x\)</span>) direction is calculated using:</p>
+<p><span class="math display">\[ x ~ = ~ \frac{3d}{2} \]</span></p>
+<p>where <span class="math inline">\(d\)</span> is the distance (<span class="math inline">\(d\)</span>) that you decided in <strong>Step 2</strong>.</p>
+<p>The height of the grid in the north-south (<code>y</code>) direction can be calculated using:</p>
+<p><span class="math display">\[ y ~ = ~ \frac{\sqrt{3}d}{2} \]</span></p>
+<p>where <span class="math inline">\(d\)</span> is the distance (<span class="math inline">\(d\)</span>) that you decided in <strong>Step 2</strong>.</p>
+<p>For example, if <span class="math inline">\(d ~ = ~ 10 ~ \text{km}\)</span> then:</p>
+<p><span class="math display">\[ x ~ = ~ \frac{3d}{2} ~ = ~ \frac{3 ~ \times ~ 10}{2} ~ = ~ \frac{30}{2} ~ = ~ 15 ~ \text{km} \]</span></p>
+<p>and:</p>
+<p><span class="math display">\[ y ~ = ~ \frac{\sqrt{3}d}{2} ~ \approx ~ \frac{1.73 ~ \times ~ 10}{2} ~ \approx ~ \frac{17.3}{2} ~ \approx ~ 8.7 ~ \text{km} \]</span></p>
+<p>The table below shows the grid sizes for different values of <span class="math inline">\(d\)</span>:</p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="17%" />
+<col width="17%" />
+<col width="7%" />
+<col width="11%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"><strong>d</strong></th>
+<th align="right"><strong>x</strong></th>
+<th align="right"><strong>y</strong></th>
+<th></th>
+<th align="right"><strong>d</strong></th>
+<th align="right"><strong>x</strong></th>
+<th align="right"><strong>y</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">7.5</td>
+<td align="right">4.3</td>
+<td></td>
+<td align="right">13</td>
+<td align="right">19.5</td>
+<td align="right">11.3</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">9.0</td>
+<td align="right">5.2</td>
+<td></td>
+<td align="right">14</td>
+<td align="right">21.0</td>
+<td align="right">12.1</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">10.5</td>
+<td align="right">6.1</td>
+<td></td>
+<td align="right">15</td>
+<td align="right">22.5</td>
+<td align="right">13.0</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">12.0</td>
+<td align="right">6.9</td>
+<td></td>
+<td align="right">16</td>
+<td align="right">24.0</td>
+<td align="right">13.9</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">13,5</td>
+<td align="right">7.8</td>
+<td></td>
+<td align="right">17</td>
+<td align="right">25.5</td>
+<td align="right">14.7</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">15.0</td>
+<td align="right">8.7</td>
+<td></td>
+<td align="right">18</td>
+<td align="right">27.0</td>
+<td align="right">15.6</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">16.5</td>
+<td align="right">19.5</td>
+<td></td>
+<td align="right">19</td>
+<td align="right">28.5</td>
+<td align="right">16.5</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">18.0</td>
+<td align="right">10.4</td>
+<td></td>
+<td align="right">20</td>
+<td align="right">30.0</td>
+<td align="right">17.3</td>
+</tr>
+</tbody>
+</table>
+<p>When drawing the grid make sure that it covers the entire survey area.</p>
+<p>It is usually best to draw a grid that covers an area that is a little larger than the entire survey area. This helps to ensure that the survey will sample from the entire survey area.</p>
+<p>The grid can be drawn using marker pens onto plastic film overlaying the map. This protects the map and allows you to reposition the grid to improve the coverage of the sample should this be needed.</p>
+<p>If you are drawing the grid directly onto the map then use a soft pencil (e.g. a <em>2B</em> or <em>#1</em> pencil). A soft pencil will not damage the surface of the map and is easy to erase using a soft rubber eraser should you make a mistake or need to draw a different grid.</p>
+</div>
+<div id="step-4-create-an-even-spread-of-sampling-points" class="section level2">
+<h2><span class="header-section-number">3.4</span> Step 4: Create an even spread of sampling points</h2>
+<p>Sampling points are located at the intersections of the rectangular grid in a staggered fashion. Alternate intersections of the grid in the x (east-west) and y (north-south) directions are used :</p>
+<p>Note how this process places sampling points at the centres of hexagons in a hexagonal grid without the need to draw a hexagonal grid.
+Make sure that your sample points go right to the edge (or even over the edge) of the survey area. This helps to ensure that the survey will sample from the entire survey area.</p>
+</div>
+<div id="step-5-select-the-communities-to-sample" class="section level2">
+<h2><span class="header-section-number">3.5</span> Step 5: Select the communities to sample</h2>
+<p>Select the community (or communities) closest to the sampling points identified in <strong>Step 4</strong>.</p>
+<p>The position of the sampling point is moved to the position of the selected community. This is shown in the
+diagram above.</p>
+<p>You may drop sampling points if you find that many sampling points are clustered closely together.</p>
+<p>You may move or add sampling points if you find that there are populated areas that do not contain sampling points.</p>
+<p>The aim is to create a roughly even spread of sampling points over the entire survey area.</p>
+
+<div class="rmdwarning">
+<strong>Caution:</strong> The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
+</div>
+
+<p>A good way to check if you have an even spread of sampling points over the entire survey area is to do a trial <em>triangulation</em> of the selected sampling points. This involves dividing up the survey area into non-overlapping triangles with a sampling point at each vertex.</p>
+<p>There will usually be many ways to divide the survey area into triangles. The best triangulation is one that results in small equilateral triangles (i.e. triangles with all sides of equal length) or small and nearly equilateral triangles. Avoid long and narrow triangles. Avoid large triangles.</p>
+<p>You can triangulate “by eye” or automatically (i.e. using a computer). If you use a computer to do this then you should use software that produces a <em>Delaunay triangulation</em>.</p>
+<p>You may drop sampling points if you find that many sampling points are clustered closely together.</p>
+<p>You may move or add sampling points if you find that there are populated areas that do not contain sampling points.</p>
+<p>The aim is to create a roughly even spread of sampling points over the entire survey area.</p>
+<p>The diagrams above show a trial triangulation with only a few long and narrow triangles :</p>
+<ul>
+<li><p>One sampling point (labelled x1) has been added to ensure that the sample covers almost the entire survey area.</p></li>
+<li><p>Four sampling points (labelled m1, m2, m3, and m4) have been moved to ensure that there are few long and narrow triangles.</p></li>
+</ul>
+<p><strong>The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.</strong></p>
+<p>The process of selecting communities to sample is:</p>
+<ol style="list-style-type: decimal">
+<li><p>Start by defining the sample using the grid based approach outlined above.</p></li>
+<li><p>Use a trial triangulation. This can be done “by eye” or using a computer. Check for an even spatial sample:</p></li>
+</ol>
+<ul>
+<li><p>Most triangles should be short and wide.</p></li>
+<li><p>Very few triangles should be long and narrow.</p></li>
+<li><p>The triangles should be of roughly equal size.</p></li>
+<li><p>The complete set of triangles should cover all (or almost all) of the survey area.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Move or add sampling points to improve the sample (i.e. to avoid long and narrow triangles, to avoid large triangles, to make triangles roughly equal in size, and to ensure the sample covers all or almost all of the survey area). Triangulate again. Repeat this process until you are happy with the sample.</li>
+</ol>
+<p><strong>The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.</strong></p>
+</div>
+<div id="step-6-label-each-sampling-point" class="section level2">
+<h2><span class="header-section-number">3.6</span> Step 6: Label each sampling point</h2>
+<p>Give each sampling point a unique identifying label:</p>
+<ul>
+<li><p>The label may be a number or a name.</p></li>
+<li><p>The label must be unique.</p></li>
+<li><p>The label is used to identify which community belongs to which sampling point.</p></li>
+</ul>
+<p>These labels are used when collecting, organising, and analysing data.</p>
+</div>
+<div id="step-7-label-each-triangular-tile" class="section level2">
+<h2><span class="header-section-number">3.7</span> Step 7: Label each triangular tile</h2>
+<p>Give each triangular tile a unique identifying label:</p>
+<ul>
+<li><p>The label may be a number or a name.</p></li>
+<li><p>The label must be unique.</p></li>
+<li><p>The label is used to identify which communities belong to which triangular tile.</p></li>
+</ul>
+<p>These labels are used when collecting, organising, and analysing data.</p>
+
+<div class="rmdnote">
+This step is only required if you will be using the simple analysis provided by the RAnalyticFlow workflow. More complicated analysis methods will usually not use the tile labels created in this step.
+</div>
+
+</div>
+<div id="step-8-describe-the-sample-in-numbers" class="section level2">
+<h2><span class="header-section-number">3.8</span> Step 8: Describe the sample in numbers</h2>
+<p>To analyse and map data you will need to create two files:</p>
+<ul>
+<li><strong>The PSU file:</strong> This is a file that describes each sampling point (a sampling point is sometimes called a primary sampling unit or PSU). This file <strong>must</strong> have the following named columns and the names <strong>must</strong> be <strong>exactly</strong> as given here:</li>
+</ul>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="39%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Column Name</strong></th>
+<th><strong>Contains</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>psu</strong></td>
+<td>Unique identifying label for a sampling
+point (from <strong>Step 6</strong>).</td>
+<td>Must be unique.</td>
+</tr>
+<tr class="even">
+<td><strong>pop</strong></td>
+<td>Population of the community at the
+sampling point.</td>
+<td>Can be taken from census or program
+data or collected when the sampling
+point is visited.</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
