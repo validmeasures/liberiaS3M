@@ -180,14 +180,22 @@ S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$
 | 12       | 14 km         | 24       | 14 km         |
 +----------+---------------+----------+---------------+
 
-```{block2, type = "rmdnote"}
-**Calculations**
+```{block2, type = "rmdcalc"}
+Add the distances together: 
+  
+  $$ \sum \text{Distance} ~ = ~ 343 ~ \text{km} $$
 
-Add the distances together: $\sum \text{Distance} ~ = ~ 343 ~ \text{km}$
+&nbsp;
+  
+Divide the result by the number of paired distances:
+  
+$$ \frac{\sum \text{Distance}}{\text{Number of paired distances}} ~ = ~ \frac{343}{24} ~ = ~ 14.29 ~ \text{km} $$
 
-Divide the result by the number of paired distances: $\frac{\sum \text{Distance}}{\text{Number of paired distances}} ~ = ~ \frac{343}{24} ~ = ~ 14.29 ~ \text{km}$
-
-Divide the result by two: $d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km}$
+&nbsp;
+  
+Divide the result by two:
+  
+$$ d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km} $$
 ```
   
 
@@ -369,3 +377,49 @@ To analyse and map data you will need to create two files:
 |                    | sampling point.                        | data or collected when the sampling    |
 |                    |                                        | point is visited.                      |
 +--------------------+----------------------------------------+----------------------------------------+
+| **latDegrees**     | Latitude of the sampling point         | Optional                               |
++--------------------+----------------------------------------+----------------------------------------+
+| **latMinutes**     | Minutes of latitude should be recorded | Optional                               |
+|                    | in decimal minutes                     |                                        |
++--------------------+----------------------------------------+----------------------------------------+
+| **lonDegrees**     | Longitude of the sampling point        | Optional                               |
++--------------------+----------------------------------------+----------------------------------------+
+| **lonMinutes       | Minutes of longitude should be recorded| Optional                               |
+|                    | in decimal minutes                     |                                        |
++--------------------+----------------------------------------+----------------------------------------+
+
+The PSU file may also contain other columns such as district name, village name, and date visited. These columns may help when describing the sample in survey reports. If (e.g.) the survey area covers many districts then a column giving the district name will be useful if district-level summaries are required.
+
+* **The TILE file:** This is a file that links sampling points to tiles. This file has only four columns which must have the exact names:
+
++--------------------+----------------------------------------------------------+
+| **Column Name**    | **Contains**                                             |
++====================+==========================================================+
+| **tile**           | Unique identifying label a tile (from **Step 7**)        |
++--------------------+----------------------------------------------------------+
+| **psu1**           | Identifying label for vertex 1 of the tile.              |
++--------------------+----------------------------------------------------------+
+| **psu2**           |  Identifying label for vertex 2 of the tile.             |
++--------------------+----------------------------------------------------------+
+| **psu3**           |  Identifying label for vertex 3 of the tile.             |
++--------------------+----------------------------------------------------------+
+
+For example, the first four rows of the TILE file for the sample shown in the illustration to **Step 7** would be:
+
++----------+----------+----------+----------+
+| **tile** | **psu1** | **psu2** | **psu3** |
++:========:+:========:+:========:+:========:+
+| 1        | 4        | 5        | 8        |
++----------+----------+----------+----------+
+| 2        | 5        | 8        | 10       |
++----------+----------+----------+----------+
+| 3        | 5        | 9        | 10       |
++----------+----------+----------+----------+
+
+The TILE file is only required if you will be using the simple analysis provided by the **RAnalyticFlow** workflow. More complicated analysis methods may not need a TILE file.
+
+Both of these files can be created using a spreadsheet package such as Microsoft Excel or OpenOffice Calc but they should be exported as comma-separated-value (CSV) files before use by the **RAnalyticFlow** workflow. Do **not** use commas (i.e. “,”) in any cell when entering data.
+
+## Step 9: Plan data collection
+
+Now you have identified the location and number of sampling points you can draw up a project plan (using your favourite or institutional project management tools) and budget. When drawing up the timetable and budget it is common to assume that one team will sample one sampling point in one day.
