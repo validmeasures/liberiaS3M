@@ -110,6 +110,22 @@ pre code {
     top:0px;
     font-size: 45px;
 }
+.rmdcaution {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #ffff00;
+  background: rgba(255,255,0,0.6);
+  border-radius: 15px;
+  position:relative;
+}
+.rmdcaution:before {
+    content: "\f071";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:0px;
+    font-size: 45px;
+}
 .rmddownload {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;

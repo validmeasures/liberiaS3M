@@ -129,7 +129,7 @@ assessing coverage of health and nutrition programmes in Liberia}
                      title = {\textbf{Calculations}}, 
                      colbacktitle = lightgray,
                      coltitle = black]
-  \begin{includegraphics}[scale = 1]{pencil.png}}
+  \begin{includegraphics}[scale = 2]{pencil.png}}
   {\end{includegraphics}
   \end{tcolorbox}}
   
@@ -167,6 +167,16 @@ assessing coverage of health and nutrition programmes in Liberia}
   {\begin{tcolorbox}[width=\textwidth, 
                      colback = {white}, 
                      title = {\textbf{Warning}}, 
+                     colbacktitle = lightgray,
+                     coltitle = black]
+  \begin{includegraphics}[scale = 1]{warning.png}}
+  {\end{includegraphics}
+  \end{tcolorbox}}
+
+\newenvironment{rmdcaution}
+  {\begin{tcolorbox}[width=\textwidth, 
+                     colback = {white}, 
+                     title = {\textbf{Caution}}, 
                      colbacktitle = lightgray,
                      coltitle = black]
   \begin{includegraphics}[scale = 1]{warning.png}}
@@ -590,6 +600,11 @@ will probably be small enough in most circumstances.
 \end{longtable}
 
 \BeginKnitrBlock{rmdcalc}
+Following are steps to estimate value of \(d\) based on distances that
+carers are willing or able to walk to access services.
+
+~
+
 Add the distances together:
 
 \[ \sum \text{Distance} ~ = ~ 343 ~ \text{km} \]
@@ -620,6 +635,8 @@ S3M surveys have been done using a wide range (i.e.~from
 \(d ~ = ~ 8 ~ \text{km}\) to \(d ~ = ~ 33 ~ \text{km}\)) of values for
 \(d\). A value for \(d\) of 10 km or 12 km will probably be small enough
 in most circumstances.
+
+\newpage
 
 \hypertarget{step-3-draw-a-grid-over-the-map}{%
 \section{Step 3: Draw a grid over the
@@ -658,6 +675,8 @@ For example, if \(d ~ = ~ 10 ~ \text{km}\) then:
 and:
 
 \[ y ~ = ~ \frac{\sqrt{3}d}{2} ~ \approx ~ \frac{1.73 ~ \times ~ 10}{2} ~ \approx ~ \frac{17.3}{2} ~ \approx ~ 8.7 ~ \text{km} \]
+
+\newpage
 
 The table below shows the grid sizes for different values of \(d\):
 
@@ -818,6 +837,8 @@ If you are drawing the grid directly onto the map then use a soft pencil
 the surface of the map and is easy to erase using a soft rubber eraser
 should you make a mistake or need to draw a different grid.
 
+\newpage
+
 \hypertarget{step-4-create-an-even-spread-of-sampling-points}{%
 \section{Step 4: Create an even spread of sampling
 points}\label{step-4-create-an-even-spread-of-sampling-points}}
@@ -831,6 +852,8 @@ in a hexagonal grid without the need to draw a hexagonal grid. Make sure
 that your sample points go right to the edge (or even over the edge) of
 the survey area. This helps to ensure that the survey will sample from
 the entire survey area.
+
+\newpage
 
 \hypertarget{step-5-select-the-communities-to-sample}{%
 \section{Step 5: Select the communities to
@@ -851,16 +874,16 @@ areas that do not contain sampling points.
 The aim is to create a roughly even spread of sampling points over the
 entire survey area.
 
-\BeginKnitrBlock{rmdwarning}
-\textbf{Caution:} The S3M sample is defined using a systematic sampling
-method. Like any systematic sampling method, an S3M sample can produce
-biased estimates if there is periodic variation in prevalence and / or
-coverage and the sampling points tend to coincide with this periodicity.
-This is difficult to control for without prior knowledge of the periodic
+\BeginKnitrBlock{rmdcaution}
+The S3M sample is defined using a systematic sampling method. Like any
+systematic sampling method, an S3M sample can produce biased estimates
+if there is periodic variation in prevalence and / or coverage and the
+sampling points tend to coincide with this periodicity. This is
+difficult to control for without prior knowledge of the periodic
 variation, although simple checks such as ensuring that sampling points
 are not all in valleys or all on hilltops, and adjusting the grid
 position accordingly, should help to minimise this problem.
-\EndKnitrBlock{rmdwarning}
+\EndKnitrBlock{rmdcaution}
 
 A good way to check if you have an even spread of sampling points over
 the entire survey area is to do a trial \emph{triangulation} of the
@@ -946,6 +969,8 @@ some large triangles and some long and narrow triangles in your final
 triangulation. You should try to keep the number of these ``problem''
 triangles to a minimum.}
 
+\newpage
+
 \hypertarget{step-6-label-each-sampling-point}{%
 \section{Step 6: Label each sampling
 point}\label{step-6-label-each-sampling-point}}
@@ -963,6 +988,8 @@ Give each sampling point a unique identifying label:
 \end{itemize}
 
 These labels are used when collecting, organising, and analysing data.
+
+\newpage
 
 \hypertarget{step-7-label-each-triangular-tile}{%
 \section{Step 7: Label each triangular
@@ -987,6 +1014,8 @@ This step is only required if you will be using the simple analysis
 provided by the RAnalyticFlow workflow. More complicated analysis
 methods will usually not use the tile labels created in this step.
 \EndKnitrBlock{rmdnote}
+
+\newpage
 
 \hypertarget{step-8-describe-the-sample-in-numbers}{%
 \section{Step 8: Describe the sample in
@@ -1162,6 +1191,8 @@ Microsoft Excel or OpenOffice Calc but they should be exported as
 comma-separated-value (CSV) files before use by the
 \textbf{RAnalyticFlow} workflow. Do \textbf{not} use commas (i.e. ``,'')
 in any cell when entering data.
+
+\newpage
 
 \hypertarget{step-9-plan-data-collection}{%
 \section{Step 9: Plan data
