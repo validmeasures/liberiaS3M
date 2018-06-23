@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-06-22">
+<meta name="date" content="2018-06-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -80,7 +80,11 @@
 <li class="chapter" data-level="3.8" data-path="stage1.html"><a href="stage1.html#step-8-describe-the-sample-in-numbers"><i class="fa fa-check"></i><b>3.8</b> Step 8: Describe the sample in numbers</a></li>
 <li class="chapter" data-level="3.9" data-path="stage1.html"><a href="stage1.html#step-9-plan-data-collection"><i class="fa fa-check"></i><b>3.9</b> Step 9: Plan data collection</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a></li>
+<li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a><ul>
+<li class="chapter" data-level="4.1" data-path="stage2.html"><a href="stage2.html#step-10-within-community-sampling"><i class="fa fa-check"></i><b>4.1</b> Step 10: Within-community sampling</a></li>
+<li class="chapter" data-level="4.2" data-path="stage2.html"><a href="stage2.html#step-11-collect-and-record-the-data"><i class="fa fa-check"></i><b>4.2</b> Step 11: Collect and record the data</a></li>
+<li class="chapter" data-level="4.3" data-path="stage2.html"><a href="stage2.html#step-12-enter-the-collected-data"><i class="fa fa-check"></i><b>4.3</b> Step 12: Enter the collected data</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -105,7 +109,60 @@
             <section class="normal" id="section-">
 <div id="stage2" class="section level1">
 <h1><span class="header-section-number">4</span> The second stage sample</h1>
+<div id="step-10-within-community-sampling" class="section level2">
+<h2><span class="header-section-number">4.1</span> Step 10: Within-community sampling</h2>
+<p>The sampling process that you use to select a sample from a community will depend on what the survey is investigating.</p>
+<p>If you are investigating multiple indicators which apply to different groups of individuals then you may find it easier to use different sampling methods for different indicators. You can think of this as having different surveys for different indicators sampled from the same set of communities at the same time.</p>
+<p>If you are evaluating a program treating SAM you can efficiently find SAM cases using an active and adaptive (snowball) case-finding method. If you are also evaluating TSFP and FBPM programs using house- to-house and door-to-door screening then you will not need to use active and adaptive case-finding as the screening process will also identify SAM cases. SAM is a rare condition. This means that estimates and maps of SAM prevalence and SAM treatment coverage may be based on only a small number of cases from a small number of sampling points. This problem can be avoided by using a “top-up” sample collected using an active and adaptive case-finding method in a small set of communities neighbouring the selected sampling point.</p>
+<p>If you are evaluating (e.g.) TSFP and FBPM programs then the active and adaptive case-finding may only find the most severe cases. In this case, house-to-house and door-to-door screening will be the most appropriate way to find eligible persons (cases). If a sampling point is located in a village then the entire population can be screened. If a sampling point is located in a large village or town then the village or town can be divided into a set of segments and the entire population of only a sample of these segments are then screened (see <strong>Appendix A</strong>).</p>
+<p>If you are evaluating a BCC program then you can apply your BCC questions to the carers of children and to the PLWs that you find in the sample.</p>
 
+</div>
+<div id="step-11-collect-and-record-the-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Step 11: Collect and record the data</h2>
+<p>Datasets for need and coverage surveys of selective-entry feeding programs are usually simple and can be collected using simple tabular forms.</p>
+<p>Here is an example of a form used to collect coverage data on TSFP and FPBM programs for children:</p>
+<p>Here is an example of a form used to collect coverage data on TSFP and FPBM programs for PLWs:</p>
+<p>The “BCC confirmed by message recall” column records whether the respondent can recall any messages that match with the program’s BCC key messages.</p>
+<p>The data collected using the tabular forms will allow you to estimate or classify need and coverage. They do not, however, allow you to know the reasons for coverage failure. To collect this data we apply a “barriers” questionnaire to uncovered cases (PLWs) or the carers of uncovered cases (children). Here is an example of a barriers questionnaire:</p>
+<p>The barriers questionnaire is applied only to non-covered cases.</p>
+<p>Remember to refer all non-covered cases to the appropriate program.</p>
+
+</div>
+<div id="step-12-enter-the-collected-data" class="section level2">
+<h2><span class="header-section-number">4.3</span> Step 12: Enter the collected data</h2>
+<p>Coverage survey data is simple enough to be entered (and analysed) using spreadsheet packages such as Microsoft Excel or OpenOffice Calc.</p>
+<p>If you want to analyse your data using a spreadsheet then you can use column names that make sense to you. If you want to analyse your data using the <strong>RAnalyticFlow</strong> workflow (see <strong>Step 13</strong>) then the column names
+<strong>must</strong> be <strong>exactly</strong>:</p>
+<table style="width:65%;">
+<colgroup>
+<col width="22%" />
+<col width="43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Column</strong></th>
+<th><strong>Contains</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>age</strong></td>
+<td>Age of child in months</td>
+</tr>
+<tr class="even">
+<td><strong>sex</strong></td>
+<td>Sex of child
+1 = Male; 2 = Female</td>
+</tr>
+<tr class="odd">
+<td><strong>muac</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
             </section>
 
