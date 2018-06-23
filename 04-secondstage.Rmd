@@ -39,3 +39,12 @@ Coverage survey data is simple enough to be entered (and analysed) using spreads
 If you want to analyse your data using a spreadsheet then you can use column names that make sense to you. If you want to analyse your data using the **RAnalyticFlow** workflow (see **Step 13**) then the column names
 **must** be **exactly**:
 
++---------------+------------------------------+
+| **Column**    | **Contains**                 |
++===============+==============================+
+| **age**       | Age of child in months       |
++---------------+------------------------------+
+| **sex**       | Sex of child                 |
+|               | 1 = Male; 2 = Female         |
++---------------+------------------------------+
+| **muac**      
