@@ -9,3 +9,6 @@ addons:
      packages:
        - libgdal-dev 
        - libproj-dev
+       
+script:
+  - Rscript -e 'bookdown::render_book("index.rmd")'
