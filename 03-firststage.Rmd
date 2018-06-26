@@ -233,7 +233,7 @@ $$ x ~ = ~ \frac{3d}{2} $$
 
 where $d$ is the distance ($d$) that you decided in **Step 2**.
 
-The height of the grid in the north-south (`y`) direction can be calculated using:
+The height of the grid in the north-south ($y$) direction can be calculated using:
 
 $$ y ~ = ~ \frac{\sqrt{3}d}{2} $$
 
@@ -402,7 +402,7 @@ To analyse and map data you will need to create two files:
 +--------------------+----------------------------------------+----------------------------------------+
 | **lonDegrees**     | Longitude of the sampling point        | Optional                               |
 +--------------------+----------------------------------------+----------------------------------------+
-| **lonMinutes       | Minutes of longitude should be recorded| Optional                               |
+| **lonMinutes**     | Minutes of longitude should be recorded| Optional                               |
 |                    | in decimal minutes                     |                                        |
 +--------------------+----------------------------------------+----------------------------------------+
 
