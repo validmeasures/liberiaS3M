@@ -1,10 +1,4 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 liberia
 kableExtra
 knitr
@@ -14,3 +8,6 @@ devtools
 rgdal
 rgeos
 maps
+spatialsampler
+magrittr
+FNN

@@ -1,0 +1,13 @@
+base
+liberia
+kableExtra
+knitr
+sp
+raster
+devtools
+rgdal
+rgeos
+maps
+spatialsampler
+magrittr
+FNN
