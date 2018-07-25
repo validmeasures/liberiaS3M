@@ -44,10 +44,12 @@ grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
 
 calculate_length <- function(d) {
   x <- (3 * d) / 2
+  return(x)
 }
 
 calculate_height <- function(d) {
   y <- (sqrt(3) / 2) * d
+  return(y)
 }
 
 ```
@@ -296,11 +298,13 @@ montserradoBox <- montserradoUTM %>%
 
 proj4string(montserradoBox) <- proj4string(montserradoUTM)
 
-montserradoBox <- create_buffer(x = montserradoBox, buffer = 4, country = "Liberia")
+montserradoBox <- create_buffer(x = montserradoBox, buffer = 5, country = "Liberia")
 
-x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], by = 18000)
+x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
+         by = calculate_length(d = 12000))
 
-y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], by = 10392.3)
+y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], 
+         by = calculate_height(d = 12000))
 
 coords <- NULL
 
