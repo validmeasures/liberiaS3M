@@ -28,6 +28,15 @@ knitr::opts_chunk$set(
 )
 options(stringsAsFactors = FALSE)
 
+if(!require(devtools)) install.packages("devtools")
+if(!require(rgdal)) install.packages("rgdal")
+if(!require(rgeos)) install.packages("rgeos")
+if(!require(raster)) install.packages("raster")
+if(!require(liberia)) install_github("validmeasures/liberia")
+if(!require(maps)) install.packages("maps")
+if(!require(knitr)) install.packages("knitr")
+if(!require(kableExtra)) install.packages("kableExtra")
+
 wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
                       layer = "wca_adm0",
                       verbose = FALSE)
