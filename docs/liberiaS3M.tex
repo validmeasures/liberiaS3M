@@ -80,16 +80,17 @@
 }
 
 \setlength{\droptitle}{-2em}
+
   \title{Notes on a design of a simple spatial sampling method (S3M) for
 assessing coverage of health and nutrition programmes in Liberia}
-  \pretitle{\vspace{\droptitle}\centering\huge}
+    \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{Valid International}
-  \preauthor{\centering\large\emph}
+    \author{Valid International}
+    \preauthor{\centering\large\emph}
   \postauthor{\par}
-  \predate{\centering\large\emph}
+      \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-06-27}
+    \date{2018-07-25}
 
 \usepackage{booktabs}
 \usepackage{color}
@@ -365,7 +366,7 @@ and useful to have:
 
 }
 
-\caption{Small scale map of two counties in Liberia showing all districts, roads and points of interest}\label{fig:smallScaleMapCounty}
+\caption{Small scale map of Montserrado and Grand Bassa in Liberia showing all districts, roads and points of interest}\label{fig:smallScaleMapCounty}
 \end{figure}\newpage
 
 \begin{itemize}
@@ -421,7 +422,7 @@ point}\label{step-2-decide-the-area-to-be-represented-by-each-sampling-point}}
 
 The easiest way of thinking about this is as a function of the intended
 maximum distance (\(d\)) of any community from the nearest sampling
-point (see Figure \ref{fig:distance}.
+point (see Figure \ref{fig:distance1}.
 
 ~
 
@@ -431,19 +432,20 @@ point (see Figure \ref{fig:distance}.
 
 }
 
-\caption{Conceptual presentation of the area represented by each sampling point}\label{fig:distance}
+\caption{Conceptual presentation of the area represented by each sampling point}\label{fig:distance1}
 \end{figure}
 
 ~
 
 There are other ways of thinking about \(d\). These are:
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   \textbf{The area of each triangular tile}: This can be calculated
   using the formula:
-\end{itemize}
+\end{enumerate}
 
 \[ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 \]
 
@@ -452,7 +454,9 @@ about:
 
 \[ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 ~ \approx ~ 1.3 ~ \times ~ 100 ~ = ~ 130 ~ \text{km} ^ 2 \]
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
 \tightlist
 \item
   \textbf{Practicability}: Most of the time spent in the field when
@@ -462,7 +466,7 @@ about:
   take (\(m\)) then you can make a \textbf{very approximate} estimate of
   a suitable value for d using the following \emph{rule-of-thumb}
   formula:
-\end{itemize}
+\end{enumerate}
 
 \[ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} \]
 
@@ -470,10 +474,7 @@ The value of \(d\) calculated using this formula is approximate and
 should be used as a starting point for a number of trial samples using
 the procedure outlined below.
 
-S3M surveys have been done using a wide range (i.e.~from
-\(d ~ = ~ 8 ~ \text{km}\) to \(d ~ = ~ 33 ~ \text{km}\)) of values for
-\(d\). A value for \(d\) of \(10 ~ \text{km}\) or \(12 ~ \text{km}\)
-will probably be small enough in most circumstances.
+~
 
 \begin{longtable}[]{@{}cccc@{}}
 \toprule
@@ -599,13 +600,27 @@ will probably be small enough in most circumstances.
 \bottomrule
 \end{longtable}
 
+~
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=16.67in]{figures/step2a} 
+
+}
+
+\caption{Distances of communities to the nearest substantial markets}\label{fig:distance2}
+\end{figure}
+
+~
+
 \BeginKnitrBlock{rmdcalc}
 Following are steps to estimate value of \(d\) based on distances that
 carers are willing or able to walk to access services.
 
 ~
 
-Add the distances together:
+Using the information from the distance table, add the distances
+together:
 
 \[ \sum \text{Distance} ~ = ~ 343 ~ \text{km} \]
 
@@ -622,9 +637,11 @@ Divide the result by two:
 \[ d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km} \]
 \EndKnitrBlock{rmdcalc}
 
+~
+
 This is an estimate of the distance that carers are willing or able to
 walk to access services. Only distances between towns and villages with
-markets are use in this calculation.
+markets are used in this calculation.
 
 A way of deciding a value for \(d\) that is based on the economic
 geography of the survey area is to set \(d\) to one half of the mean

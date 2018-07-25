@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-06-27">
+<meta name="date" content="2018-07-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -125,9 +125,9 @@ Figure 3.1: Small scale map of Liberia showing counties, roads and points of int
 </div>
 
 <div class="figure" style="text-align: center"><span id="fig:smallScaleMapCounty"></span>
-<img src="figures/smallScaleMapCounty-1.png" alt="Small scale map of two counties in Liberia showing all districts, roads and points of interest"  />
+<img src="figures/smallScaleMapCounty-1.png" alt="Small scale map of Montserrado and Grand Bassa in Liberia showing all districts, roads and points of interest"  />
 <p class="caption">
-Figure 3.2: Small scale map of two counties in Liberia showing all districts, roads and points of interest
+Figure 3.2: Small scale map of Montserrado and Grand Bassa in Liberia showing all districts, roads and points of interest
 </p>
 </div>
 
@@ -155,9 +155,9 @@ Figure 3.4: Large scale maps of 5 districts of Montserrado county in Liberia sho
 </div>
 <div id="step-2-decide-the-area-to-be-represented-by-each-sampling-point" class="section level2">
 <h2><span class="header-section-number">3.2</span> Step 2: Decide the area to be represented by each sampling point</h2>
-<p>The easiest way of thinking about this is as a function of the intended maximum distance (<span class="math inline">\(d\)</span>) of any community from the nearest sampling point (see Figure <a href="stage1.html#fig:distance">3.5</a>.</p>
+<p>The easiest way of thinking about this is as a function of the intended maximum distance (<span class="math inline">\(d\)</span>) of any community from the nearest sampling point (see Figure <a href="stage1.html#fig:distance1">3.5</a>.</p>
 <p> </p>
-<div class="figure" style="text-align: center"><span id="fig:distance"></span>
+<div class="figure" style="text-align: center"><span id="fig:distance1"></span>
 <img src="figures/step2.png" alt="Conceptual presentation of the area represented by each sampling point" width="1200" />
 <p class="caption">
 Figure 3.5: Conceptual presentation of the area represented by each sampling point
@@ -165,18 +165,18 @@ Figure 3.5: Conceptual presentation of the area represented by each sampling poi
 </div>
 <p> </p>
 <p>There are other ways of thinking about <span class="math inline">\(d\)</span>. These are:</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li><strong>The area of each triangular tile</strong>: This can be calculated using the formula:</li>
-</ul>
+</ol>
 <p><span class="math display">\[ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 \]</span></p>
 <p>For <span class="math inline">\(d ~ = ~ 10 ~ \text{km}\)</span> the area of each triangular tile will be about:</p>
 <p><span class="math display">\[ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 ~ \approx ~ 1.3 ~ \times ~ 100 ~ = ~ 130 ~ \text{km} ^ 2 \]</span></p>
-<ul>
+<ol start="2" style="list-style-type: decimal">
 <li><strong>Practicability</strong>: Most of the time spent in the field when doing a survey will be in travelling to and from sampling points. Having many sampling points can make for an expensive and / or lengthy survey. If you know how many sampling points that you can afford to take (<span class="math inline">\(m\)</span>) then you can make a <strong>very approximate</strong> estimate of a suitable value for d using the following <em>rule-of-thumb</em> formula:</li>
-</ul>
+</ol>
 <p><span class="math display">\[ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} \]</span></p>
 <p>The value of <span class="math inline">\(d\)</span> calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.</p>
-<p>S3M surveys have been done using a wide range (i.e. from <span class="math inline">\(d ~ = ~ 8 ~ \text{km}\)</span> to <span class="math inline">\(d ~ = ~ 33 ~ \text{km}\)</span>) of values for <span class="math inline">\(d\)</span>. A value for <span class="math inline">\(d\)</span> of <span class="math inline">\(10 ~ \text{km}\)</span> or <span class="math inline">\(12 ~ \text{km}\)</span> will probably be small enough in most circumstances.</p>
+<p> </p>
 <table style="width:75%;">
 <colgroup>
 <col width="15%" />
@@ -267,11 +267,19 @@ Figure 3.5: Conceptual presentation of the area represented by each sampling poi
 </tr>
 </tbody>
 </table>
+<p> </p>
+<div class="figure" style="text-align: center"><span id="fig:distance2"></span>
+<img src="figures/step2a.png" alt="Distances of communities to the nearest substantial markets" width="1200" />
+<p class="caption">
+Figure 3.6: Distances of communities to the nearest substantial markets
+</p>
+</div>
+<p> </p>
 
 <div class="rmdcalc">
 <p>Following are steps to estimate value of <span class="math inline">\(d\)</span> based on distances that carers are willing or able to walk to access services.</p>
 <p> </p>
-<p>Add the distances together:</p>
+<p>Using the information from the distance table, add the distances together:</p>
 <p><span class="math display">\[ \sum \text{Distance} ~ = ~ 343 ~ \text{km} \]</span></p>
 <p> </p>
 <p>Divide the result by the number of paired distances:</p>
@@ -281,7 +289,8 @@ Figure 3.5: Conceptual presentation of the area represented by each sampling poi
 <span class="math display">\[ d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km} \]</span>
 </div>
 
-<p>This is an estimate of the distance that carers are willing or able to walk to access services. Only distances between towns and villages with markets are use in this calculation.</p>
+<p> </p>
+<p>This is an estimate of the distance that carers are willing or able to walk to access services. Only distances between towns and villages with markets are used in this calculation.</p>
 <p>A way of deciding a value for <span class="math inline">\(d\)</span> that is based on the economic geography of the survey area is to set <span class="math inline">\(d\)</span> to one half of the mean distance between neighbouring pairs of communities with substantial markets.</p>
 <p>S3M surveys have been done using a wide range (i.e. from <span class="math inline">\(d ~ = ~ 8 ~ \text{km}\)</span> to <span class="math inline">\(d ~ = ~ 33 ~ \text{km}\)</span>) of values for <span class="math inline">\(d\)</span>. A value for <span class="math inline">\(d\)</span> of 10 km or 12 km will probably be small enough in most circumstances.</p>
 
