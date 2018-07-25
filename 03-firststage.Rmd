@@ -41,6 +41,15 @@ montserrado2 <- districts[districts$admin1Name == "Montserrado", ]
 
 grandbassa1 <- counties[counties$admin1name == "Grand Bassa", ]
 grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
+
+calculate_length <- function(d) {
+  x <- (3 * d) / 2
+}
+
+calculate_height <- function(d) {
+  y <- (sqrt(3) / 2) * d
+}
+
 ```
 
 # The first stage sample {#stage1}
@@ -287,11 +296,11 @@ montserradoBox <- montserradoUTM %>%
 
 proj4string(montserradoBox) <- proj4string(montserradoUTM)
 
-montserradoBox <- create_buffer(x = montserradoBox, buffer = 2, country = "Liberia")
+montserradoBox <- create_buffer(x = montserradoBox, buffer = 4, country = "Liberia")
 
-x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], by = 30000)
+x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], by = 18000)
 
-y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], by = 17320.51)
+y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], by = 10392.3)
 
 coords <- NULL
 
