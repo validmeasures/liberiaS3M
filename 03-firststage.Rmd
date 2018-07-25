@@ -1,3 +1,48 @@
+```{r, echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "figures/"
+)
+
+options(stringsAsFactors = FALSE)
+
+if(!require(devtools)) install.packages("devtools")
+if(!require(rgdal)) install.packages("rgdal")
+if(!require(rgeos)) install.packages("rgeos")
+if(!require(raster)) install.packages("raster")
+if(!require(spatialsampler)) install_github("validmeasures/spatialsampler")
+if(!require(liberia)) install_github("validmeasures/liberia")
+if(!require(maps)) install.packages("maps")
+if(!require(knitr)) install.packages("knitr")
+if(!require(kableExtra)) install.packages("kableExtra")
+if(!require(magrittr)) install.packages("magrittr")
+
+wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
+                      layer = "wca_adm0",
+                      verbose = FALSE)
+
+roads <- rgdal::readOGR(dsn = "maps/lbr_rdsl_unmil",
+                        layer = "lbr_rdsl_unmil",
+                        verbose = FALSE)
+
+tracks <- subset(roads, CATEGORY %in% c("Track", "Tracks"))
+primary <- subset(roads, CATEGORY == "Primary Routes")
+paved <- subset(roads, CATEGORY == "Paved") 
+
+poi <- rgdal::readOGR(dsn = "maps/hotosm_liberia_points_of_interest_points_shp",
+                      layer = "hotosm_liberia_points_of_interest_points",
+                      verbose = FALSE)
+
+montserrado1 <- counties[counties$admin1name == "Montserrado", ]
+montserrado2 <- districts[districts$admin1Name == "Montserrado", ]
+
+grandbassa1 <- counties[counties$admin1name == "Grand Bassa", ]
+grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
+```
+
 # The first stage sample {#stage1}
 
 ## Step 1: Find a map
@@ -233,6 +278,32 @@ S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$
 
 ```{r grid1, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 12 km", fig.align = "center", fig.pos = "H", fig.retina = 1}
 
+montserradoUTM <- spTransform(montserrado1, CRSobj = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
+
+montserradoBox <- montserradoUTM %>% 
+  bbox() %>% 
+  extent() %>% 
+  as("SpatialPolygons")
+
+proj4string(montserradoBox) <- proj4string(montserradoUTM)
+
+montserradoBox <- create_buffer(x = montserradoBox, buffer = 2, country = "Liberia")
+
+x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], by = 30000)
+
+y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], by = 17320.51)
+
+coords <- NULL
+
+for(i in 1:length(x)) {
+  for(j in 1:length(y)) {
+    coords <- rbind(coords, c(x[i], y[j]))
+  }
+}
+
+montserradoGrid <- coords %>% 
+  SpatialPoints(proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"]))) %>%
+  SpatialPixels()
 
 ```
 
