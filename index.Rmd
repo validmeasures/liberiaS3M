@@ -18,7 +18,7 @@ cover-image: figures/s3mlogo.png
 description: "Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
 ---
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
@@ -52,6 +52,12 @@ paved <- subset(roads, CATEGORY == "Paved")
 poi <- rgdal::readOGR(dsn = "maps/hotosm_liberia_points_of_interest_points_shp",
                       layer = "hotosm_liberia_points_of_interest_points",
                       verbose = FALSE)
+
+montserrado1 <- counties[counties$admin1name == "Montserrado", ]
+montserrado2 <- districts[districts$admin1Name == "Montserrado", ]
+
+grandbassa1 <- counties[counties$admin1name == "Grand Bassa", ]
+grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
 ```
 
 # Simple Spatial Sampling Method (S3M) {-}
