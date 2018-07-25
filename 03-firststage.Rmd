@@ -19,6 +19,7 @@ if(!require(maps)) install.packages("maps")
 if(!require(knitr)) install.packages("knitr")
 if(!require(kableExtra)) install.packages("kableExtra")
 if(!require(magrittr)) install.packages("magrittr")
+if(!require(FNN)) install.packages("FNN")
 
 wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
                       layer = "wca_adm0",
@@ -52,6 +53,90 @@ calculate_height <- function(d) {
   return(y)
 }
 
+montserradoUTM <- spTransform(montserrado1, CRSobj = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
+
+montserradoBox <- montserradoUTM %>% 
+  bbox() %>% 
+  extent() %>% 
+  as("SpatialPolygons")
+
+proj4string(montserradoBox) <- proj4string(montserradoUTM)
+
+montserradoBox <- create_buffer(x = montserradoBox, buffer = 6, country = "Liberia")
+
+x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
+         by = calculate_length(d = 6000))
+
+x1 <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
+          by = calculate_length(d = 6000) * 2)
+
+x2 <- seq(from = extent(montserradoBox)[1] + calculate_length(d = 6000), to = extent(montserradoBox)[2], 
+          by = calculate_length(d = 6000) * 2)
+
+y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], 
+         by = calculate_height(d = 6000))
+
+y1 <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], 
+          by = calculate_height(d = 6000) * 2)
+
+y2 <- seq(from = extent(montserradoBox)[3] + calculate_height(d = 6000), to = extent(montserradoBox)[4], 
+          by = calculate_height(d = 6000) * 2)
+
+coords  <- NULL
+coords1 <- NULL
+coords2 <- NULL 
+
+for(i in 1:length(x)) {
+  for(j in 1:length(y)) {
+    coords  <- rbind(coords, c(x[i], y[j]))
+    coords1 <- rbind(coords1, c(x1[i], y1[j]))
+    coords2 <- rbind(coords2, c(x2[i], y2[j]))
+  }
+}
+
+coordsSP <- rbind(coords1, coords2)
+
+coordsSP <- coordsSP[!is.na(coordsSP[ , 1]), ]
+coordsSP <- coordsSP[!is.na(coordsSP[ , 2]), ]
+
+a <- seq(from = 1, to = nrow(coords), by = length(y))
+b <- seq(from = length(y), to = nrow(coords), by = length(y))
+
+hline <- NULL
+
+for(i in 1:length(x)) {
+  temp <- Lines(Line(coords[a[i]:b[i], ]), ID = paste("hline", i, sep = ""))
+  hline <- c(hline, temp)
+}
+
+coordsX <- coords[order(coords[ , 2]), ]
+
+a <- seq(from = 1, to = nrow(coordsX), by = length(x))
+b <- seq(from = length(x), to = nrow(coordsX), by = length(x))
+
+vline <- NULL
+
+for(i in 1:length(y)) {
+  temp <- Lines(Line(coordsX[a[i]:b[i], ]), ID = paste("vline", i, sep = ""))
+  vline <- c(vline, temp)
+}
+
+montserradoBox <- spTransform(montserradoBox, CRS(proj4string(montserrado1)))
+
+allLines <- SpatialLines(c(hline, vline), 
+                         proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
+
+allLines <- spTransform(allLines, CRSobj = CRS(proj4string(montserrado1)))
+
+coords <- SpatialPoints(coords = coords, 
+                        proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
+
+coords <- spTransform(coords, CRSobj = CRS(proj4string(montserrado1)))
+
+coordsSP <- SpatialPoints(coords = coordsSP, 
+                          proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
+
+coordsSP <- spTransform(coordsSP, CRSobj = CRS(proj4string(montserrado1)))
 ```
 
 # The first stage sample {#stage1}
@@ -187,7 +272,7 @@ The large-scale maps in Figures \@ref(fig:largeScaleMapCounty) and \@ref(fig:lar
 
 \newpage
 
-## Step 2: Decide the area to be represented by each sampling point
+## Step 2: Decide the area to represent each sampling point
 
 The easiest way of thinking about this is as a function of the intended maximum distance ($d$) of any community from the nearest sampling point (see Figure \@ref(fig:distance1).
 
@@ -287,44 +372,31 @@ S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$
 
 ## Step 3: Draw a grid over the map
 
-```{r grid1, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 12 km", fig.align = "center", fig.pos = "H", fig.retina = 1}
-
-montserradoUTM <- spTransform(montserrado1, CRSobj = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
-
-montserradoBox <- montserradoUTM %>% 
-  bbox() %>% 
-  extent() %>% 
-  as("SpatialPolygons")
-
-proj4string(montserradoBox) <- proj4string(montserradoUTM)
-
-montserradoBox <- create_buffer(x = montserradoBox, buffer = 4, country = "Liberia")
-
-x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
-         by = calculate_length(d = 12000))
-
-y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], 
-         by = calculate_height(d = 12000))
-
-coords <- NULL
-
-for(i in 1:length(x)) {
-  for(j in 1:length(y)) {
-    coords <- rbind(coords, c(x[i], y[j]))
-  }
-}
-
-montserradoGrid <- coords %>% 
-  SpatialPoints(proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"]))) %>%
-  SpatialPixels()
-
-montserradoGrid <- coords %>% 
-  SpatialPoints(proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"]))) %>%
-  points2grid() %>%
-  SpatialGrid()
-
-
+```{r grid1, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+par(mar = c(0, 0, 0, 0))
+plot(montserradoBox, lty = 0)
+plot(counties, add = TRUE)
+plot(montserrado1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(allLines, add = TRUE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements"),
+       pch = c(0, 0, NA, NA, 4),
+       lty = c(NA, NA, 1, 2, NA),
+       lwd = c(1, 3, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
 ```
+
+&nbsp;
 
 The next step is to draw a grid over the map.
 
@@ -346,13 +418,15 @@ $$ y ~ = ~ \frac{\sqrt{3}d}{2} $$
 
 where $d$ is the distance ($d$) that you decided in **Step 2**.
 
-For example, if $d ~ = ~ 10 ~ \text{km}$ then:
+For example, in Figure \@ref(fig:grid1), we used $d ~ = ~ 6 ~ \text{km}$. This value of $d$ creates a rectangular grid with the following dimensions:
 
-$$ x ~ = ~ \frac{3d}{2} ~ = ~ \frac{3 ~ \times ~ 10}{2} ~ = ~ \frac{30}{2} ~ = ~ 15 ~ \text{km} $$
+$$ x ~ = ~ \frac{3d}{2} ~ = ~ \frac{3 ~ \times ~ 6}{2} ~ = ~ \frac{18}{2} ~ = ~ 9 ~ \text{km} $$
 
 and:
 
-$$ y ~ = ~ \frac{\sqrt{3}d}{2} ~ \approx ~ \frac{1.73 ~ \times ~ 10}{2} ~ \approx ~ \frac{17.3}{2} ~ \approx ~ 8.7 ~ \text{km} $$
+$$ y ~ = ~ \frac{\sqrt{3}d}{2} ~ \approx ~ \frac{1.73 ~ \times ~ 6}{2} ~ \approx ~ \frac{10.38}{2} ~ \approx ~ 5.2 ~ \text{km} $$
+
+So, the grid in Figure \@ref(fig:grid1) is 9 km long on the east-west direction and 5.2 km on the north and south direction.
 
 \newpage
 
@@ -390,14 +464,82 @@ If you are drawing the grid directly onto the map then use a soft pencil (e.g. a
 
 ## Step 4: Create an even spread of sampling points
 
-Sampling points are located at the intersections of the rectangular grid in a staggered fashion. Alternate intersections of the grid in the x (east-west) and y (north-south) directions are used :
+```{r grid2, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and alternating intersections of the grid used to identify sampling points", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+par(mar = c(0, 0, 0, 0))
+plot(montserradoBox, lty = 0)
+plot(counties, add = TRUE)
+plot(montserrado1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(allLines, add = TRUE)
+plot(coordsSP, pch = 1, cex = 2, col = "red", add = TRUE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
+Sampling points are located at the intersections of the rectangular grid in a staggered fashion. Alternate intersections of the grid in the x (east-west) and y (north-south) directions are used:
+
+\newpage
+
+```{r grid2a, echo = FALSE, eval = TRUE, fig.cap = "Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly", fig.align = "center", fig.pos = "H", fig.retina = 1}
+include_graphics("figures/grid2a.png")
+```
 
 Note how this process places sampling points at the centres of hexagons in a hexagonal grid without the need to draw a hexagonal grid.
+
 Make sure that your sample points go right to the edge (or even over the edge) of the survey area. This helps to ensure that the survey will sample from the entire survey area.
 
 \newpage
 
 ## Step 5: Select the communities to sample
+
+```{r grid3, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+
+xx <- get_nearest_point(data = settlements, 
+                        data.x = "COORD_X", 
+                        data.y = "COORD_Y", 
+                        query = coordsSP)
+
+villagesSP <- SpatialPoints(coords = xx[ , c("COORD_X", "COORD_Y")],
+                            proj4string = CRS(proj4string(montserrado1)))[montserrado1]
+
+
+par(mar = c(0, 0, 0, 0))
+plot(montserradoBox, lty = 0)
+plot(counties, add = TRUE)
+plot(montserrado1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(allLines, add = TRUE)
+#plot(coordsSP, pch = 1, cex = 2, col = "red", add = TRUE)
+plot(villagesSP, pch = 1, cex = 2, col = "red", add = TRUE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
 
 Select the community (or communities) closest to the sampling points identified in **Step 4**.
 
