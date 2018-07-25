@@ -14,17 +14,18 @@ For the coverage survey of 2 counties in Liberia, it will be practical and usefu
 # Set margins
 par(mar = c(0, 0, 0, 0))
 # Plot map
-sp::plot(liberia::counties, lwd = 2, border = "gray50")
-sp::plot(wca, lwd = 4, border = "black", add = TRUE)
-sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
-sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
-sp::plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
-maps::map.scale()
+plot(counties, lwd = 2, border = "gray50")
+plot(wca, lwd = 4, border = "black", add = TRUE)
+plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+map.scale()
 legend(x = "topright",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
-       legend = c("Country borders", "County borders", "Paved roads", "Primary roads", "Main towns and locations"),
+       legend = c("Country borders", "County borders", "Paved roads", 
+                  "Primary roads", "Main towns and locations"),
        pch = c(0, 0, NA, NA, 4),
        lty = c(NA, NA, 1, 2, NA),
        lwd = c(3, 2, 2, 1, 2),
@@ -34,31 +35,35 @@ legend(x = "topright",
 ```
 \newpage
 
-```{r smallScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of two counties in Liberia showing all districts, roads and points of interest", fig.align = "center", fig.width = 6, fig.height = 12, fig.pos = "H", fig.retina = 1}
+```{r smallScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of Montserrado and Grand Bassa in Liberia showing all districts, roads and points of interest", fig.align = "center", fig.width = 6, fig.height = 12, fig.pos = "H", fig.retina = 1}
 # Set margins and plot layout
 par(mar = c(1, 1, 1, 1), mfrow = c(2, 1))
 # Draw first county
-sp::plot(subset(liberia::districts, admin1Name == "Grand Kru"), lwd = 1, border = "gray50")
-sp::plot(liberia::counties, lwd = 1, border = "black", add = TRUE)
-sp::plot(wca, lwd = 4, border = "black", add = TRUE)
-raster::text(x = liberia::counties, 
-             labels = liberia::counties$admin1name, 
-             cex = 2, col = "gray70")
-sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
-sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
-sp::plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
-maps::map.scale(ratio = FALSE)
+plot(subset(districts, admin1Name == "Grand Bassa"), 
+     lwd = 1, 
+     border = "gray50")
+plot(counties, lwd = 1, border = "black", add = TRUE)
+plot(wca, lwd = 4, border = "black", add = TRUE)
+text(x = counties, 
+     labels = counties$admin1name, 
+     cex = 2, col = "gray70")
+plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+map.scale(ratio = FALSE)
 # Draw second county
-sp::plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 2, border = "gray50")
-sp::plot(liberia::counties, lwd = 1, border = "black", add = TRUE)
-sp::plot(wca, lwd = 4, border = "black", add = TRUE)
-raster::text(x = liberia::counties, 
-             labels = liberia::counties$admin1name, 
-             cex = 2, col = "gray70")
-sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
-sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
-sp::plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
-maps::map.scale(ratio = FALSE)
+plot(subset(districts, admin1Name == "Montserrado"), 
+     lwd = 2, 
+     border = "gray50")
+plot(counties, lwd = 1, border = "black", add = TRUE)
+plot(wca, lwd = 4, border = "black", add = TRUE)
+text(x = counties, 
+     labels = counties$admin1name, 
+     cex = 2, col = "gray70")
+plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+map.scale(ratio = FALSE)
 ```
 \newpage
 
@@ -68,24 +73,25 @@ maps::map.scale(ratio = FALSE)
 
 ```{r largeScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Montserrado county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
-sp::plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 1, border = "gray50")
-sp::plot(liberia::counties, lwd = 4, border = "black", add = TRUE)
-sp::plot(wca, lwd = 5, border = "black", add = TRUE)
-raster::text(x = subset(liberia::counties, admin1name == "Montserrado"), 
-             labels = subset(liberia::counties, admin1name == "Montserrado")$admin1name, 
-             cex = 4, col = "gray70")
-raster::text(x = subset(liberia::districts, admin1Name == "Montserrado"), 
-             labels = subset(liberia::districts, admin1Name == "Montserrado")$admin2Name, 
+plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 1, border = "gray50")
+plot(liberia::counties, lwd = 4, border = "black", add = TRUE)
+plot(wca, lwd = 5, border = "black", add = TRUE)
+text(x = subset(counties, admin1name == "Montserrado"), 
+     labels = subset(counties, admin1name == "Montserrado")$admin1name, 
+     cex = 4, col = "gray70")
+raster::text(x = subset(districts, admin1Name == "Montserrado"), 
+             labels = subset(districts, admin1Name == "Montserrado")$admin2Name, 
              cex = 1, col = "gray70")
-sp::plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
-sp::plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
-sp::plot(liberia::settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
-maps::map.scale(ratio = FALSE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+map.scale(ratio = FALSE)
 legend(x = "topleft",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
-       legend = c("Country borders", "County borders", "Paved roads", "Primary roads", "All settlements"),
+       legend = c("Country borders", "County borders", "Paved roads", 
+                  "Primary roads", "All settlements"),
        pch = c(0, 0, NA, NA, 4),
        lty = c(NA, NA, 1, 2, NA),
        lwd = c(3, 2, 2, 1, 2),
@@ -100,17 +106,20 @@ legend(x = "topleft",
 # Set margins and plot layout
 par(mar = c(1, 1, 1, 1), mfrow = c(3, 2))
 # Plot maps
-for(i in subset(liberia::districts, admin1Name == "Montserrado")$admin2Name) {
-  sp::plot(subset(liberia::districts, admin1Name == "Montserrado" & admin2Name == i), lwd = 1, border = "black")
-  sp::plot(liberia::counties, lwd = 2, border = "black", add = TRUE)
+for(i in subset(districts, admin1Name == "Montserrado")$admin2Name) {
+  plot(subset(districts, admin1Name == "Montserrado" & admin2Name == i), 
+       lwd = 1, 
+       border = "black")
+  plot(counties, lwd = 2, border = "black", add = TRUE)
   #sp::plot(wca, lwd = 4, border = "black", add = TRUE)
-  raster::text(x = subset(liberia::districts, admin1Name == "Montserrado" & admin2Name == i), 
-             labels = i, 
-             cex = 3, col = "gray70")
-  sp::plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
-  sp::plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
-  sp::plot(liberia::settlements, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
-  maps::map.scale(ratio = FALSE)
+  text(x = subset(districts, admin1Name == "Montserrado" & admin2Name == i), 
+       labels = i, 
+       cex = 3, 
+       col = "gray70")
+  plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+  plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+  plot(settlements, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+  map.scale(ratio = FALSE)
 }
 ```
 
@@ -124,11 +133,11 @@ The large-scale maps in Figures \@ref(fig:largeScaleMapCounty) and \@ref(fig:lar
 
 ## Step 2: Decide the area to be represented by each sampling point
 
-The easiest way of thinking about this is as a function of the intended maximum distance ($d$) of any community from the nearest sampling point (see Figure \@ref(fig:distance).
+The easiest way of thinking about this is as a function of the intended maximum distance ($d$) of any community from the nearest sampling point (see Figure \@ref(fig:distance1).
 
 &nbsp;
 
-```{r distance, echo = FALSE, eval = TRUE, fig.cap = "Conceptual presentation of the area represented by each sampling point", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r distance1, echo = FALSE, eval = TRUE, fig.cap = "Conceptual presentation of the area represented by each sampling point", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("figures/step2.png")
 ```
 
@@ -136,7 +145,7 @@ knitr::include_graphics("figures/step2.png")
 
 There are other ways of thinking about $d$. These are:
 
-* **The area of each triangular tile**: This can be calculated using the formula:
+1. **The area of each triangular tile**: This can be calculated using the formula:
 
 $$ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 $$
 
@@ -144,13 +153,13 @@ For $d ~ = ~ 10 ~ \text{km}$ the area of each triangular tile will be about:
 
 $$ A ~ = ~ \tan30^ \circ ~ \times ~ \frac{9}{4} ~ d ^ 2 ~ \approx ~ 1.3 ~ \times ~ 100 ~ = ~ 130 ~ \text{km} ^ 2 $$
 
-* **Practicability**: Most of the time spent in the field when doing a survey will be in travelling to and from sampling points. Having many sampling points can make for an expensive and / or lengthy survey. If you know how many sampling points that you can afford to take ($m$) then you can make a **very approximate** estimate of a suitable value for d using the following *rule-of-thumb* formula:
+2. **Practicability**: Most of the time spent in the field when doing a survey will be in travelling to and from sampling points. Having many sampling points can make for an expensive and / or lengthy survey. If you know how many sampling points that you can afford to take ($m$) then you can make a **very approximate** estimate of a suitable value for d using the following *rule-of-thumb* formula:
 
 $$ d ~ \approx ~ \sqrt{\frac{\text{Program Area}}{m}} $$
 
 The value of $d$ calculated using this formula is approximate and should be used as a starting point for a number of trial samples using the procedure outlined below.
 
-S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$ to $d ~ = ~ 33 ~ \text{km}$) of values for $d$. A value for $d$ of $10 ~ \text{km}$ or $12 ~ \text{km}$ will probably be small enough in most circumstances.
+&nbsp;
 
 +----------+---------------+----------+---------------+
 | **Pair** | **Distance**  | **Pair** | **Distance**  |
@@ -180,12 +189,20 @@ S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$
 | 12       | 14 km         | 24       | 14 km         |
 +----------+---------------+----------+---------------+
 
+&nbsp;
+
+```{r distance2, echo = FALSE, eval = TRUE, fig.cap = "Distances of communities to the nearest substantial markets", fig.align = "center", fig.pos = "H", fig.retina = 1}
+include_graphics("figures/step2a.png")
+```
+
+&nbsp;
+
 ```{block2, type = "rmdcalc"}
 Following are steps to estimate value of $d$ based on distances that carers are willing or able to walk to access services.
 
 &nbsp;
 
-Add the distances together: 
+Using the information from the distance table, add the distances together: 
   
 $$ \sum \text{Distance} ~ = ~ 343 ~ \text{km} $$
 
@@ -202,9 +219,9 @@ Divide the result by two:
 $$ d ~ = ~ \frac{14.29}{2} ~ = ~ 7.15 ~ \approx ~ 7 ~ \text{km} $$
 ```
   
-
-This is an estimate of the distance that carers are willing or able to walk to access services. Only distances between towns and villages with markets are use in this calculation.
-
+&nbsp;
+  
+This is an estimate of the distance that carers are willing or able to walk to access services. Only distances between towns and villages with markets are used in this calculation.
 
 A way of deciding a value for $d$ that is based on the economic geography of the survey area is to set $d$ to one half of the mean distance between neighbouring pairs of communities with substantial markets.
 
