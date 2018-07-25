@@ -298,7 +298,7 @@ montserradoBox <- montserradoUTM %>%
 
 proj4string(montserradoBox) <- proj4string(montserradoUTM)
 
-montserradoBox <- create_buffer(x = montserradoBox, buffer = 5, country = "Liberia")
+montserradoBox <- create_buffer(x = montserradoBox, buffer = 4, country = "Liberia")
 
 x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
          by = calculate_length(d = 12000))
@@ -317,6 +317,12 @@ for(i in 1:length(x)) {
 montserradoGrid <- coords %>% 
   SpatialPoints(proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"]))) %>%
   SpatialPixels()
+
+montserradoGrid <- coords %>% 
+  SpatialPoints(proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"]))) %>%
+  points2grid() %>%
+  SpatialGrid()
+
 
 ```
 
