@@ -1,0 +1,16 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
+liberia
+kableExtra
+knitr
+sp
+raster
+devtools
+rgdal
+rgeos
+maps
