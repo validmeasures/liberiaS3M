@@ -43,16 +43,6 @@ montserrado2 <- districts[districts$admin1Name == "Montserrado", ]
 grandbassa1 <- counties[counties$admin1name == "Grand Bassa", ]
 grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
 
-calculate_length <- function(d) {
-  x <- (3 * d) / 2
-  return(x)
-}
-
-calculate_height <- function(d) {
-  y <- (sqrt(3) / 2) * d
-  return(y)
-}
-
 montserradoUTM <- spTransform(montserrado1, CRSobj = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
 
 montserradoBox <- montserradoUTM %>% 
