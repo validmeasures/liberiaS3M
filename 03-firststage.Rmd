@@ -417,7 +417,9 @@ legend(x = "topleft",
 map.scale()
 ```
 
-```{r grid1a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+\newpage
+
+```{r grid1a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 10 km", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
 plot(grandbassaGrid, lty = 0)
 plot(counties, add = TRUE)
@@ -534,7 +536,9 @@ legend(x = "topleft",
 map.scale()
 ```
 
-```{r grid2a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and alternating intersections of the grid used to identify sampling points", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+\newpage
+
+```{r grid2a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 10 km and alternating intersections of the grid used to identify sampling points", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
 plot(grandbassaGrid, lty = 0)
 plot(counties, add = TRUE)
@@ -544,7 +548,7 @@ plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
 plot(grandbassaGrid, add = TRUE)
 plot(grandbassaSP, pch = 1, cex = 2, col = "red", add = TRUE)
-legend(x = "topleft",
+legend(x = "bottomright",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
@@ -606,7 +610,9 @@ legend(x = "topleft",
 map.scale()
 ```
 
-```{r grid4, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+\newpage
+
+```{r grid4, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 10 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
 yy <- get_nearest_point(data = settlements[settlements$admin1Name == "Grand Bassa", ], 
                         data.x = "COORD_X", 
@@ -622,7 +628,7 @@ plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
 plot(grandbassaGrid, add = TRUE)
 points(yy[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
-legend(x = "topleft",
+legend(x = "bottomright",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
@@ -682,7 +688,7 @@ legend(x = "topleft",
 map.scale()
 ```
 
-```{r grid4a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing test triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+```{r grid4a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 10 km and sampling points moved to the nearest communities showing test triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
 triSP <- get_tri(input = yy, x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
 
@@ -697,7 +703,7 @@ plot(grandbassaGrid, add = TRUE)
 points(yy[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
 plot(triSP, border = "red", lwd = 2, add = TRUE)
 text(yy[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(yy))
-legend(x = "topleft",
+legend(x = "bottomright",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
@@ -730,7 +736,7 @@ The aim is to create a roughly even spread of sampling points over the entire su
 
 \newpage
 
-```{r grid3c, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing update triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+```{r grid3c, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing updated triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
 triSP <- get_tri(input = xx[!1:nrow(xx) %in% c(2, 25, 32, 33, 39), ], 
                  x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
@@ -765,9 +771,10 @@ legend(x = "topleft",
 map.scale()
 ```
 
-```{r grid4c, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing update triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+```{r grid4c, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 10 km and sampling points moved to the nearest communities showing updated triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
-triSP <- get_tri(input = yy[!1:nrow(yy) %in% c(2, 25, 32, 33, 39), ], 
+triSP <- get_tri(input = yy[!1:nrow(yy) %in% c(3, 4, 8, 10, 11, 12, 17, 26, 28, 
+                                               35, 39, 42, 43, 47, 48, 54, 62), ], 
                  x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
 
 par(mar = c(0, 0, 0, 0))
@@ -779,12 +786,15 @@ plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
 plot(grandbassaGrid, add = TRUE)
 points(yy[ , c("COORD_X", "COORD_Y")], 
-       pch = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 20, 1), 
-       cex = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 4, 2), 
-       col = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), "yellow", "red"))
+       pch = ifelse(1:nrow(yy) %in% c(3, 4, 8, 10, 11, 12, 17, 26, 28, 35, 
+                                      39, 42, 43, 47, 48, 54, 62), 20, 1), 
+       cex = ifelse(1:nrow(yy) %in% c(3, 4, 8, 10, 11, 12, 17, 26, 28, 35, 
+                                      39, 42, 43, 47, 48, 54, 62), 4, 2), 
+       col = ifelse(1:nrow(yy) %in% c(3, 4, 8, 10, 11, 12, 17, 26, 28, 35, 
+                                      39, 42, 43, 47, 48, 54, 62), "yellow", "red"))
 plot(triSP, border = "red", lwd = 2, add = TRUE)
 text(yy[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(yy))
-legend(x = "topleft",
+legend(x = "bottomright",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
@@ -800,9 +810,9 @@ legend(x = "topleft",
 map.scale()
 ```
 
-Figure \@ref(fig:grid3c) above show a trial triangulation with only a few long and narrow triangles:
+Figure \@ref(fig:grid3c) above show a trial triangulation for Montserrado county with only a few long and narrow triangles. Five sampling points (labelled 2, 25, 32, 33, 39) have been dropped to ensure that there are few long and narrow triangles.
 
-* Five sampling points (labelled 2, 25, 32, 33, 39) have been dropped to ensure that there are few long and narrow triangles.
+Figure \@ref(fig:grid4c) above show a trial triangulation for Grand Bassa county with only a few long and narrow triangles. Seventeen sampling points (labelled 3, 4, 8, 10, 11, 12, 17, 26, 28, 35, 39, 42, 43, 47, 48, 54, 62) have been dropped to ensure that there are a few long and narrow triangles.
 
 \newpage
 
