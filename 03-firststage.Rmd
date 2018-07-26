@@ -638,6 +638,8 @@ Figure \@ref(fig:grid3c) above show a trial triangulation with only a few long a
 
 * Five sampling points (labelled 2, 25, 32, 33, 39) have been dropped to ensure that there are few long and narrow triangles.
 
+\newpage
+
 **The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.**
 
 The process of selecting communities to sample is:
