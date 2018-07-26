@@ -21,6 +21,19 @@ if(!require(kableExtra)) install.packages("kableExtra")
 if(!require(magrittr)) install.packages("magrittr")
 if(!require(FNN)) install.packages("FNN")
 
+library(devtools)
+library(rgdal)
+library(rgeos)
+library(raster)
+library(spatialsampler)
+library(liberia)
+library(maps)
+library(knitr)
+library(kableExtra)
+library(magrittr)
+library(FNN)
+
+
 wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
                       layer = "wca_adm0",
                       verbose = FALSE)
@@ -40,93 +53,32 @@ poi <- rgdal::readOGR(dsn = "maps/hotosm_liberia_points_of_interest_points_shp",
 montserrado1 <- counties[counties$admin1name == "Montserrado", ]
 montserrado2 <- districts[districts$admin1Name == "Montserrado", ]
 
+montserradoGrid <- create_s3m_grid(input = montserrado1, 
+                                   d = 6, 
+                                   buffer = 6, 
+                                   country = "Liberia", 
+                                   output = "lines")
+
+montserradoSP <- create_s3m_grid(input = montserrado1, 
+                                 d = 6, 
+                                 buffer = 6, 
+                                 country = "Liberia",
+                                 output = "points")
+
 grandbassa1 <- counties[counties$admin1name == "Grand Bassa", ]
 grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
 
-montserradoUTM <- spTransform(montserrado1, CRSobj = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
+grandbassaGrid <- create_s3m_grid(input = grandbassa1,
+                                  d = 10,
+                                  buffer = 6,
+                                  country = "Liberia",
+                                  output = "lines")
 
-montserradoBox <- montserradoUTM %>% 
-  bbox() %>% 
-  extent() %>% 
-  as("SpatialPolygons")
-
-proj4string(montserradoBox) <- proj4string(montserradoUTM)
-
-montserradoBox <- create_buffer(x = montserradoBox, buffer = 6, country = "Liberia")
-
-x <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
-         by = calculate_length(d = 6000))
-
-x1 <- seq(from = extent(montserradoBox)[1], to = extent(montserradoBox)[2], 
-          by = calculate_length(d = 6000) * 2)
-
-x2 <- seq(from = extent(montserradoBox)[1] + calculate_length(d = 6000), to = extent(montserradoBox)[2], 
-          by = calculate_length(d = 6000) * 2)
-
-y <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], 
-         by = calculate_height(d = 6000))
-
-y1 <- seq(from = extent(montserradoBox)[3], to = extent(montserradoBox)[4], 
-          by = calculate_height(d = 6000) * 2)
-
-y2 <- seq(from = extent(montserradoBox)[3] + calculate_height(d = 6000), to = extent(montserradoBox)[4], 
-          by = calculate_height(d = 6000) * 2)
-
-coords  <- NULL
-coords1 <- NULL
-coords2 <- NULL 
-
-for(i in 1:length(x)) {
-  for(j in 1:length(y)) {
-    coords  <- rbind(coords, c(x[i], y[j]))
-    coords1 <- rbind(coords1, c(x1[i], y1[j]))
-    coords2 <- rbind(coords2, c(x2[i], y2[j]))
-  }
-}
-
-coordsSP <- rbind(coords1, coords2)
-
-coordsSP <- coordsSP[!is.na(coordsSP[ , 1]), ]
-coordsSP <- coordsSP[!is.na(coordsSP[ , 2]), ]
-
-a <- seq(from = 1, to = nrow(coords), by = length(y))
-b <- seq(from = length(y), to = nrow(coords), by = length(y))
-
-hline <- NULL
-
-for(i in 1:length(x)) {
-  temp <- Lines(Line(coords[a[i]:b[i], ]), ID = paste("hline", i, sep = ""))
-  hline <- c(hline, temp)
-}
-
-coordsX <- coords[order(coords[ , 2]), ]
-
-a <- seq(from = 1, to = nrow(coordsX), by = length(x))
-b <- seq(from = length(x), to = nrow(coordsX), by = length(x))
-
-vline <- NULL
-
-for(i in 1:length(y)) {
-  temp <- Lines(Line(coordsX[a[i]:b[i], ]), ID = paste("vline", i, sep = ""))
-  vline <- c(vline, temp)
-}
-
-montserradoBox <- spTransform(montserradoBox, CRS(proj4string(montserrado1)))
-
-allLines <- SpatialLines(c(hline, vline), 
-                         proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
-
-allLines <- spTransform(allLines, CRSobj = CRS(proj4string(montserrado1)))
-
-coords <- SpatialPoints(coords = coords, 
-                        proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
-
-coords <- spTransform(coords, CRSobj = CRS(proj4string(montserrado1)))
-
-coordsSP <- SpatialPoints(coords = coordsSP, 
-                          proj4string = CRS(as.character(map_projections$proj[map_projections$country == "Liberia"])))
-
-coordsSP <- spTransform(coordsSP, CRSobj = CRS(proj4string(montserrado1)))
+grandbassaSP <- create_s3m_grid(input = grandbassa1,
+                                d = 10,
+                                buffer = 6,
+                                country = "Liberia",
+                                output = "points")
 ```
 
 # The first stage sample {#stage1}
@@ -145,7 +97,7 @@ For the coverage survey of 2 counties in Liberia, it will be practical and usefu
 # Set margins
 par(mar = c(0, 0, 0, 0))
 # Plot map
-plot(counties, lwd = 2, border = "gray50")
+plot(liberia::counties, lwd = 2, border = "gray50")
 plot(wca, lwd = 4, border = "black", add = TRUE)
 plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
@@ -164,6 +116,7 @@ legend(x = "topright",
        cex = 1,
        pt.cex = 2)
 ```
+
 \newpage
 
 ```{r smallScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Small scale map of Montserrado and Grand Bassa in Liberia showing all districts, roads and points of interest", fig.align = "center", fig.width = 6, fig.height = 12, fig.pos = "H", fig.retina = 1}
@@ -196,13 +149,14 @@ plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
 plot(poi, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
 map.scale(ratio = FALSE)
 ```
+
 \newpage
 
-* A collection of larger scale maps (a small area map but with good detail) of each of the selected counties and each of the districts within those counties in Liberia. Figure \@ref(fig:largeScaleMapCounty) is a large scale map of Montserrado county showing all districts, roads and all settlements. Figure \@ref(fig:largeScaleMapDistricts) is a collection of large scale maps of each of the districts of Montserrado country showing all roads and all settlements.
+* A collection of larger scale maps (a small area map but with good detail) of each of the selected counties and each of the districts within those counties in Liberia. Figure \@ref(fig:largeScaleMapCounty1) is a large scale map of Montserrado county showing all districts, roads and all settlements. Figure \@ref(fig:largeScaleMapDistricts1) is a collection of large scale maps of each of the districts of Montserrado country showing all roads and all settlements.
 
 &nbsp;
 
-```{r largeScaleMapCounty, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Montserrado county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
+```{r largeScaleMapCounty1, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Montserrado county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
 plot(subset(liberia::districts, admin1Name == "Montserrado"), lwd = 1, border = "gray50")
 plot(liberia::counties, lwd = 4, border = "black", add = TRUE)
@@ -233,7 +187,7 @@ legend(x = "topleft",
 
 \newpage
 
-```{r largeScaleMapDistricts, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 5 districts of Montserrado county in Liberia showing roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
+```{r largeScaleMapDistricts1, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 5 districts of Montserrado county in Liberia showing roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
 # Set margins and plot layout
 par(mar = c(1, 1, 1, 1), mfrow = c(3, 2))
 # Plot maps
@@ -256,9 +210,86 @@ for(i in subset(districts, admin1Name == "Montserrado")$admin2Name) {
 
 \newpage
 
+```{r largeScaleMapCounty2, echo = FALSE, eval = TRUE, fig.cap = "Large scale map of Grand Bassa county in Liberia showing all districts, roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 10, fig.pos = "H", fig.retina = 1}
+par(mar = c(0, 0, 0, 0))
+plot(grandbassa2, lwd = 1, border = "gray50")
+plot(liberia::counties, lwd = 4, border = "black", add = TRUE)
+plot(wca, lwd = 5, border = "black", add = TRUE)
+text(x = grandbassa1, 
+     labels = grandbassa1$admin1name, 
+     cex = 4, col = "gray70")
+raster::text(x = grandbassa2, 
+             labels = grandbassa2$admin2Name, 
+             cex = 1, col = "gray70")
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+map.scale(ratio = FALSE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("Country borders", "County borders", "Paved roads", 
+                  "Primary roads", "All settlements"),
+       pch = c(0, 0, NA, NA, 4),
+       lty = c(NA, NA, 1, 2, NA),
+       lwd = c(3, 2, 2, 1, 2),
+       col = c("black", "gray50", "blue", "blue", "darkgreen"),
+       cex = 1,
+       pt.cex = 2)
+```
+
+\newpage
+
+```{r largeScaleMapDistricts2, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 8 districts of Grand Bassa county in Liberia showing roads and all settlements (towns, villages)", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
+# Set margins and plot layout
+par(mar = c(1, 1, 1, 1), mfrow = c(2, 2))
+# Plot maps
+for(i in grandbassa2$admin2Name[1:4]) {
+  plot(subset(grandbassa2, admin2Name == i), 
+       lwd = 1, 
+       border = "black")
+  plot(counties, lwd = 2, border = "black", add = TRUE)
+  #sp::plot(wca, lwd = 4, border = "black", add = TRUE)
+  text(x = subset(grandbassa2, admin2Name == i), 
+       labels = i, 
+       cex = 3, 
+       col = "gray70")
+  plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+  plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+  plot(settlements, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+  map.scale(ratio = FALSE)
+}
+```
+
+\newpage
+
+```{r largeScaleMapDistricts3, echo = FALSE, eval = TRUE, fig.cap = "Large scale maps of 8 districts of Grand Bassa county in Liberia showing roads and all settlements (towns, villages) continued", fig.align = "center", fig.width = 10, fig.height = 15, fig.pos = "H", fig.retina = 1}
+# Set margins and plot layout
+par(mar = c(1, 1, 1, 1), mfrow = c(2, 2))
+# Plot maps
+for(i in grandbassa2$admin2Name[5:8]) {
+  plot(subset(grandbassa2, admin2Name == i), 
+       lwd = 1, 
+       border = "black")
+  plot(counties, lwd = 2, border = "black", add = TRUE)
+  #sp::plot(wca, lwd = 4, border = "black", add = TRUE)
+  text(x = subset(grandbassa2, admin2Name == i), 
+       labels = i, 
+       cex = 3, 
+       col = "gray70")
+  plot(primary, lwd = 1, lty = 2, col = "blue", add = TRUE)
+  plot(paved, lwd = 3, lty = 1, col = "blue", add = TRUE)
+  plot(settlements, pch = 4, cex = 0.3, lwd = 1, col = "darkgreen", add = TRUE)
+  map.scale(ratio = FALSE)
+}
+```
+
+\newpage
+
 The small-scale maps in Figures \@ref(fig:smallScaleMap) and \@ref(fig:smallScaleMapCounty) will be useful for identifying initial sampling locations. 
 
-The large-scale maps in Figures \@ref(fig:largeScaleMapCounty) and \@ref(fig:largeScaleMapDistricts) will be useful for identifying the precise location of sampling points and for selecting the communities to be sampled.
+The large-scale maps in Figures \@ref(fig:largeScaleMapCounty1), \@ref(fig:largeScaleMapCounty2), \@ref(fig:largeScaleMapDistricts1), \@ref(fig:largeScaleMapDistricts2) and \@ref(fig:largeScaleMapDistricts3) will be useful for identifying the precise location of sampling points and for selecting the communities to be sampled.
 
 \newpage
 
@@ -364,18 +395,42 @@ S3M surveys have been done using a wide range (i.e. from $d ~ = ~ 8 ~ \text{km}$
 
 ```{r grid1, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
-plot(montserradoBox, lty = 0)
+plot(montserradoGrid, lty = 0)
 plot(counties, add = TRUE)
 plot(montserrado1, lwd = 3, add = TRUE)
 plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
-plot(allLines, add = TRUE)
+plot(montserradoGrid, add = TRUE)
 legend(x = "topleft",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
        legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements"),
+       pch = c(0, 0, NA, NA, 4),
+       lty = c(NA, NA, 1, 2, NA),
+       lwd = c(1, 3, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
+```{r grid1a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+par(mar = c(0, 0, 0, 0))
+plot(grandbassaGrid, lty = 0)
+plot(counties, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(grandbassaGrid, add = TRUE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Grand Bassa borders", "Paved roads", 
                   "Primary roads", "All settlements"),
        pch = c(0, 0, NA, NA, 4),
        lty = c(NA, NA, 1, 2, NA),
@@ -456,14 +511,14 @@ If you are drawing the grid directly onto the map then use a soft pencil (e.g. a
 
 ```{r grid2, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and alternating intersections of the grid used to identify sampling points", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 par(mar = c(0, 0, 0, 0))
-plot(montserradoBox, lty = 0)
+plot(montserradoGrid, lty = 0)
 plot(counties, add = TRUE)
 plot(montserrado1, lwd = 3, add = TRUE)
 plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
-plot(allLines, add = TRUE)
-plot(coordsSP, pch = 1, cex = 2, col = "red", add = TRUE)
+plot(montserradoGrid, add = TRUE)
+plot(montserradoSP, pch = 1, cex = 2, col = "red", add = TRUE)
 legend(x = "topleft",
        inset = 0.02,
        y.intersp = 1.2,
@@ -479,11 +534,36 @@ legend(x = "topleft",
 map.scale()
 ```
 
+```{r grid2a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and alternating intersections of the grid used to identify sampling points", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+par(mar = c(0, 0, 0, 0))
+plot(grandbassaGrid, lty = 0)
+plot(counties, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(grandbassaGrid, add = TRUE)
+plot(grandbassaSP, pch = 1, cex = 2, col = "red", add = TRUE)
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Grand Bassa borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
 Sampling points are located at the intersections of the rectangular grid in a staggered fashion. Alternate intersections of the grid in the x (east-west) and y (north-south) directions are used:
 
 \newpage
 
-```{r grid2a, echo = FALSE, eval = TRUE, fig.cap = "Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r grid2b, echo = FALSE, eval = TRUE, fig.cap = "Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly", fig.align = "center", fig.pos = "H", fig.retina = 1}
 include_graphics("figures/grid2a.png")
 ```
 
@@ -500,22 +580,53 @@ Make sure that your sample points go right to the edge (or even over the edge) o
 xx <- get_nearest_point(data = settlements[settlements$admin1Name == "Montserrado", ], 
                         data.x = "COORD_X", 
                         data.y = "COORD_Y", 
-                        query = coordsSP)
+                        query = montserradoSP)
 
 par(mar = c(0, 0, 0, 0))
-plot(montserradoBox, lty = 0)
+plot(montserradoGrid, lty = 0)
 plot(counties, add = TRUE)
 plot(montserrado1, lwd = 3, add = TRUE)
 plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
-plot(allLines, add = TRUE)
+plot(montserradoGrid, add = TRUE)
 points(xx[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
 legend(x = "topleft",
        inset = 0.02,
        y.intersp = 1.2,
        bg = "white",
        legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
+```{r grid4, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+
+yy <- get_nearest_point(data = settlements[settlements$admin1Name == "Grand Bassa", ], 
+                        data.x = "COORD_X", 
+                        data.y = "COORD_Y", 
+                        query = grandbassaSP)
+
+par(mar = c(0, 0, 0, 0))
+plot(grandbassaGrid, lty = 0)
+plot(counties, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(grandbassaGrid, add = TRUE)
+points(yy[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Grand Bassa borders", "Paved roads", 
                   "Primary roads", "All settlements", "Sampling points"),
        pch = c(0, 0, NA, NA, 4, 1),
        lty = c(NA, NA, 1, 2, NA, NA),
@@ -541,18 +652,18 @@ The aim is to create a roughly even spread of sampling points over the entire su
 The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
 ```
 
-```{r grid3a, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+```{r grid3a, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing test triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
 triSP <- get_tri(input = xx, x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
 
 par(mar = c(0, 0, 0, 0))
-plot(montserradoBox, lty = 0)
+plot(montserradoGrid, lty = 0)
 plot(counties, add = TRUE)
 plot(montserrado1, lwd = 3, add = TRUE)
 plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
-plot(allLines, add = TRUE)
+plot(montserradoGrid, add = TRUE)
 points(xx[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
 plot(triSP, border = "red", lwd = 2, add = TRUE)
 text(xx[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(xx))
@@ -561,6 +672,36 @@ legend(x = "topleft",
        y.intersp = 1.2,
        bg = "white",
        legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
+```{r grid4a, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing test triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+
+triSP <- get_tri(input = yy, x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
+
+par(mar = c(0, 0, 0, 0))
+plot(grandbassaGrid, lty = 0)
+plot(counties, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(grandbassaGrid, add = TRUE)
+points(yy[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
+plot(triSP, border = "red", lwd = 2, add = TRUE)
+text(yy[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(yy))
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Grand Bassa borders", "Paved roads", 
                   "Primary roads", "All settlements", "Sampling points"),
        pch = c(0, 0, NA, NA, 4, 1),
        lty = c(NA, NA, 1, 2, NA, NA),
@@ -589,22 +730,22 @@ The aim is to create a roughly even spread of sampling points over the entire su
 
 \newpage
 
-```{r grid3c, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+```{r grid3c, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing update triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
 triSP <- get_tri(input = xx[!1:nrow(xx) %in% c(2, 25, 32, 33, 39), ], 
                  x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
 
 par(mar = c(0, 0, 0, 0))
-plot(montserradoBox, lty = 0)
+plot(montserradoGrid, lty = 0)
 plot(counties, add = TRUE)
 plot(montserrado1, lwd = 3, add = TRUE)
 plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
-plot(allLines, add = TRUE)
+plot(montserradoGrid, add = TRUE)
 points(xx[ , c("COORD_X", "COORD_Y")], 
        pch = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 20, 1), 
-       cex = 2, 
+       cex = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 4, 2), 
        col = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), "yellow", "red"))
 plot(triSP, border = "red", lwd = 2, add = TRUE)
 text(xx[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(xx))
@@ -613,16 +754,51 @@ legend(x = "topleft",
        y.intersp = 1.2,
        bg = "white",
        legend = c("County borders", "Montserrado borders", "Paved roads", 
-                  "Primary roads", "All settlements", "Sampling points"),
-       pch = c(0, 0, NA, NA, 4, 1),
-       lty = c(NA, NA, 1, 2, NA, NA),
-       lwd = c(1, 3, 2, 2, 2, 2),
-       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+                  "Primary roads", "All settlements", "Sampling points", 
+                  "Dropped sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1, 20),
+       lty = c(NA, NA, 1, 2, NA, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red", "yellow"),
        cex = 1,
        pt.cex = 2)
 map.scale()
 ```
 
+```{r grid4c, echo = FALSE, eval = TRUE, fig.cap = "Grand Bassa county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities showing update triangulation", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+
+triSP <- get_tri(input = yy[!1:nrow(yy) %in% c(2, 25, 32, 33, 39), ], 
+                 x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
+
+par(mar = c(0, 0, 0, 0))
+plot(grandbassaGrid, lty = 0)
+plot(counties, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(grandbassaGrid, add = TRUE)
+points(yy[ , c("COORD_X", "COORD_Y")], 
+       pch = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 20, 1), 
+       cex = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 4, 2), 
+       col = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), "yellow", "red"))
+plot(triSP, border = "red", lwd = 2, add = TRUE)
+text(yy[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(yy))
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Grand Bassa borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points", 
+                  "Dropped sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1, 20),
+       lty = c(NA, NA, 1, 2, NA, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red", "yellow"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
 
 Figure \@ref(fig:grid3c) above show a trial triangulation with only a few long and narrow triangles:
 
