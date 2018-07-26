@@ -68,7 +68,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Simple Spatial Sampling Method (S3M)</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="sample.html"><a href="sample.html"><i class="fa fa-check"></i><b>2</b> The survey sample</a></li>
+<li class="chapter" data-level="2" data-path="sample.html"><a href="sample.html"><i class="fa fa-check"></i><b>2</b> The survey sample</a><ul>
+<li class="chapter" data-level="2.1" data-path="sample.html"><a href="sample.html#sample-size-considerations"><i class="fa fa-check"></i><b>2.1</b> Sample size considerations</a></li>
+<li class="chapter" data-level="2.2" data-path="sample.html"><a href="sample.html#urban-and-rural-sample-considerations"><i class="fa fa-check"></i><b>2.2</b> Urban and rural sample considerations</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="stage1.html"><a href="stage1.html"><i class="fa fa-check"></i><b>3</b> The first stage sample</a><ul>
 <li class="chapter" data-level="3.1" data-path="stage1.html"><a href="stage1.html#step-1-find-a-map"><i class="fa fa-check"></i><b>3.1</b> Step 1: Find a map</a></li>
 <li class="chapter" data-level="3.2" data-path="stage1.html"><a href="stage1.html#step-2-decide-the-area-to-represent-each-sampling-point"><i class="fa fa-check"></i><b>3.2</b> Step 2: Decide the area to represent each sampling point</a></li>
@@ -78,8 +81,6 @@
 </ul></li>
 <li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a><ul>
 <li class="chapter" data-level="4.1" data-path="stage2.html"><a href="stage2.html#step-10-within-community-sampling"><i class="fa fa-check"></i><b>4.1</b> Step 10: Within-community sampling</a></li>
-<li class="chapter" data-level="4.2" data-path="stage2.html"><a href="stage2.html#step-11-collect-and-record-the-data"><i class="fa fa-check"></i><b>4.2</b> Step 11: Collect and record the data</a></li>
-<li class="chapter" data-level="4.3" data-path="stage2.html"><a href="stage2.html#step-12-enter-the-collected-data"><i class="fa fa-check"></i><b>4.3</b> Step 12: Enter the collected data</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -110,11 +111,45 @@
 <li><p><strong>First-stage:</strong> We take an even (or near-even) spatial sample of communities from all of the communities in the survey area.</p></li>
 <li><p><strong>Second-stage:</strong> We take a sample of eligible individuals from each of the communities identified in the first stage of sampling.</p></li>
 </ul>
-<p>Two-stage sampling is used in many survey methods. A typical example of a survey method that uses a two- stage sample is the SMART method that is commonly used for nutritional anthropometry surveys.</p>
-<p>The main difference between the sample taken in S3M based surveys and in SMART type surveys is that S3M based samples used a spatial sample in the first stage whereas SMART type surveys use a proportional to population size (PPS) sample.</p>
+<p>Two-stage sampling is used in many survey methods. A typical example of a survey method that uses a two-stage sample is the SMART method that is commonly used for nutritional anthropometry surveys.</p>
+<p>The main difference between the sample taken in S3M based surveys and in SMART type surveys is that S3M based samples use a spatial sample in the first stage whereas SMART type surveys use a proportional to population size (PPS) sample.</p>
 <p>The advantages of using a spatial first stage sample is that such a sample allows us to identify where (and why) coverage is good, and where (and why) coverage is poor. This information is essential to improving program coverage and ensuring equitable access to services.</p>
 <p>A spatial sample can be used to produce equivalent results to a traditional proportional to population size (PPS) sample as is used in (e.g.) SMART type surveys using a weighted analysis. This means that a spatial sample can be made to act as a PPS sample. A PPS type sample cannot, however, be made to act as a spatial sample.</p>
+<div id="sample-size-considerations" class="section level2">
+<h2><span class="header-section-number">2.1</span> Sample size considerations</h2>
+<p>In general, the sample size needed for proportion-type indicators such as coverage can be calculated using the following equation.</p>
+<p><span class="math display">\[\begin{aligned}
+n &amp; ~ = ~ Z^2 ~ \times ~ \frac{p(1 ~ - ~ p)}{c ^ 2} \\
+\\
+where: &amp; \\
+\\
+Z &amp; ~ = ~ \text{z-value for preferred confidence interval} \\
+p &amp; ~ = ~ \text{expected indicator proportion/prevalence} \\
+c &amp; ~ = ~ \text{level of precision}
+\end{aligned}\]</span></p>
+<p>The <span class="math inline">\(Z\)</span> value is usually 1.96 for a 95% confidence interval. The <span class="math inline">\(p\)</span> should usually be based on previous coverage results if available. If not, it is usually appropriate to set <span class="math inline">\(p\)</span> at 50% (0.5) as this results in the highest sample size estimate. The precision (<span class="math inline">\(c\)</span>) for coverage surveys is usually set at ±10% based on standard precision used for immunisation coverage.</p>
+<p>Using these values, the typical sample size needed for coverage surveys is about 96.</p>
+<p><span class="math display">\[ n ~ = ~ 1.96^2 ~ \times ~ \frac{0.5(1 ~ - ~ 0.5)}{0.10 ^ 2} ~ \approx ~  96 \]</span></p>
+<p>However, the survey design needs to be taken into account. A cluster survey such as the one that is proposed for the Liberia S3M will need to inflate sample sizes to account for the loss of variance due to the cluster design. This inflation factor is called the <em>design effect</em> (<em>DEFF</em>) which is based on the <em>intracluster correlation coefficient</em> (<em>ICC</em>).</p>
+<p>Generally, a <em>DEFF</em> of 2 is used to multiply the sample size with to account for the loss of variance. This would mean that a sample size of 192 would be the target sample size.</p>
+<p>The sample size required will also depend on the indicators being assessed.</p>
+<p>SAM treatment coverage can be demonstrated in the following equation:</p>
+<p><span class="math display">\[ \text{SAM treatment coverage} ~ = ~ \frac{\text{SAM cases in treatment}}{\text{Total SAM cases}} \]</span></p>
+<p>This indicator requires a sample of under 5 children who have SAM. SAM children are rare (at most 3% of the general population of children under 5). This means that the universe population of SAM children is small hence a finite population correction can be applied to sample size calculations. At the same time, given the active adaptive case finding approach that will be applied to finding SAM cases is know to be exhaustive, <em>DEFF</em> would generally be close to 1. Therefore, a sample size of about 96 is generally big enough to estimate SAM treatment coverage with a ±10% precision.</p>
+<p>For vitamin A supplementation, micronutrient powder supplementation, IYCF counselling and ferrous sulfate-folic acid supplementation<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, the sample size of 192 would be the target sample size.</p>
+</div>
+<div id="urban-and-rural-sample-considerations" class="section level2">
+<h2><span class="header-section-number">2.2</span> Urban and rural sample considerations</h2>
+<p>Currently, the requirements for the survey is to provide coverage estimates for Montserrado rural districts and the whole Grand Bassa county. Urban areas have been specifically excluded.</p>
+<p>Given that urban areas would most likely have different characteristics than rural areas, it is more reasonable to treat urban areas as a separate survey area. If urban areas are to be sampled, then urben areas should have its own sample with the same minimum sample size as described above. The implication of this would be an extra survey for each and every urban area to be assessed.</p>
 
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>If pregnant women is chosen as the universe population for the ferrous sulfate-folic acide supplementation, the sample size requirements can be reduced given that the number of pregnant women will be finite population as well and an active and adaptive case finding method will need to be applied to find pregnant women.<a href="sample.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
