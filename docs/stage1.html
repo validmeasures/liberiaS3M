@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-07-25">
+<meta name="date" content="2018-07-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -75,10 +75,6 @@
 <li class="chapter" data-level="3.3" data-path="stage1.html"><a href="stage1.html#step-3-draw-a-grid-over-the-map"><i class="fa fa-check"></i><b>3.3</b> Step 3: Draw a grid over the map</a></li>
 <li class="chapter" data-level="3.4" data-path="stage1.html"><a href="stage1.html#step-4-create-an-even-spread-of-sampling-points"><i class="fa fa-check"></i><b>3.4</b> Step 4: Create an even spread of sampling points</a></li>
 <li class="chapter" data-level="3.5" data-path="stage1.html"><a href="stage1.html#step-5-select-the-communities-to-sample"><i class="fa fa-check"></i><b>3.5</b> Step 5: Select the communities to sample</a></li>
-<li class="chapter" data-level="3.6" data-path="stage1.html"><a href="stage1.html#step-6-label-each-sampling-point"><i class="fa fa-check"></i><b>3.6</b> Step 6: Label each sampling point</a></li>
-<li class="chapter" data-level="3.7" data-path="stage1.html"><a href="stage1.html#step-7-label-each-triangular-tile"><i class="fa fa-check"></i><b>3.7</b> Step 7: Label each triangular tile</a></li>
-<li class="chapter" data-level="3.8" data-path="stage1.html"><a href="stage1.html#step-8-describe-the-sample-in-numbers"><i class="fa fa-check"></i><b>3.8</b> Step 8: Describe the sample in numbers</a></li>
-<li class="chapter" data-level="3.9" data-path="stage1.html"><a href="stage1.html#step-9-plan-data-collection"><i class="fa fa-check"></i><b>3.9</b> Step 9: Plan data collection</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="stage2.html"><a href="stage2.html"><i class="fa fa-check"></i><b>4</b> The second stage sample</a><ul>
 <li class="chapter" data-level="4.1" data-path="stage2.html"><a href="stage2.html#step-10-within-community-sampling"><i class="fa fa-check"></i><b>4.1</b> Step 10: Within-community sampling</a></li>
@@ -462,16 +458,34 @@ diagram above.</p>
 The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
 </div>
 
+<div class="figure" style="text-align: center"><span id="fig:grid3a"></span>
+<img src="figures/grid3a-1.png" alt="Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities"  />
+<p class="caption">
+Figure 3.11: Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities
+</p>
+</div>
 <p>A good way to check if you have an even spread of sampling points over the entire survey area is to do a trial <em>triangulation</em> of the selected sampling points. This involves dividing up the survey area into non-overlapping triangles with a sampling point at each vertex.</p>
 <p>There will usually be many ways to divide the survey area into triangles. The best triangulation is one that results in small equilateral triangles (i.e. triangles with all sides of equal length) or small and nearly equilateral triangles. Avoid long and narrow triangles. Avoid large triangles.</p>
+<div class="figure" style="text-align: center"><span id="fig:grid3b"></span>
+<img src="figures/grid3a.png" alt="Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly" width="1726" />
+<p class="caption">
+Figure 3.12: Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly
+</p>
+</div>
 <p>You can triangulate “by eye” or automatically (i.e. using a computer). If you use a computer to do this then you should use software that produces a <em>Delaunay triangulation</em>.</p>
 <p>You may drop sampling points if you find that many sampling points are clustered closely together.</p>
 <p>You may move or add sampling points if you find that there are populated areas that do not contain sampling points.</p>
 <p>The aim is to create a roughly even spread of sampling points over the entire survey area.</p>
-<p>The diagrams above show a trial triangulation with only a few long and narrow triangles :</p>
+
+<div class="figure" style="text-align: center"><span id="fig:grid3c"></span>
+<img src="figures/grid3c-1.png" alt="Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities"  />
+<p class="caption">
+Figure 3.13: Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities
+</p>
+</div>
+<p>Figure <a href="stage1.html#fig:grid3c">3.13</a> above show a trial triangulation with only a few long and narrow triangles:</p>
 <ul>
-<li><p>One sampling point (labelled x1) has been added to ensure that the sample covers almost the entire survey area.</p></li>
-<li><p>Four sampling points (labelled m1, m2, m3, and m4) have been moved to ensure that there are few long and narrow triangles.</p></li>
+<li>Five sampling points (labelled 2, 25, 32, 33, 39) have been dropped to ensure that there are few long and narrow triangles.</li>
 </ul>
 <p><strong>The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.</strong></p>
 <p>The process of selecting communities to sample is:</p>
@@ -488,172 +502,6 @@ The S3M sample is defined using a systematic sampling method. Like any systemati
 <ol start="3" style="list-style-type: decimal">
 <li>Move or add sampling points to improve the sample (i.e. to avoid long and narrow triangles, to avoid large triangles, to make triangles roughly equal in size, and to ensure the sample covers all or almost all of the survey area). Triangulate again. Repeat this process until you are happy with the sample.</li>
 </ol>
-<p><strong>The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.</strong></p>
-
-</div>
-<div id="step-6-label-each-sampling-point" class="section level2">
-<h2><span class="header-section-number">3.6</span> Step 6: Label each sampling point</h2>
-<p>Give each sampling point a unique identifying label:</p>
-<ul>
-<li><p>The label may be a number or a name.</p></li>
-<li><p>The label must be unique.</p></li>
-<li><p>The label is used to identify which community belongs to which sampling point.</p></li>
-</ul>
-<p>These labels are used when collecting, organising, and analysing data.</p>
-
-</div>
-<div id="step-7-label-each-triangular-tile" class="section level2">
-<h2><span class="header-section-number">3.7</span> Step 7: Label each triangular tile</h2>
-<p>Give each triangular tile a unique identifying label:</p>
-<ul>
-<li><p>The label may be a number or a name.</p></li>
-<li><p>The label must be unique.</p></li>
-<li><p>The label is used to identify which communities belong to which triangular tile.</p></li>
-</ul>
-<p>These labels are used when collecting, organising, and analysing data.</p>
-
-<div class="rmdnote">
-This step is only required if you will be using the simple analysis provided by the RAnalyticFlow workflow. More complicated analysis methods will usually not use the tile labels created in this step.
-</div>
-
-
-</div>
-<div id="step-8-describe-the-sample-in-numbers" class="section level2">
-<h2><span class="header-section-number">3.8</span> Step 8: Describe the sample in numbers</h2>
-<p>To analyse and map data you will need to create two files:</p>
-<ul>
-<li><strong>The PSU file:</strong> This is a file that describes each sampling point (a sampling point is sometimes called a primary sampling unit or PSU). This file <strong>must</strong> have the following named columns and the names <strong>must</strong> be <strong>exactly</strong> as given here:</li>
-</ul>
-<table>
-<colgroup>
-<col width="20%" />
-<col width="39%" />
-<col width="39%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Column Name</strong></th>
-<th><strong>Contains</strong></th>
-<th><strong>Notes</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>psu</strong></td>
-<td>Unique identifying label for a sampling
-point (from <strong>Step 6</strong>).</td>
-<td>Must be unique.</td>
-</tr>
-<tr class="even">
-<td><strong>pop</strong></td>
-<td>Population of the community at the
-sampling point.</td>
-<td>Can be taken from census or program
-data or collected when the sampling
-point is visited.</td>
-</tr>
-<tr class="odd">
-<td><strong>latDegrees</strong></td>
-<td>Latitude of the sampling point</td>
-<td>Optional</td>
-</tr>
-<tr class="even">
-<td><strong>latMinutes</strong></td>
-<td>Minutes of latitude should be recorded
-in decimal minutes</td>
-<td>Optional</td>
-</tr>
-<tr class="odd">
-<td><strong>lonDegrees</strong></td>
-<td>Longitude of the sampling point</td>
-<td>Optional</td>
-</tr>
-<tr class="even">
-<td><strong>lonMinutes</strong></td>
-<td>Minutes of longitude should be recorded
-in decimal minutes</td>
-<td>Optional</td>
-</tr>
-</tbody>
-</table>
-<p>The PSU file may also contain other columns such as district name, village name, and date visited. These columns may help when describing the sample in survey reports. If (e.g.) the survey area covers many districts then a column giving the district name will be useful if district-level summaries are required.</p>
-<ul>
-<li><strong>The TILE file:</strong> This is a file that links sampling points to tiles. This file has only four columns which must have the exact names:</li>
-</ul>
-<table>
-<colgroup>
-<col width="26%" />
-<col width="73%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Column Name</strong></th>
-<th><strong>Contains</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>tile</strong></td>
-<td>Unique identifying label a tile (from <strong>Step 7</strong>)</td>
-</tr>
-<tr class="even">
-<td><strong>psu1</strong></td>
-<td>Identifying label for vertex 1 of the tile.</td>
-</tr>
-<tr class="odd">
-<td><strong>psu2</strong></td>
-<td>Identifying label for vertex 2 of the tile.</td>
-</tr>
-<tr class="even">
-<td><strong>psu3</strong></td>
-<td>Identifying label for vertex 3 of the tile.</td>
-</tr>
-</tbody>
-</table>
-<p>For example, the first four rows of the TILE file for the sample shown in the illustration to <strong>Step 7</strong> would be:</p>
-<table style="width:61%;">
-<colgroup>
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center"><strong>tile</strong></th>
-<th align="center"><strong>psu1</strong></th>
-<th align="center"><strong>psu2</strong></th>
-<th align="center"><strong>psu3</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">8</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td align="center">5</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="center">5</td>
-<td align="center">9</td>
-<td align="center">10</td>
-</tr>
-</tbody>
-</table>
-<p>The TILE file is only required if you will be using the simple analysis provided by the <strong>RAnalyticFlow</strong> workflow. More complicated analysis methods may not need a TILE file.</p>
-<p>Both of these files can be created using a spreadsheet package such as Microsoft Excel or OpenOffice Calc but they should be exported as comma-separated-value (CSV) files before use by the <strong>RAnalyticFlow</strong> workflow. Do <strong>not</strong> use commas (i.e. “,”) in any cell when entering data.</p>
-
-</div>
-<div id="step-9-plan-data-collection" class="section level2">
-<h2><span class="header-section-number">3.9</span> Step 9: Plan data collection</h2>
-<p>Now you have identified the location and number of sampling points you can draw up a project plan (using your favourite or institutional project management tools) and budget. When drawing up the timetable and budget it is common to assume that one team will sample one sampling point in one day.</p>
 
 </div>
 </div>

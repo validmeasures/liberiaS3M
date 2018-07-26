@@ -90,7 +90,7 @@ assessing coverage of health and nutrition programmes in Liberia}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-25}
+    \date{2018-07-26}
 
 \usepackage{booktabs}
 \usepackage{color}
@@ -353,7 +353,7 @@ and useful to have:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/smallScaleMap-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/smallScaleMap-1} 
 
 }
 
@@ -362,7 +362,7 @@ and useful to have:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/smallScaleMapCounty-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/smallScaleMapCounty-1} 
 
 }
 
@@ -385,7 +385,7 @@ and useful to have:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/largeScaleMapCounty-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/largeScaleMapCounty-1} 
 
 }
 
@@ -396,7 +396,7 @@ and useful to have:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/largeScaleMapDistricts-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/largeScaleMapDistricts-1} 
 
 }
 
@@ -661,7 +661,7 @@ map}\label{step-3-draw-a-grid-over-the-map}}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/grid1-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/grid1-1} 
 
 }
 
@@ -878,7 +878,7 @@ points}\label{step-4-create-an-even-spread-of-sampling-points}}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/grid2-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/grid2-1} 
 
 }
 
@@ -915,7 +915,7 @@ sample}\label{step-5-select-the-communities-to-sample}}
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/grid3-1} 
+{\centering \includegraphics{liberiaS3M_files/figure-latex/grid3-1} 
 
 }
 
@@ -948,6 +948,15 @@ are not all in valleys or all on hilltops, and adjusting the grid
 position accordingly, should help to minimise this problem.
 \EndKnitrBlock{rmdcaution}
 
+\begin{figure}[H]
+
+{\centering \includegraphics{liberiaS3M_files/figure-latex/grid3a-1} 
+
+}
+
+\caption{Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities}\label{fig:grid3a}
+\end{figure}
+
 A good way to check if you have an even spread of sampling points over
 the entire survey area is to do a trial \emph{triangulation} of the
 selected sampling points. This involves dividing up the survey area into
@@ -958,6 +967,15 @@ triangles. The best triangulation is one that results in small
 equilateral triangles (i.e.~triangles with all sides of equal length) or
 small and nearly equilateral triangles. Avoid long and narrow triangles.
 Avoid large triangles.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=23.97in]{figures/grid3a} 
+
+}
+
+\caption{Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly}\label{fig:grid3b}
+\end{figure}
 
 You can triangulate ``by eye'' or automatically (i.e.~using a computer).
 If you use a computer to do this then you should use software that
@@ -972,15 +990,24 @@ areas that do not contain sampling points.
 The aim is to create a roughly even spread of sampling points over the
 entire survey area.
 
-The diagrams above show a trial triangulation with only a few long and
-narrow triangles :
+\newpage
+
+\begin{figure}[H]
+
+{\centering \includegraphics{liberiaS3M_files/figure-latex/grid3c-1} 
+
+}
+
+\caption{Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities}\label{fig:grid3c}
+\end{figure}
+
+Figure \ref{fig:grid3c} above show a trial triangulation with only a few
+long and narrow triangles:
 
 \begin{itemize}
+\tightlist
 \item
-  One sampling point (labelled x1) has been added to ensure that the
-  sample covers almost the entire survey area.
-\item
-  Four sampling points (labelled m1, m2, m3, and m4) have been moved to
+  Five sampling points (labelled 2, 25, 32, 33, 39) have been dropped to
   ensure that there are few long and narrow triangles.
 \end{itemize}
 
@@ -1025,247 +1052,6 @@ The process of selecting communities to sample is:
   all of the survey area). Triangulate again. Repeat this process until
   you are happy with the sample.
 \end{enumerate}
-
-\textbf{The sample will, to some extent, be dictated by the distribution
-of communities in the survey area. It is usual to find that you have
-some large triangles and some long and narrow triangles in your final
-triangulation. You should try to keep the number of these ``problem''
-triangles to a minimum.}
-
-\newpage
-
-\hypertarget{step-6-label-each-sampling-point}{%
-\section{Step 6: Label each sampling
-point}\label{step-6-label-each-sampling-point}}
-
-Give each sampling point a unique identifying label:
-
-\begin{itemize}
-\item
-  The label may be a number or a name.
-\item
-  The label must be unique.
-\item
-  The label is used to identify which community belongs to which
-  sampling point.
-\end{itemize}
-
-These labels are used when collecting, organising, and analysing data.
-
-\newpage
-
-\hypertarget{step-7-label-each-triangular-tile}{%
-\section{Step 7: Label each triangular
-tile}\label{step-7-label-each-triangular-tile}}
-
-Give each triangular tile a unique identifying label:
-
-\begin{itemize}
-\item
-  The label may be a number or a name.
-\item
-  The label must be unique.
-\item
-  The label is used to identify which communities belong to which
-  triangular tile.
-\end{itemize}
-
-These labels are used when collecting, organising, and analysing data.
-
-\BeginKnitrBlock{rmdnote}
-This step is only required if you will be using the simple analysis
-provided by the RAnalyticFlow workflow. More complicated analysis
-methods will usually not use the tile labels created in this step.
-\EndKnitrBlock{rmdnote}
-
-\newpage
-
-\hypertarget{step-8-describe-the-sample-in-numbers}{%
-\section{Step 8: Describe the sample in
-numbers}\label{step-8-describe-the-sample-in-numbers}}
-
-To analyse and map data you will need to create two files:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{The PSU file:} This is a file that describes each sampling
-  point (a sampling point is sometimes called a primary sampling unit or
-  PSU). This file \textbf{must} have the following named columns and the
-  names \textbf{must} be \textbf{exactly} as given here:
-\end{itemize}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule
-\begin{minipage}[b]{0.19\columnwidth}\raggedright
-\textbf{Column Name}\strut
-\end{minipage} & \begin{minipage}[b]{0.36\columnwidth}\raggedright
-\textbf{Contains}\strut
-\end{minipage} & \begin{minipage}[b]{0.36\columnwidth}\raggedright
-\textbf{Notes}\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-\textbf{psu}\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Unique identifying label for a sampling point (from \textbf{Step
-6}).\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Must be unique.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-\textbf{pop}\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Population of the community at the sampling point.\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Can be taken from census or program data or collected when the sampling
-point is visited.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-\textbf{latDegrees}\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Latitude of the sampling point\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Optional\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-\textbf{latMinutes}\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Minutes of latitude should be recorded in decimal minutes\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Optional\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-\textbf{lonDegrees}\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Longitude of the sampling point\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Optional\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-\textbf{lonMinutes}\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Minutes of longitude should be recorded in decimal minutes\strut
-\end{minipage} & \begin{minipage}[t]{0.36\columnwidth}\raggedright
-Optional\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-The PSU file may also contain other columns such as district name,
-village name, and date visited. These columns may help when describing
-the sample in survey reports. If (e.g.) the survey area covers many
-districts then a column giving the district name will be useful if
-district-level summaries are required.
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{The TILE file:} This is a file that links sampling points to
-  tiles. This file has only four columns which must have the exact
-  names:
-\end{itemize}
-
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\begin{minipage}[b]{0.25\columnwidth}\raggedright
-\textbf{Column Name}\strut
-\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright
-\textbf{Contains}\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-\textbf{tile}\strut
-\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright
-Unique identifying label a tile (from \textbf{Step 7})\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-\textbf{psu1}\strut
-\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright
-Identifying label for vertex 1 of the tile.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-\textbf{psu2}\strut
-\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright
-Identifying label for vertex 2 of the tile.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-\textbf{psu3}\strut
-\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright
-Identifying label for vertex 3 of the tile.\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-For example, the first four rows of the TILE file for the sample shown
-in the illustration to \textbf{Step 7} would be:
-
-\begin{longtable}[]{@{}cccc@{}}
-\toprule
-\begin{minipage}[b]{0.14\columnwidth}\centering
-\textbf{tile}\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering
-\textbf{psu1}\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering
-\textbf{psu2}\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering
-\textbf{psu3}\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.14\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-8\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-10\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\centering
-10\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-The TILE file is only required if you will be using the simple analysis
-provided by the \textbf{RAnalyticFlow} workflow. More complicated
-analysis methods may not need a TILE file.
-
-Both of these files can be created using a spreadsheet package such as
-Microsoft Excel or OpenOffice Calc but they should be exported as
-comma-separated-value (CSV) files before use by the
-\textbf{RAnalyticFlow} workflow. Do \textbf{not} use commas (i.e. ``,'')
-in any cell when entering data.
-
-\newpage
-
-\hypertarget{step-9-plan-data-collection}{%
-\section{Step 9: Plan data
-collection}\label{step-9-plan-data-collection}}
-
-Now you have identified the location and number of sampling points you
-can draw up a project plan (using your favourite or institutional
-project management tools) and budget. When drawing up the timetable and
-budget it is common to assume that one team will sample one sampling
-point in one day.
 
 \hypertarget{stage2}{%
 \chapter{The second stage sample}\label{stage2}}
