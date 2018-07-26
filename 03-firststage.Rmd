@@ -507,14 +507,10 @@ Make sure that your sample points go right to the edge (or even over the edge) o
 
 ```{r grid3, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
-xx <- get_nearest_point(data = settlements, 
+xx <- get_nearest_point(data = settlements[settlements$admin1Name == "Montserrado", ], 
                         data.x = "COORD_X", 
                         data.y = "COORD_Y", 
                         query = coordsSP)
-
-villagesSP <- SpatialPoints(coords = xx[ , c("COORD_X", "COORD_Y")],
-                            proj4string = CRS(proj4string(montserrado1)))[montserrado1]
-
 
 par(mar = c(0, 0, 0, 0))
 plot(montserradoBox, lty = 0)
@@ -524,8 +520,7 @@ plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
 plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
 plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
 plot(allLines, add = TRUE)
-#plot(coordsSP, pch = 1, cex = 2, col = "red", add = TRUE)
-plot(villagesSP, pch = 1, cex = 2, col = "red", add = TRUE)
+points(xx[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
 legend(x = "topleft",
        inset = 0.02,
        y.intersp = 1.2,
@@ -556,9 +551,43 @@ The aim is to create a roughly even spread of sampling points over the entire su
 The S3M sample is defined using a systematic sampling method. Like any systematic sampling method, an S3M sample can produce biased estimates if there is periodic variation in prevalence and / or coverage and the sampling points tend to coincide with this periodicity. This is difficult to control for without prior knowledge of the periodic variation, although simple checks such as ensuring that sampling points are not all in valleys or all on hilltops, and adjusting the grid position accordingly, should help to minimise this problem.
 ```
 
+```{r grid3a, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
+
+triSP <- get_tri(input = xx, x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
+
+par(mar = c(0, 0, 0, 0))
+plot(montserradoBox, lty = 0)
+plot(counties, add = TRUE)
+plot(montserrado1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(allLines, add = TRUE)
+points(xx[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
+plot(triSP, border = "red", lwd = 2, add = TRUE)
+text(xx[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(xx))
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
 A good way to check if you have an even spread of sampling points over the entire survey area is to do a trial *triangulation* of the selected sampling points. This involves dividing up the survey area into non-overlapping triangles with a sampling point at each vertex.
 
 There will usually be many ways to divide the survey area into triangles. The best triangulation is one that results in small equilateral triangles (i.e. triangles with all sides of equal length) or small and nearly equilateral triangles. Avoid long and narrow triangles. Avoid large triangles.
+
+```{r grid3b, echo = FALSE, eval = TRUE, fig.cap = "Selecting alternating intersections of the grid in the x and y directions to spread sampling points evenly", fig.align = "center", fig.pos = "H", fig.retina = 1}
+include_graphics("figures/grid3a.png")
+```
 
 You can triangulate “by eye” or automatically (i.e. using a computer). If you use a computer to do this then you should use software that produces a *Delaunay triangulation*.
 
@@ -566,13 +595,48 @@ You may drop sampling points if you find that many sampling points are clustered
 
 You may move or add sampling points if you find that there are populated areas that do not contain sampling points.
 
-The aim is to create a roughly even spread of sampling points over the entire survey area. 
+The aim is to create a roughly even spread of sampling points over the entire survey area.
 
-The diagrams above show a trial triangulation with only a few long and narrow triangles :
+\newpage
 
-* One sampling point (labelled x1) has been added to ensure that the sample covers almost the entire survey area.
+```{r grid3c, echo = FALSE, eval = TRUE, fig.cap = "Montserrado county with a rectangular grid defined by d of 6 km and sampling points moved to the nearest communities", fig.align = "center", fig.width = 8, fig.height = 8, fig.pos = "H", fig.retina = 1}
 
-* Four sampling points (labelled m1, m2, m3, and m4) have been moved to ensure that there are few long and narrow triangles.
+triSP <- get_tri(input = xx[!1:nrow(xx) %in% c(2, 25, 32, 33, 39), ], 
+                 x = "COORD_X", y = "COORD_Y", qTSL = 0.9)
+
+par(mar = c(0, 0, 0, 0))
+plot(montserradoBox, lty = 0)
+plot(counties, add = TRUE)
+plot(montserrado1, lwd = 3, add = TRUE)
+plot(primary, lwd = 2, lty = 2, col = "blue", add = TRUE)
+plot(paved, lwd = 2, lty = 1, col = "blue", add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(allLines, add = TRUE)
+points(xx[ , c("COORD_X", "COORD_Y")], 
+       pch = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), 20, 1), 
+       cex = 2, 
+       col = ifelse(1:nrow(xx) %in% c(2, 25, 32, 33, 39), "yellow", "red"))
+plot(triSP, border = "red", lwd = 2, add = TRUE)
+text(xx[ , c("COORD_X", "COORD_Y")], labels = 1:nrow(xx))
+legend(x = "topleft",
+       inset = 0.02,
+       y.intersp = 1.2,
+       bg = "white",
+       legend = c("County borders", "Montserrado borders", "Paved roads", 
+                  "Primary roads", "All settlements", "Sampling points"),
+       pch = c(0, 0, NA, NA, 4, 1),
+       lty = c(NA, NA, 1, 2, NA, NA),
+       lwd = c(1, 3, 2, 2, 2, 2),
+       col = c("black", "black", "blue", "blue", "darkgreen", "red"),
+       cex = 1,
+       pt.cex = 2)
+map.scale()
+```
+
+
+Figure \@ref(fig:grid3c) above show a trial triangulation with only a few long and narrow triangles:
+
+* Five sampling points (labelled 2, 25, 32, 33, 39) have been dropped to ensure that there are few long and narrow triangles.
 
 **The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.**
 
@@ -592,103 +656,3 @@ The process of selecting communities to sample is:
 
 3. Move or add sampling points to improve the sample (i.e. to avoid long and narrow triangles, to avoid large triangles, to make triangles roughly equal in size, and to ensure the sample covers all or almost all of the survey area). Triangulate again. Repeat this process until you are happy with the sample.
 
-**The sample will, to some extent, be dictated by the distribution of communities in the survey area. It is usual to find that you have some large triangles and some long and narrow triangles in your final triangulation. You should try to keep the number of these “problem” triangles to a minimum.**
-
-\newpage
-
-## Step 6: Label each sampling point
-
-Give each sampling point a unique identifying label:
-
-* The label may be a number or a name.
-
-* The label must be unique.
-
-* The label is used to identify which community belongs to which sampling point.
-
-These labels are used when collecting, organising, and analysing data.
-
-\newpage
-
-## Step 7: Label each triangular tile
-
-Give each triangular tile a unique identifying label:
-
-* The label may be a number or a name.
-
-* The label must be unique.
-
-* The label is used to identify which communities belong to which triangular tile.
-
-These labels are used when collecting, organising, and analysing data.
-
-```{block2, type = "rmdnote"}
-This step is only required if you will be using the simple analysis provided by the RAnalyticFlow workflow. More complicated analysis methods will usually not use the tile labels created in this step.
-```
-
-\newpage
-
-## Step 8: Describe the sample in numbers
-
-To analyse and map data you will need to create two files:
-
-* **The PSU file:** This is a file that describes each sampling point (a sampling point is sometimes called a primary sampling unit or PSU). This file **must** have the following named columns and the names **must** be **exactly** as given here:
-
-+--------------------+----------------------------------------+----------------------------------------+
-| **Column Name**    | **Contains**                           | **Notes**                              |
-+====================+========================================+========================================+
-| **psu**            | Unique identifying label for a sampling| Must be unique.                        |
-|                    | point (from **Step 6**).               |                                        |
-+--------------------+----------------------------------------+----------------------------------------+
-| **pop**            | Population of the community at the     | Can be taken from census or program    |
-|                    | sampling point.                        | data or collected when the sampling    |
-|                    |                                        | point is visited.                      |
-+--------------------+----------------------------------------+----------------------------------------+
-| **latDegrees**     | Latitude of the sampling point         | Optional                               |
-+--------------------+----------------------------------------+----------------------------------------+
-| **latMinutes**     | Minutes of latitude should be recorded | Optional                               |
-|                    | in decimal minutes                     |                                        |
-+--------------------+----------------------------------------+----------------------------------------+
-| **lonDegrees**     | Longitude of the sampling point        | Optional                               |
-+--------------------+----------------------------------------+----------------------------------------+
-| **lonMinutes**     | Minutes of longitude should be recorded| Optional                               |
-|                    | in decimal minutes                     |                                        |
-+--------------------+----------------------------------------+----------------------------------------+
-
-The PSU file may also contain other columns such as district name, village name, and date visited. These columns may help when describing the sample in survey reports. If (e.g.) the survey area covers many districts then a column giving the district name will be useful if district-level summaries are required.
-
-* **The TILE file:** This is a file that links sampling points to tiles. This file has only four columns which must have the exact names:
-
-+--------------------+----------------------------------------------------------+
-| **Column Name**    | **Contains**                                             |
-+====================+==========================================================+
-| **tile**           | Unique identifying label a tile (from **Step 7**)        |
-+--------------------+----------------------------------------------------------+
-| **psu1**           | Identifying label for vertex 1 of the tile.              |
-+--------------------+----------------------------------------------------------+
-| **psu2**           |  Identifying label for vertex 2 of the tile.             |
-+--------------------+----------------------------------------------------------+
-| **psu3**           |  Identifying label for vertex 3 of the tile.             |
-+--------------------+----------------------------------------------------------+
-
-For example, the first four rows of the TILE file for the sample shown in the illustration to **Step 7** would be:
-
-+----------+----------+----------+----------+
-| **tile** | **psu1** | **psu2** | **psu3** |
-+:========:+:========:+:========:+:========:+
-| 1        | 4        | 5        | 8        |
-+----------+----------+----------+----------+
-| 2        | 5        | 8        | 10       |
-+----------+----------+----------+----------+
-| 3        | 5        | 9        | 10       |
-+----------+----------+----------+----------+
-
-The TILE file is only required if you will be using the simple analysis provided by the **RAnalyticFlow** workflow. More complicated analysis methods may not need a TILE file.
-
-Both of these files can be created using a spreadsheet package such as Microsoft Excel or OpenOffice Calc but they should be exported as comma-separated-value (CSV) files before use by the **RAnalyticFlow** workflow. Do **not** use commas (i.e. “,”) in any cell when entering data.
-
-\newpage
-
-## Step 9: Plan data collection
-
-Now you have identified the location and number of sampling points you can draw up a project plan (using your favourite or institutional project management tools) and budget. When drawing up the timetable and budget it is common to assume that one team will sample one sampling point in one day.
