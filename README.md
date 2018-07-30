@@ -1,4 +1,4 @@
-# Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia
+# Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia <img src="images/s3m_neg.png" align="right" />
 
 [![Build Status](https://travis-ci.org/validmeasures/liberiaS3M.svg?branch=master)](https://travis-ci.org/validmeasures/liberiaS3M)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/liberiaS3M?branch=master&svg=true)](https://ci.appveyor.com/project/validmeasures/liberiaS3M)
