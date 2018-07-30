@@ -18,7 +18,7 @@ cover-image: figures/s3mlogo.png
 description: "Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
 ---
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
@@ -26,16 +26,33 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "figures/"
 )
+
 options(stringsAsFactors = FALSE)
 
 if(!require(devtools)) install.packages("devtools")
 if(!require(rgdal)) install.packages("rgdal")
 if(!require(rgeos)) install.packages("rgeos")
 if(!require(raster)) install.packages("raster")
+if(!require(spatialsampler)) install_github("validmeasures/spatialsampler")
 if(!require(liberia)) install_github("validmeasures/liberia")
 if(!require(maps)) install.packages("maps")
 if(!require(knitr)) install.packages("knitr")
 if(!require(kableExtra)) install.packages("kableExtra")
+if(!require(magrittr)) install.packages("magrittr")
+if(!require(FNN)) install.packages("FNN")
+
+library(devtools)
+library(rgdal)
+library(rgeos)
+library(raster)
+library(spatialsampler)
+library(liberia)
+library(maps)
+library(knitr)
+library(kableExtra)
+library(magrittr)
+library(FNN)
+
 
 wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
                       layer = "wca_adm0",
@@ -56,8 +73,32 @@ poi <- rgdal::readOGR(dsn = "maps/hotosm_liberia_points_of_interest_points_shp",
 montserrado1 <- counties[counties$admin1name == "Montserrado", ]
 montserrado2 <- districts[districts$admin1Name == "Montserrado", ]
 
+montserradoGrid <- create_s3m_grid(input = montserrado1, 
+                                   d = 6, 
+                                   buffer = 6, 
+                                   country = "Liberia", 
+                                   output = "lines")
+
+montserradoSP <- create_s3m_grid(input = montserrado1, 
+                                 d = 6, 
+                                 buffer = 6, 
+                                 country = "Liberia",
+                                 output = "points")
+
 grandbassa1 <- counties[counties$admin1name == "Grand Bassa", ]
 grandbassa2 <- districts[districts$admin1Name == "Grand Bassa", ]
+
+grandbassaGrid <- create_s3m_grid(input = grandbassa1,
+                                  d = 10,
+                                  buffer = 6,
+                                  country = "Liberia",
+                                  output = "lines")
+
+grandbassaSP <- create_s3m_grid(input = grandbassa1,
+                                d = 10,
+                                buffer = 6,
+                                country = "Liberia",
+                                output = "points")
 ```
 
 # Simple Spatial Sampling Method (S3M) {-}
