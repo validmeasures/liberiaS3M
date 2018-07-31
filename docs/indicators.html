@@ -82,8 +82,10 @@
 <li class="chapter" data-level="2.3" data-path="sample.html"><a href="sample.html#samplesize"><i class="fa fa-check"></i><b>2.3</b> Sample size considerations</a></li>
 <li class="chapter" data-level="2.4" data-path="sample.html"><a href="sample.html#urbanrural"><i class="fa fa-check"></i><b>2.4</b> Urban and rural sample considerations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="indicators.html"><a href="indicators.html"><i class="fa fa-check"></i><b>3</b> Indicators</a></li>
-<li class="chapter" data-level="4" data-path="questionnaire.html"><a href="questionnaire.html"><i class="fa fa-check"></i><b>4</b> Survey instrument</a></li>
+<li class="chapter" data-level="3" data-path="indicators.html"><a href="indicators.html"><i class="fa fa-check"></i><b>3</b> Indicators</a><ul>
+<li class="chapter" data-level="3.1" data-path="indicators.html"><a href="indicators.html#cmam-coverage"><i class="fa fa-check"></i><b>3.1</b> CMAM coverage</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="questionnaire.html"><a href="questionnaire.html"><i class="fa fa-check"></i><b>4</b> Questionnaire</a></li>
 <li class="chapter" data-level="5" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -108,7 +110,45 @@
             <section class="normal" id="section-">
 <div id="indicators" class="section level1">
 <h1><span class="header-section-number">3</span> Indicators</h1>
+<div id="cmam-coverage" class="section level2">
+<h2><span class="header-section-number">3.1</span> CMAM coverage</h2>
+<p>There are two coverage estimators in common use: <strong>point</strong> and <strong>period</strong> coverage.</p>
+<p>Point coverage is the number of current SAM cases in a treatment programme divided by the total number of current SAM cases.</p>
+<p><strong>Point coverage</strong> uses data for current cases only. It is calculated using the following formula:</p>
+<p>$nbsp;</p>
+<p><span class="math display">\[\begin{aligned} 
+\text{Point coverage} &amp; ~ = ~ \frac{C_{in}}{C_{in} ~ + ~ C_{out}} \\
+\\
+where: &amp; \\
+\\
+C_{in} &amp; ~ = ~ \text{current SAM cases in the programme} \\
+C_{out} &amp; ~ = ~ \text{current SAM cases out of the programme}
+\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>Point coverage</strong> provides a snapshot of programme performance, putting a strong emphasis on the effectiveness and timeliness of case-finding and recruitment <span class="citation">(Myatt et al. <a href="#ref-Myatt:2012tt">2012</a>)</span>.</p>
+<p><strong>Period coverage</strong>, on the other hand, uses data for both current and recovering cases. It is calculated using the following formula:</p>
+<p> </p>
+<p><span class="math display">\[\begin{aligned}
+\text{Period coverage} ~ = ~ \frac{C_{in} ~ + ~ R_{in}}{C_{in} ~ + ~ C_{out} ~ + ~ R_{out}}
+\end{aligned}\]</span></p>
+<p> </p>
+<p><strong>Period coverage</strong> is the number of current and recovering cases in a treatment programme divided by all current SAM cases and recovering cases. It approximates treatment coverage much better (albeit with limitations) as it accounts for children who are no longer cases but are in the programme. A recent Epicentre review <span class="citation">(Epicentre <a href="#ref-Epicentre:2015ty">2015</a>)</span> has highlighted the existence of these two coverage estimators as a source of confusion, with the risk that implementers may choose to assess period coverage (rather than point) simply because it produces a higher estimate. The review suggests that both coverage indicators could be reported, with sufficient context (e.g. on length of stay, timeliness of admissions, etc.) to allow for their interpretation. For this reason work has been conducted on further developing the coverage estimators to address this confusion around them. This work has included:</p>
+<ul>
+<li><p>A shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. <strong>Point coverage</strong> is now named <em>case-finding effectiveness</em> to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of MAM and then getting them to treatment. A programme with effective case-finding will always have good overall coverage when this estimator is used. <strong>Period coverage</strong> is now named <em>treatment coverage</em> as this is the estimator that approximates this coverage indicator the closest.</p></li>
+<li><p>Improvement of the period coverage estimator so that it can be used more precisely as a single coverage estimator for treatment coverage.</p></li>
+</ul>
+<p>We propose therefore that programmes report both case-finding effectiveness and the improved treatment coverage indicator and, crucially, give sufficient context to properly evaluate both estimates. For a more detailed description of the definitions of these two estimators, their differences and limitations, and the development work completed under this project, see Annex 3.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Myatt:2012tt">
+<p>Myatt, Mark, Ernest Guevarra, Lionella Fieschi, Allison Norris, Saul Guerrero, Lily Schofield, Daniel Jones, Ephrem Emru, and Kate Sadler. 2012. <em>Semi-Quantitative Evaluation of Access and Coverage (SQUEAC)/ Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Technical Reference</em>. Washington, DC: FHI 360/FANTA.</p>
+</div>
+<div id="ref-Epicentre:2015ty">
+<p>Epicentre. 2015. “Open review of coverage methodologies: Questions, comments and ways forward.” Epicentre.</p>
+</div>
 </div>
             </section>
 
