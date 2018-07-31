@@ -23,4 +23,3 @@ This document concentrates on using S3M to assess the need for and coverage of:
 * Ferrous sulfate-folic acid supplementation; and,
 
 * Infant and young child feeding counselling.
-
