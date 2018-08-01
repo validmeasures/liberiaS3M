@@ -198,7 +198,7 @@ $$ \text{Vitamin A supplementation coverage} ~ = ~ \frac{\text{No. of children w
 
 &nbsp;
 
-In standard surveys such as the DHS and MICS, this indicator is adjusted to a recall of 6 months for a single age-appropriate doses of vitamin A.
+In standard surveys such as the DHS and MICS, this indicator is adjusted to a recall of 6 months for a single age-appropriate dose of vitamin A.
 
 ## Iron-folic acid (IFA) supplementation for pregnant women
 
@@ -213,7 +213,6 @@ Population-based surveys typically report the percentage of women with a live bi
 4. Adherence to 180 days of supplementation
 
 ## Micronutrient powder supplementation
-
 
 
 ## IYCF counselling
