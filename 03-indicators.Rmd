@@ -118,21 +118,113 @@ In this example, point coverage is the more reflective coverage of the programme
 
 It should be noted also that period coverage has a tendency to an overestimation bias. This is because the current period coverage estimator does not take into account cases of acute malnutrition who have recovered spontaneously but were never enrolled in any treatment programme.
 
-An estimator of coverage that includes these cases would be:
+An estimator of coverage that does include both recovering cases that are in the programme and recovering cases that are not in the programme and, thus, provides an unbiased estimator of overall programme performance is:
 
 &nbsp;
 
-$$ \text{Coverage} ~ = ~ \frac{C_{in} ~ + ~ R_{in}}{C_{in} ~ + ~ R_{in} ~ + ~ C_{out} ~ + ~ R_{out}} $$ 
+$$\begin{aligned}
+\text{Single coverage} & ~ = ~ \frac{C_{in} ~ + ~ R_{in}}{C_{in} ~ + ~ R_{in} ~ + ~ C_{out} ~ + ~ R_{out}} \\
+\\
+where: & \\
+\\
+R_{out} & ~ = ~ \text{Recovering SAM cases not in the programme}
+\end{aligned}$$ 
 
 &nbsp;
 
-A recent Epicentre review [@Epicentre:2015ty] has highlighted the existence of these two coverage estimators as a source of confusion, with the risk that implementers may choose to assess period coverage (rather than point) simply because it produces a higher estimate. The review suggests that both coverage indicators could be reported, with sufficient context (e.g. on length of stay, timeliness of admissions, etc.) to allow for their interpretation. For this reason work has been conducted on further developing the coverage estimators to address this confusion around them. This work has included:
+It is for these reasons that the coverage assessment technical guide [@Myatt:2012tt] recommends that only one of these estimators be reported and the choice of estimator to report should be guided by specific programme features and characteristics (such as lengths of stay in the programme) that would justify the choice of reported estimator. In a recent Epicentre review [@Epicentre:2015ty] this has been highlighted as a source of confusion and issues given the possibility of period coverage being chosen more as a coverage estimator rather than point coverage because of it being a higher estimate even if the programme characteristics do not merit its use. The review suggests that both coverage indicators could be reported, with sufficient context (e.g. on length of stay, timeliness of admissions, etc.) to allow for their interpretation.
 
-* A shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. **Point coverage** is now named *case-finding effectiveness* to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of MAM and then getting them to treatment. A programme with effective case-finding will always have good overall coverage when this estimator is used. **Period coverage** is now named *treatment coverage* as this is the estimator that approximates this coverage indicator the closest.
+In response to the review and to address the limitations of the coverage estimators, development work has been conducted on further developing and improving the coverage estimators to address this confusion and the issues around them [@Balegamire:2015ud]. This work focused primarily on improving the period coverage estimator to address the overestimation bias described earlier and to make it more closely approximate the treatment coverage estimator formula shown above.
 
-* Improvement of the period coverage estimator so that it can be used more precisely as a single coverage estimator for treatment coverage.
+The problem with this estimator is that $R_{out}$ (i.e. the number of recovering cases that are not in the programme) is unknown and may be difficult to collect accurately. This problem of estimating the number of recovering cases not in the programme ($R_{out}$) may be addressed using a simple mathematical model[^2] proposed by @Balegamire:2015ud.
 
-We propose therefore that programmes report both case-finding effectiveness and the improved treatment coverage indicator and, crucially, give sufficient context to properly evaluate both estimates. For a more detailed description of the definitions of these two estimators, their differences and limitations, and the development work completed under this project, see Annex 3.
+&nbsp;
+
+$$\begin{aligned}
+\frac{C_{in} ~ + ~ C_{out}}{C_{in}} & ~ \approx ~ \frac{R_{in} ~ + ~ k ~ \times ~ R_{out}}{R_{in}} \\
+\\
+where: & \\
+\\
+k & ~ = ~ \text{a correction factor}
+\end{aligned}$$
+
+&nbsp;
+
+$R_{out}$ can then be expressed in terms of the known variables:
+
+&nbsp;
+
+$$  R_{out} ~ \approx ~ \left \lfloor ~ \frac{1}{k} ~ \times ~ \left ( ~ R_{in} ~ \times ~ \frac{C_{in} ~ + ~ C_{out}}{C_{in}} ~ - ~ R_{in} ~ \right ) ~ \right \rfloor $$
+
+&nbsp;
+
+Given the possibility that no cases in the programme ($C_{in}$) are found, the calculation is adjusted by adding 1 to $C_{in}$. To arrive at a whole number value for $R_{out}$, the calculation is rounded off towards zero.
+
+&nbsp;
+
+$$ R_{out} ~ \approx ~ \left \lfloor ~ \frac{1}{k} ~ \times ~ \left ( ~ R_{in} ~ \times ~ \frac{C_{in} ~ + ~ 1 ~ + ~ C_{out}}{C_{in} ~ + ~ 1} ~ - ~ R_{in} ~ \right ) ~ \right \rfloor $$
+
+&nbsp;
+
+This leaves the problem of deciding a suitable value for the correction factor ($k$). A reasonable candidate for $k$ is the ratio of the mean length of an untreated episode to the mean length of a CMAM treatment episode. 
+
+&nbsp;
+
+$$ k ~ = ~ \frac{\text{Mean length of untreated episode}}{\text{Mean length of a treatment episode}} $$
+
+&nbsp;
+
+Possible value for mean length of untreated episode is 7.5 months [@Garenne:2009fq] which is the common value used when estimating programme case-loads from prevalence estimates [@Myatt:2012tu]. Mean length of a treatment episode can be estimated by calculating the mean length of stay in the CMAM programme using routine monitoring data. In general, A value
+of 2.5 months could be used in the absence of better information or when the validity of routine programme monitoring data is suspect. Using these values, k is:
+
+&nbsp;
+
+$$ k ~ = ~ \frac{\text{Mean length of untreated episode}}{\text{Mean length of a treatment episode}} ~ = ~ \frac{7.5}{2.5} ~ = ~ 3 $$
+
+&nbsp;
+
+The inclusion of recovering cases means that the single coverage estimate is mathematically constrained to return a coverage estimate that is greater than or equal to the point coverage estimate. The underestimation present in the point coverage estimate has, to some extent, been corrected. The inclusion of recovering cases that are not in the programme means that the single coverage estimator is mathematically constrained to return a coverage estimate that is less than or equal to the period coverage estimate. The overestimation present in the period coverage estimate has, to some extent, been corrected.
+
+Given this single coverage estimator, we further propose a shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. **Point coverage** is now named *case-finding effectiveness* to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of SAM and then getting them to treatment. **Period coverage** that has been improved into the single coverage metric is now named *treatment coverage* as this is the estimator that approximates this coverage indicator the closest.
 
 
-The problem with this estimator is that $R_{out}$ is unknown and is not readily amenable to collection by survey.
+## Vitamin A supplementation
+
+The standard estimator for vitamin A supplementation is the proportion of children aged 6-59 months who received two age-appropriate doses of vitamin A in the past 12 months.
+
+&nbsp;
+
+$$ \text{Vitamin A supplementation coverage} ~ = ~ \frac{\text{No. of children who received two age-appropriate doses of vitamin A in the past 12 months}}{\text{No. of children aged 6-59 months}} $$
+
+&nbsp;
+
+In standard surveys such as the DHS and MICS, this indicator is adjusted to a recall of 6 months for a single age-appropriate doses of vitamin A.
+
+## Iron-folic acid (IFA) supplementation for pregnant women
+
+Population-based surveys typically report the percentage of women with a live birth in the two to five years before the survey who received and took IFA supplementation during their most recent pregnancy. Because antenatal care (ANC) is typically the main platform for IFA supplement distribution for pregnant women, survey questions on antenatal care attendance and timing of the first antenatal care visit can provide information on the use of this platform to deliver IFA supplementation. @Sununtnasuk:2015kb propose a falter point framework[^3] that utilises four indicators that proxy the four critical points at which the ANC approach to IFA distribution might falter in IFA supplementation coverage to pregnant women. These indicators are:
+
+1. At least one ANC visit during most recent pregnancy
+
+2. Receipt or purchase of IFA tablet/s
+
+3. IFA consumption
+
+4. Adherence to 180 days of supplementation
+
+## Micronutrient powder supplementation
+
+
+
+## IYCF counselling
+
+
+
+
+
+
+
+
+
+[^2]: This model assumes that incidence of acute malnutrition and programme coverage do not vary rapidly over time.
+[^3]: Similar to a bottleneck framework and consistent with @Tanahashi:1978we hierarchical model of coverage.
