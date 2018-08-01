@@ -12,7 +12,11 @@ biblio-style: "apalike"
 link-citations: TRUE
 links-as-notes: FALSE
 colorlinks: TRUE
+linkcolor: blue
+citecolor: blue
+urlcolor: blue
 fontsize: 12pt
+always_allow_html: yes
 url: http\://design.validmeasures.com/liberiaS3M
 cover-image: figures/s3mlogo.png
 description: "Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
@@ -40,19 +44,6 @@ if(!require(knitr)) install.packages("knitr")
 if(!require(kableExtra)) install.packages("kableExtra")
 if(!require(magrittr)) install.packages("magrittr")
 if(!require(FNN)) install.packages("FNN")
-
-#library(devtools)
-#library(rgdal)
-#library(rgeos)
-#library(raster)
-#library(spatialsampler)
-#library(liberia)
-#library(maps)
-#library(knitr)
-#library(kableExtra)
-#library(magrittr)
-#library(FNN)
-
 
 wca <- rgdal::readOGR(dsn = "maps/wca_adm0",
                       layer = "wca_adm0",
