@@ -28,9 +28,9 @@
             pdftitle={Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia},
             pdfauthor={Valid International},
             colorlinks=true,
-            linkcolor=Maroon,
-            citecolor=Blue,
-            urlcolor=Blue,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
@@ -90,9 +90,10 @@ assessing coverage of health and nutrition programmes in Liberia}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-31}
+    \date{2018-08-01}
 
 \usepackage{booktabs}
+\usepackage[table]{xcolor}
 \usepackage{color}
 \usepackage{tcolorbox}
 \usepackage{float}
@@ -1275,8 +1276,9 @@ each and every urban area to be assessed.
 \hypertarget{cmam-coverage}{%
 \section{CMAM coverage}\label{cmam-coverage}}
 
-There are two coverage estimators in common use: \textbf{point} and
-\textbf{period} coverage.
+CMAM coverage usually pertains to coverage of SAM treatment.
+Historically, there have been two coverage estimators in common use:
+\textbf{point} and \textbf{period} coverage.
 
 Point coverage is the number of current SAM cases in a treatment
 programme divided by the total number of current SAM cases.
@@ -1316,15 +1318,82 @@ and recovering cases. It is calculated using the following formula:
 in a treatment programme divided by all current SAM cases and recovering
 cases. It approximates treatment coverage much better (albeit with
 limitations) as it accounts for children who are no longer cases but are
-in the programme. A recent Epicentre review \citep{Epicentre:2015ty} has
-highlighted the existence of these two coverage estimators as a source
-of confusion, with the risk that implementers may choose to assess
-period coverage (rather than point) simply because it produces a higher
-estimate. The review suggests that both coverage indicators could be
-reported, with sufficient context (e.g.~on length of stay, timeliness of
-admissions, etc.) to allow for their interpretation. For this reason
-work has been conducted on further developing the coverage estimators to
-address this confusion around them. This work has included:
+in the programme.
+
+Point and period coverage both have their limitations.
+
+Point coverage of a programme with good case-finding and recruitment and
+short lengths of stay can be misleadingly low because there are too few
+current cases. For example, a coverage survey found:
+
+~
+
+\begin{longtable}[]{@{}rl@{}}
+\caption{\label{tab:survey2} Scenario 1 - coverage survey results from a
+programme with good case-finding and recruitment and short lengths of
+stay}\tabularnewline
+\toprule
+\begin{minipage}[t]{0.43\columnwidth}\raggedleft
+Number of current cases\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.43\columnwidth}\raggedleft
+Number of current cases in the programme\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.43\columnwidth}\raggedleft
+Number of current cases not in the programme\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.43\columnwidth}\raggedleft
+Number of recovering cases in the programme\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedright
+34\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\label{tab:survey1}Scenario 1: coverage survey results from a programme with
+good case-finding and recruitment and short lengths of stay
+
+Number of current cases
+
+2
+
+Number of current cases in the program
+
+0
+
+Number of current cases not in the program
+
+2
+
+Number of recovering cases in the program
+
+34
+
+In this regard, the period coverage most likely better depicts the
+coverage of the programme. On the other hand, a programme with poor
+case-finding and recruitment and long lengths of stay may have a period
+coverage that is misleadingly high because of high number of recovering
+cases when in fact point coverage is the more reflective coverage of the
+programme. In addition, period coverage suffers from an overestimation
+bias. This is because the current period coverage estimator does not
+take into account cases of acute malnutrition who have recovered
+spontaneously but were never enrolled in any treatment programme.
+
+A recent Epicentre review \citep{Epicentre:2015ty} has highlighted the
+existence of these two coverage estimators as a source of confusion,
+with the risk that implementers may choose to assess period coverage
+(rather than point) simply because it produces a higher estimate. The
+review suggests that both coverage indicators could be reported, with
+sufficient context (e.g.~on length of stay, timeliness of admissions,
+etc.) to allow for their interpretation. For this reason work has been
+conducted on further developing the coverage estimators to address this
+confusion around them. This work has included:
 
 \begin{itemize}
 \item

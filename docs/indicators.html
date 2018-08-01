@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-07-31">
+<meta name="date" content="2018-08-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -112,7 +112,7 @@
 <h1><span class="header-section-number">3</span> Indicators</h1>
 <div id="cmam-coverage" class="section level2">
 <h2><span class="header-section-number">3.1</span> CMAM coverage</h2>
-<p>There are two coverage estimators in common use: <strong>point</strong> and <strong>period</strong> coverage.</p>
+<p>CMAM coverage usually pertains to coverage of SAM treatment. Historically, there have been two coverage estimators in common use: <strong>point</strong> and <strong>period</strong> coverage.</p>
 <p>Point coverage is the number of current SAM cases in a treatment programme divided by the total number of current SAM cases.</p>
 <p><strong>Point coverage</strong> uses data for current cases only. It is calculated using the following formula:</p>
 <p>$nbsp;</p>
@@ -132,7 +132,79 @@ C_{out} &amp; ~ = ~ \text{current SAM cases out of the programme}
 \text{Period coverage} ~ = ~ \frac{C_{in} ~ + ~ R_{in}}{C_{in} ~ + ~ C_{out} ~ + ~ R_{out}}
 \end{aligned}\]</span></p>
 <p> </p>
-<p><strong>Period coverage</strong> is the number of current and recovering cases in a treatment programme divided by all current SAM cases and recovering cases. It approximates treatment coverage much better (albeit with limitations) as it accounts for children who are no longer cases but are in the programme. A recent Epicentre review <span class="citation">(Epicentre <a href="#ref-Epicentre:2015ty">2015</a>)</span> has highlighted the existence of these two coverage estimators as a source of confusion, with the risk that implementers may choose to assess period coverage (rather than point) simply because it produces a higher estimate. The review suggests that both coverage indicators could be reported, with sufficient context (e.g. on length of stay, timeliness of admissions, etc.) to allow for their interpretation. For this reason work has been conducted on further developing the coverage estimators to address this confusion around them. This work has included:</p>
+<p><strong>Period coverage</strong> is the number of current and recovering cases in a treatment programme divided by all current SAM cases and recovering cases. It approximates treatment coverage much better (albeit with limitations) as it accounts for children who are no longer cases but are in the programme.</p>
+<p>Point and period coverage both have their limitations.</p>
+<p>Point coverage of a programme with good case-finding and recruitment and short lengths of stay can be misleadingly low because there are too few current cases. For example, a coverage survey found:</p>
+<p> </p>
+<table style="width:54%;">
+<caption><span id="tab:survey2">Table 3.1: </span> Scenario 1 - coverage survey results from a programme with good case-finding and recruitment and short lengths of stay</caption>
+<colgroup>
+<col width="45%" />
+<col width="8%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="right">Number of current cases</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td align="right">Number of current cases in
+the programme</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td align="right">Number of current cases not in
+the programme</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td align="right">Number of recovering cases in
+the programme</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:survey1">Table 3.2: </span>Scenario 1: coverage survey results from a programme with good case-finding and recruitment and short lengths of stay
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Number of current cases
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of current cases in the program
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of current cases not in the program
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of recovering cases in the program
+</td>
+<td style="text-align:left;">
+34
+</td>
+</tr>
+</tbody>
+</table>
+<p>In this regard, the period coverage most likely better depicts the coverage of the programme. On the other hand, a programme with poor case-finding and recruitment and long lengths of stay may have a period coverage that is misleadingly high because of high number of recovering cases when in fact point coverage is the more reflective coverage of the programme. In addition, period coverage suffers from an overestimation bias. This is because the current period coverage estimator does not take into account cases of acute malnutrition who have recovered spontaneously but were never enrolled in any treatment programme.</p>
+<p>A recent Epicentre review <span class="citation">(Epicentre <a href="#ref-Epicentre:2015ty">2015</a>)</span> has highlighted the existence of these two coverage estimators as a source of confusion, with the risk that implementers may choose to assess period coverage (rather than point) simply because it produces a higher estimate. The review suggests that both coverage indicators could be reported, with sufficient context (e.g. on length of stay, timeliness of admissions, etc.) to allow for their interpretation. For this reason work has been conducted on further developing the coverage estimators to address this confusion around them. This work has included:</p>
 <ul>
 <li><p>A shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. <strong>Point coverage</strong> is now named <em>case-finding effectiveness</em> to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of MAM and then getting them to treatment. A programme with effective case-finding will always have good overall coverage when this estimator is used. <strong>Period coverage</strong> is now named <em>treatment coverage</em> as this is the estimator that approximates this coverage indicator the closest.</p></li>
 <li><p>Improvement of the period coverage estimator so that it can be used more precisely as a single coverage estimator for treatment coverage.</p></li>
