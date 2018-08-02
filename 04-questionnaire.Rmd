@@ -8,7 +8,7 @@ CMAM coverage surveys use primarily use two forms. The first form is used to col
 
 &nbsp;
 
-```{r samform, echo = FALSE, fig.cap = "SAM coverage survey sample/template form", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r samform, echo = FALSE, fig.cap = "SAM coverage survey sample/template form", out.width = "80%", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("forms/samForm.png")
 ```
 
@@ -18,7 +18,7 @@ The data collected using the tabular forms will allow estimation of coverage. Th
 
 &nbsp;
 
-```{r sambarriers, echo = FALSE, fig.cap = "SAM coverage barriers survey sample/template form", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r sambarriers, echo = FALSE, fig.cap = "SAM coverage barriers survey sample/template form", out.width = "80%", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("forms/samBarriersForm.png")
 ```
 
@@ -29,17 +29,12 @@ knitr::include_graphics("forms/samBarriersForm.png")
 
 For the survey for children 6-59 months, following is a sample/template questionnaire. 
 
-&nbsp;
-
 ```{r childform, echo = FALSE, fig.cap = "Children 6-59 months old and their mothers survey sample/template form", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("forms/childForm1.png")
 knitr::include_graphics("forms/childForm2.png")
 knitr::include_graphics("forms/childForm3.png")
 knitr::include_graphics("forms/childForm4.png")
 ```
-
-&nbsp;
-
 
 
 
