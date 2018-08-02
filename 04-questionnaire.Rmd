@@ -32,7 +32,10 @@ For the survey for children 6-59 months, following is a sample/template question
 &nbsp;
 
 ```{r childform, echo = FALSE, fig.cap = "Children 6-59 months old and their mothers survey sample/template form", fig.align = "center", fig.pos = "H", fig.retina = 1}
-knitr::include_graphics("forms/samBarriersForm.png")
+knitr::include_graphics("forms/childForm1.png")
+knitr::include_graphics("forms/childForm2.png")
+knitr::include_graphics("forms/childForm3.png")
+knitr::include_graphics("forms/childForm4.png")
 ```
 
 &nbsp;
