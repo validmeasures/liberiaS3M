@@ -187,16 +187,9 @@ The inclusion of recovering cases means that the single coverage estimate is mat
 
 Given this single coverage estimator, we further propose a shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. **Point coverage** is now named *case-finding effectiveness* to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of SAM and then getting them to treatment. **Period coverage** that has been improved into the single coverage metric is now named *treatment coverage* as this is the estimator that approximates this coverage indicator the closest.
 
-
 ## Vitamin A supplementation
 
 The standard estimator for vitamin A supplementation is the proportion of children aged 6-59 months who received two age-appropriate doses of vitamin A in the past 12 months.
-
-&nbsp;
-
-$$ \text{Vitamin A supplementation coverage} ~ = ~ \frac{\text{No. of children who received two age-appropriate doses of vitamin A in the past 12 months}}{\text{No. of children aged 6-59 months}} $$
-
-&nbsp;
 
 In standard surveys such as the DHS and MICS, this indicator is adjusted to a recall of 6 months for a single age-appropriate dose of vitamin A.
 
@@ -214,15 +207,17 @@ Population-based surveys typically report the percentage of women with a live bi
 
 ## Micronutrient powder supplementation
 
+The indicator for coverage of micronutrient powder supplementation is the proportion of children aged 6-23 months who consume micronutrient powder supplements. Depending on the programme protocol on mechanism of distribution and effective intake of MNP, a full indicator set on MNP supplementation can be devised that will be similar to the IFA supplementation falter point or bottleneck framework.
 
 ## IYCF counselling
 
+There are no standard indicators for IYCF counselling. Any indicator developed for this programme will depend on the mechanics of how the IYCF counselling is delivered and who the target beneficiaries are. In terms of mechanism, what is known so far is that these sessions are delivered via the health clinic/health post and that the target beneficiaries are pregnant women. Given this, similar approach to the IFA supplementation coverage of falter points/bottle necks can be used with the following indicators:
 
+1. At least one ANC visit during most recent pregnancy
 
+2. Awareness of IYCF counselling (have they been advised IYCF counselling)
 
-
-
-
+3. Attendance to IYCF counselling
 
 
 [^2]: This model assumes that incidence of acute malnutrition and programme coverage do not vary rapidly over time.
