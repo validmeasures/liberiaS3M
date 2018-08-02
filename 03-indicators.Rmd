@@ -185,13 +185,38 @@ $$ k ~ = ~ \frac{\text{Mean length of untreated episode}}{\text{Mean length of a
 
 The inclusion of recovering cases means that the single coverage estimate is mathematically constrained to return a coverage estimate that is greater than or equal to the point coverage estimate. The underestimation present in the point coverage estimate has, to some extent, been corrected. The inclusion of recovering cases that are not in the programme means that the single coverage estimator is mathematically constrained to return a coverage estimate that is less than or equal to the period coverage estimate. The overestimation present in the period coverage estimate has, to some extent, been corrected.
 
-Given this single coverage estimator, we further propose a shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. **Point coverage** is now named *case-finding effectiveness* to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of SAM and then getting them to treatment. **Period coverage** that has been improved into the single coverage metric is now named *treatment coverage* as this is the estimator that approximates this coverage indicator the closest.
+Given this single coverage estimator, a shift in terminology is proposed that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. **Point coverage** is now named *case-finding effectiveness* to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of SAM and then getting them to treatment. **Period coverage** that has been improved into the single coverage metric is now named *treatment coverage* as this is the estimator that approximates this coverage indicator the closest.
+
+### Requirements 
+
+This indicator will require additional programmatic information to be operationalised specific for Liberia.
+
+It would be ideal that a Liberia-specific value for mean length of a treatment episode be estimated using routine programme data from a selection of cured cases from a selection of health centres providing CMAM services in the two counties in which the survey is to be implemented. This data should be collected from the beneficiary cards of cured cases. For each county, a total of 30 health centres from the full list of health centres in the county can be selected systematically. Of these 30 health centres, a sample of 30 records of discharged cured cases should be selected. From these records, data on date of admission and date of discharge should be extracted collated into a data format (ideally a comma-separated value or CSV file) with each of these values in a separate column.
+
+This data will allow the calculation of the mean length of stay in the CMAM programme of discharge cured cases.
+
+&nbsp;
+
+$$ \text{Mean length of stay} ~ = ~ \frac{\text{Length of stay in programme (days)}}{\text{Number of records}} $$
 
 ## Vitamin A supplementation
 
 The standard estimator for vitamin A supplementation is the proportion of children aged 6-59 months who received two age-appropriate doses of vitamin A in the past 12 months.
 
 In standard surveys such as the DHS and MICS, this indicator is adjusted to a recall of 6 months for a single age-appropriate dose of vitamin A.
+
+In order to determine whether supplementation with vitamin A is age appropriate, vitamin A supplementation should first be assessed on the child's health card. Provision of vitamin A card is usually recorded on the child's health card with the corresponding does given. If health card not available or if health card is lost or if the child doesn't have a health card at all, then the mother/caregive will have to be asked whether their child has received vitamin A in the past 6 months and respond by recall. If the mother/caregiver says yes, then the next question to ask will be which type of gel capsule was provided. The blue vitamin A gel capsule containing 100,000 IU of vitamin A is given to children 6-11 months. The red vitamin A gel capsule containing 200,000 IU of vitamin A is given to children 12 - 59 months. A sample of the blue and the red gel capsule (or a photo of the capsules) can be used to aid the mother/caregiver in answering this question. 
+
+Given this, two indicators can be reported on vitamin A supplementation.
+
+1. Any vitamin A supplementation in the past 6 months.
+
+2. Age-appropriate vitamin A supplementation in the past 6 months.
+
+
+### Requirements
+
+Either samples and/or photos of both the blue and red gel vitamin A capsules will be needed per enumerator to use in aiding the mother to answer which type of vitamin A gel capsule has been provided to the child. 
 
 ## Iron-folic acid (IFA) supplementation for pregnant women
 
@@ -205,9 +230,23 @@ Population-based surveys typically report the percentage of women with a live bi
 
 4. Adherence to 180 days of supplementation
 
+### Requirements
+
+It would be ideal for each enumerator to have a sample/s and/or photos of an IFA tablet to show the respondent as an recall aid or prompt. Given that some mothers may have to recall as far back as 5 years and that they might not be able to remember that the tablet is called, showing them a sample of the tablet might help them remember if they have taken it.
+
 ## Micronutrient powder supplementation
 
-The indicator for coverage of micronutrient powder supplementation is the proportion of children aged 6-23 months who consume micronutrient powder supplements. Depending on the programme protocol on mechanism of distribution and effective intake of MNP, a full indicator set on MNP supplementation can be devised that will be similar to the IFA supplementation falter point or bottleneck framework.
+The indicator for coverage of micronutrient powder supplementation is the proportion of children aged 6-23 months who consume micronutrient powder supplements. Depending on the programme protocol on mechanism of distribution and effective intake of MNP, a full indicator set on MNP supplementation can be devised that will be similar to the IFA supplementation falter point or bottleneck framework. For example, if MNPs were being provided through the health centres or health posts, then the following indicators can be assessed hierarchically:
+
+1. Health centre / health post attendance in the past month
+
+2. Awareness of MNP
+
+3. Consumption of MNP
+
+### Requirement
+
+It would be ideal to provide enumerators with sample/s and/or photo/s of MNP sachets used in Liberia. If there are various brands of MNP distributed, it would be good to have sample/s and/or photo/s of each one. These sample/s and/or photo/s can be used to help mothers or caregivers recall or know what an MNP is and be able to ascertain whether they do know it or have heard of it and whether their child has consuemd it.
 
 ## IYCF counselling
 
@@ -215,9 +254,13 @@ There are no standard indicators for IYCF counselling. Any indicator developed f
 
 1. At least one ANC visit during most recent pregnancy
 
-2. Awareness of IYCF counselling (have they been advised IYCF counselling)
+2. Awareness of IYCF counselling (have they been advised IYCF counselling when they attended ANC)
 
 3. Attendance to IYCF counselling
+
+### Requirement
+
+It would be ideal to have the training materials used for IYCF counselling and the materials used when conducting IYCF counselling. These materials can be used as a recall aid for mothers/caregivers who are being asked about whether they know or have heard about IYCF counselling and whether they have attended.
 
 
 [^2]: This model assumes that incidence of acute malnutrition and programme coverage do not vary rapidly over time.
