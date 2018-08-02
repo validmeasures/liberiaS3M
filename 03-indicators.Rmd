@@ -199,6 +199,20 @@ This data will allow the calculation of the mean length of stay in the CMAM prog
 
 $$ \text{Mean length of stay} ~ = ~ \frac{\text{Length of stay in programme (days)}}{\text{Number of records}} $$
 
+&nbsp;
+
+For datat collection, enumerators will require:
+
+1. A height board;
+
+2. A digital weighing scale; and,
+
+3. A MUAC tape.
+
+Traditionally, if data collection is done using pen and paper, enumerators are provided with z-score tables for weight-for-height so that they can determine if child is SAM. Since this survey will utilise digital data collection (see Section \@ref(#analysis)), the digital form will determine whether the child is SAM by MUAC and/or weight-for-height and/or oedema and will instruct the enumerators on what to do next if the child is a SAM case.
+
+Referral slips will also be needed so that children who are identified as SAM but not in the programme can be referred.
+
 ## Vitamin A supplementation
 
 The standard estimator for vitamin A supplementation is the proportion of children aged 6-59 months who received two age-appropriate doses of vitamin A in the past 12 months.
