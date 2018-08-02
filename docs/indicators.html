@@ -83,7 +83,9 @@
 <li class="chapter" data-level="2.4" data-path="sample.html"><a href="sample.html#urbanrural"><i class="fa fa-check"></i><b>2.4</b> Urban and rural sample considerations</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="indicators.html"><a href="indicators.html"><i class="fa fa-check"></i><b>3</b> Indicators</a><ul>
-<li class="chapter" data-level="3.1" data-path="indicators.html"><a href="indicators.html#cmam-coverage"><i class="fa fa-check"></i><b>3.1</b> CMAM coverage</a></li>
+<li class="chapter" data-level="3.1" data-path="indicators.html"><a href="indicators.html#cmam-coverage"><i class="fa fa-check"></i><b>3.1</b> CMAM coverage</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="indicators.html"><a href="indicators.html#requirements"><i class="fa fa-check"></i><b>3.1.1</b> Requirements</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="indicators.html"><a href="indicators.html#vitamin-a-supplementation"><i class="fa fa-check"></i><b>3.2</b> Vitamin A supplementation</a></li>
 <li class="chapter" data-level="3.3" data-path="indicators.html"><a href="indicators.html#iron-folic-acid-ifa-supplementation-for-pregnant-women"><i class="fa fa-check"></i><b>3.3</b> Iron-folic acid (IFA) supplementation for pregnant women</a></li>
 <li class="chapter" data-level="3.4" data-path="indicators.html"><a href="indicators.html#micronutrient-powder-supplementation"><i class="fa fa-check"></i><b>3.4</b> Micronutrient powder supplementation</a></li>
@@ -261,7 +263,15 @@ of 2.5 months could be used in the absence of better information or when the val
 <p><span class="math display">\[ k ~ = ~ \frac{\text{Mean length of untreated episode}}{\text{Mean length of a treatment episode}} ~ = ~ \frac{7.5}{2.5} ~ = ~ 3 \]</span></p>
 <p> </p>
 <p>The inclusion of recovering cases means that the single coverage estimate is mathematically constrained to return a coverage estimate that is greater than or equal to the point coverage estimate. The underestimation present in the point coverage estimate has, to some extent, been corrected. The inclusion of recovering cases that are not in the programme means that the single coverage estimator is mathematically constrained to return a coverage estimate that is less than or equal to the period coverage estimate. The overestimation present in the period coverage estimate has, to some extent, been corrected.</p>
-<p>Given this single coverage estimator, we further propose a shift in terminology that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. <strong>Point coverage</strong> is now named <em>case-finding effectiveness</em> to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of SAM and then getting them to treatment. <strong>Period coverage</strong> that has been improved into the single coverage metric is now named <em>treatment coverage</em> as this is the estimator that approximates this coverage indicator the closest.</p>
+<p>Given this single coverage estimator, a shift in terminology is proposed that is more descriptive and specific with regard to what the estimator is actually measuring, allowing both measures to be reported together without confusion. <strong>Point coverage</strong> is now named <em>case-finding effectiveness</em> to more precisely reflect it as a measure of the programme’s ability to find and recruit current cases. This indicator assesses how good the treatment programme is in finding cases of SAM and then getting them to treatment. <strong>Period coverage</strong> that has been improved into the single coverage metric is now named <em>treatment coverage</em> as this is the estimator that approximates this coverage indicator the closest.</p>
+<div id="requirements" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Requirements</h3>
+<p>This indicator will require additional programmatic information to be operationalised specific for Liberia.</p>
+<p>It would be ideal that a Liberia-specific value for mean length of a treatment episode be estimated using routine programme data from a selection of cured cases from a selection of health centres providing CMAM services in the two counties in which the survey is to be implemented. This data should be collected from the beneficiary cards of cured cases. For each county, a total of 30 health centres from the full list of health centres in the county can be selected systematically. Of these 30 health centres, a sample of 30 records of discharged cured cases should be selected. From these records, data on date of admission and date of discharge should be extracted collated into a data format (ideally a comma-separated value or CSV file) with each of these values in a separate column.</p>
+<p>This data will allow the calculation of the mean length of stay in the CMAM programme of discharge cured cases.</p>
+<p> </p>
+<p><span class="math display">\[ \text{Mean length of stay} ~ = ~ \frac{\text{Length of stay in programme (days)}}{\text{Number of records}} \]</span></p>
+</div>
 </div>
 <div id="vitamin-a-supplementation" class="section level2">
 <h2><span class="header-section-number">3.2</span> Vitamin A supplementation</h2>
@@ -287,7 +297,7 @@ of 2.5 months could be used in the absence of better information or when the val
 <p>There are no standard indicators for IYCF counselling. Any indicator developed for this programme will depend on the mechanics of how the IYCF counselling is delivered and who the target beneficiaries are. In terms of mechanism, what is known so far is that these sessions are delivered via the health clinic/health post and that the target beneficiaries are pregnant women. Given this, similar approach to the IFA supplementation coverage of falter points/bottle necks can be used with the following indicators:</p>
 <ol style="list-style-type: decimal">
 <li><p>At least one ANC visit during most recent pregnancy</p></li>
-<li><p>Awareness of IYCF counselling (have they been advised IYCF counselling)</p></li>
+<li><p>Awareness of IYCF counselling (have they been advised IYCF counselling when they attended ANC)</p></li>
 <li><p>Attendance to IYCF counselling</p></li>
 </ol>
 

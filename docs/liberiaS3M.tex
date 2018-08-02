@@ -1560,17 +1560,43 @@ than or equal to the period coverage estimate. The overestimation
 present in the period coverage estimate has, to some extent, been
 corrected.
 
-Given this single coverage estimator, we further propose a shift in
-terminology that is more descriptive and specific with regard to what
-the estimator is actually measuring, allowing both measures to be
-reported together without confusion. \textbf{Point coverage} is now
-named \emph{case-finding effectiveness} to more precisely reflect it as
-a measure of the programme's ability to find and recruit current cases.
+Given this single coverage estimator, a shift in terminology is proposed
+that is more descriptive and specific with regard to what the estimator
+is actually measuring, allowing both measures to be reported together
+without confusion. \textbf{Point coverage} is now named
+\emph{case-finding effectiveness} to more precisely reflect it as a
+measure of the programme's ability to find and recruit current cases.
 This indicator assesses how good the treatment programme is in finding
 cases of SAM and then getting them to treatment. \textbf{Period
 coverage} that has been improved into the single coverage metric is now
 named \emph{treatment coverage} as this is the estimator that
 approximates this coverage indicator the closest.
+
+\hypertarget{requirements}{%
+\subsection{Requirements}\label{requirements}}
+
+This indicator will require additional programmatic information to be
+operationalised specific for Liberia.
+
+It would be ideal that a Liberia-specific value for mean length of a
+treatment episode be estimated using routine programme data from a
+selection of cured cases from a selection of health centres providing
+CMAM services in the two counties in which the survey is to be
+implemented. This data should be collected from the beneficiary cards of
+cured cases. For each county, a total of 30 health centres from the full
+list of health centres in the county can be selected systematically. Of
+these 30 health centres, a sample of 30 records of discharged cured
+cases should be selected. From these records, data on date of admission
+and date of discharge should be extracted collated into a data format
+(ideally a comma-separated value or CSV file) with each of these values
+in a separate column.
+
+This data will allow the calculation of the mean length of stay in the
+CMAM programme of discharge cured cases.
+
+~
+
+\[ \text{Mean length of stay} ~ = ~ \frac{\text{Length of stay in programme (days)}}{\text{Number of records}} \]
 
 \hypertarget{vitamin-a-supplementation}{%
 \section{Vitamin A supplementation}\label{vitamin-a-supplementation}}
@@ -1640,8 +1666,8 @@ with the following indicators:
 \item
   At least one ANC visit during most recent pregnancy
 \item
-  Awareness of IYCF counselling (have they been advised IYCF
-  counselling)
+  Awareness of IYCF counselling (have they been advised IYCF counselling
+  when they attended ANC)
 \item
   Attendance to IYCF counselling
 \end{enumerate}
