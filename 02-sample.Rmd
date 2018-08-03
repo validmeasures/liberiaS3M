@@ -1033,11 +1033,11 @@ $$ n_{villages} ~ = ~ \frac{\text{Target sample size}}{n_{\text{average village 
 
 The average village population can be estimated using per village population in Grand Bassa county and Rural Montserrado provided by the Liberia Institute of Statistics and Geo-informatio Services to UNICEF. Using this data, the average village population in Grand Bassa (including urban areas) is 521 and the average village population in Rural Montserrado is 474.
 
-The proportion of children under 5 can be estimated using data from teh US Census bureau on estimated population for single years (https://www.census.gov/data-tools/demo/idb/region.php?N=%20Results%20&T=15&A=separate&RT=0&Y=2018&R=-1&C=LI). Using this data, the estimated proportion of under five children is about 17%.
+The proportion of children under 5 can be estimated using data from teh [US Census Bureau](https://www.census.gov/data-tools/demo/idb/region.php?N=%20Results%20&T=15&A=separate&RT=0&Y=2018&R=-1&C=LI) on estimated population for single years. Using this data, the estimated proportion of under five children is about 17%.
 
-The SAM prevalence can be estimated as 3% (based on communcaiton with UNICEF). This is most likely a high estiamted considering that this is the estimate for the whole country and not specific to the counties. So, it might be good to use a lower estimate for SAM to ensure there is enough villages sampled to get the target. An estimate of 1.5% is recommended.
+The SAM prevalence can be estimated as 3% (based on communcaiton with UNICEF). This is most likely a high estimate considering that this is the estimate for the whole country and not specific to the counties. Also, seasonality of SAM prevalence will need to be taken into account. If the period in which the survey is to be conducted is as season for low prevalence of SAM, this should considered in the estimation. So, it might be good to use a lower estimate for SAM to ensure there is enough villages sampled to get the target. An estimate of 1.5% (or even lower) is recommended.
 
-Using these values, the number of villages needed to sample in each county (and urban areas if included) can be calculated as follows:
+Using these values, the number of villages needed to sample in each county (and urban areas if included) can be calculated for each county as follows:
 
 &nbsp;
 
@@ -1086,6 +1086,5 @@ n_{\text{children 6-59 months and mothers}} & ~ = ~ \left \lceil \frac{\text{Tar
 &nbsp;
 
 Twenty children 6-59 months and their mothers will need to be sampled from each of the 30 villages for each county (and urban areas if included).
-
 
 [^1]: Capture and re-capture studies done to test the sensitivity of active and adaptive case-finding as a sampling approach to find all or nearly all SAM cases were all implemented using MUAC as the indicator for SAM (see [@Wegerdt:2006ux]). 
