@@ -6,9 +6,35 @@ Appropriate data check mechanisms will be put in place using the data check syst
 
 Data analysis will be done using R language for statistical computing [@R:2018] through bespoke analytic scripts put together into application-based workflow which can be used by non-R users. The application that will be created for this study will be designed such that an automatic reporting format is produced including maps, figures and tables of results.
 
-## Analysis
+## Analytical approach for estimating coverage indicators
 
+It is important to note that data analysis procedures need to account for the sample design. All major statistical analysis software can do this (details vary). There are two things to note:
 
+* This survey is a two-stage sample. Subjects are sampled from a small number of primary sampling units (PSUs).
+* This survey is **not** prior weighted. This means that per-PSU sampling weights will be needed. These are usually the populations of the PSU.
+
+This sample design will need to be specified to your statistical analysis software. Failing this, the analysis may produce estimates that place undue weight to observations from smaller communities with confidence intervals with lower than nominal coverage (i.e. they will be too narrow).
+
+For this survey, the *blocked weighted bootstrap* estimation approach will be used:
+
+* **Blocked** : The block corresponds to the PSU or cluster.
+* **Weighted** : The sampling procedure for this survey does not use population proportional sampling to weight the sample prior to data collection as is done with SMART type surveys. This means that a posterior weighting procedure is required. The “roulette wheel” algorithm to weight (i.e. by population) the selection probability of PSUs in bootstrap replicates will be utilised.
+
+A total of `m'` PSUs are sampled *with-replacement* from the survey dataset where `m'` is the number of PSUs in the survey sample. Individual records within each PSU are then sampled *with-replacement*. A total of n' records are sampled *with-replacement* from each of the selected PSUs where `n'` is the number of individual records in a selected PSU. The resulting collection of records replicates the original survey in terms of both sample design and sample size. A large number of replicate surveys are taken (mininum of $r = 399$ replicate surveys but this can be changed). The required statistic (e.g. the mean of an indicator value) is applied to each replicate survey. The reported estimate consists of the 50th (point estimate), 2.5th (lower 95% confidence limit), and the 97.5th (upper 95% confidence limit) percentiles of the distribution of the statistic observed across all replicate surveys. The blocked weighted bootstrap procedure is outlined in Figure \@ref(fig:indicators31).
+
+The principal advantages of using a bootstrap estimator are:
+
+* Bootstrap estimators work well with small sample sizes.
+
+* The method is *non-parametric* and uses empirical rather than theoretical distributions. There are no assumptions of things like normality to worry about.
+
+* The method allows estimation of the sampling distribution of almost any statistic using only simple computational methods.
+
+\newpage
+
+```{r indicators31, echo = FALSE, fig.cap = "The blocked weighted bootstrap used by the standard RAM-OP software", fig.align = "center", fig.pos = "H", fig.retina = 1}
+knitr::include_graphics("figures/bbw.png")
+```
 
 
 
