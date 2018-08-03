@@ -2352,6 +2352,121 @@ questionnaire.
 \hypertarget{data}{%
 \chapter{Data management and analysis}\label{data}}
 
+Data will be collected using an electronic data entry system based on
+the \textbf{Open Data Kit (ODK)} standard that runs on the Android®
+operating software (OS) platform for mobile devices. The study
+instrument (see Section \ref{questionnaire}) will be encoded into the
+electronic data entry system platform and will be served out of either a
+local computer server or a remote/cloud-based server\footnote{This will
+  depend on what resources are available to the Liberia Institute of
+  Statistics and Geo-Information Services. Valid International has
+  resources to implement either a local server or a remote server
+  solution.}. Each study team will be provided with mobile devices
+running on Android® OS that have been configured with an application
+that will receive the electronic data form. All measurements and answers
+by respondents will then be recorded on the mobile devices and will then
+be transmitted to the local server or the remote server whenever there
+is a mobile phone and / or WiFi signal.
+
+Appropriate data check mechanisms will be put in place using the data
+check systems available with the ODK system. Spot checks by study
+supervisor/s will be done in the field to ensure that enumerators are
+performing the measurements correctly, administering the study
+instrument correctly and entering all data accordingly. Further checks
+will be performed by the survey manager on the data as needed as they
+are received by the local server or remote server.
+
+Data analysis will be done using R language for statistical computing
+\citep{R:2018} through bespoke analytic scripts put together into
+application-based workflow which can be used by non-R users. The
+application that will be created for this study will be designed such
+that an automatic reporting format is produced including maps, figures
+and tables of results.
+
+\hypertarget{analytical-approach-for-estimating-coverage-indicators}{%
+\section{Analytical approach for estimating coverage
+indicators}\label{analytical-approach-for-estimating-coverage-indicators}}
+
+It is important to note that data analysis procedures need to account
+for the sample design. All major statistical analysis software can do
+this (details vary). There are two things to note:
+
+\begin{itemize}
+\tightlist
+\item
+  This survey is a two-stage sample. Subjects are sampled from a small
+  number of primary sampling units (PSUs).
+\item
+  This survey is \textbf{not} prior weighted. This means that per-PSU
+  sampling weights will be needed. These are usually the populations of
+  the PSU.
+\end{itemize}
+
+This sample design will need to be specified to your statistical
+analysis software. Failing this, the analysis may produce estimates that
+place undue weight to observations from smaller communities with
+confidence intervals with lower than nominal coverage (i.e.~they will be
+too narrow).
+
+For this survey, the \emph{blocked weighted bootstrap} estimation
+approach will be used:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Blocked} : The block corresponds to the PSU or cluster.
+\item
+  \textbf{Weighted} : The sampling procedure for this survey does not
+  use population proportional sampling to weight the sample prior to
+  data collection as is done with SMART type surveys. This means that a
+  posterior weighting procedure is required. The ``roulette wheel''
+  algorithm to weight (i.e.~by population) the selection probability of
+  PSUs in bootstrap replicates will be utilised.
+\end{itemize}
+
+A total of \texttt{m\textquotesingle{}} PSUs are sampled
+\emph{with-replacement} from the survey dataset where
+\texttt{m\textquotesingle{}} is the number of PSUs in the survey sample.
+Individual records within each PSU are then sampled
+\emph{with-replacement}. A total of n' records are sampled
+\emph{with-replacement} from each of the selected PSUs where
+\texttt{n\textquotesingle{}} is the number of individual records in a
+selected PSU. The resulting collection of records replicates the
+original survey in terms of both sample design and sample size. A large
+number of replicate surveys are taken (mininum of \(r = 399\) replicate
+surveys but this can be changed). The required statistic (e.g.~the mean
+of an indicator value) is applied to each replicate survey. The reported
+estimate consists of the 50th (point estimate), 2.5th (lower 95\%
+confidence limit), and the 97.5th (upper 95\% confidence limit)
+percentiles of the distribution of the statistic observed across all
+replicate surveys. The blocked weighted bootstrap procedure is outlined
+in Figure \ref{fig:indicators31}.
+
+The principal advantages of using a bootstrap estimator are:
+
+\begin{itemize}
+\item
+  Bootstrap estimators work well with small sample sizes.
+\item
+  The method is \emph{non-parametric} and uses empirical rather than
+  theoretical distributions. There are no assumptions of things like
+  normality to worry about.
+\item
+  The method allows estimation of the sampling distribution of almost
+  any statistic using only simple computational methods.
+\end{itemize}
+
+\newpage
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=9.76in]{figures/bbw} 
+
+}
+
+\caption{The blocked weighted bootstrap used by the standard RAM-OP software}\label{fig:indicators31}
+\end{figure}
+
 \bibliography{book.bib}
 
 

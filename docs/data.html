@@ -118,7 +118,9 @@
 <li class="chapter" data-level="4.1" data-path="questionnaire.html"><a href="questionnaire.html#cmam-coverage-survey-instruments"><i class="fa fa-check"></i><b>4.1</b> CMAM coverage survey instruments</a></li>
 <li class="chapter" data-level="4.2" data-path="questionnaire.html"><a href="questionnaire.html#survey-for-children-6-59-months-and-their-mothers"><i class="fa fa-check"></i><b>4.2</b> Survey for children 6-59 months and their mothers</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>5</b> Data management and analysis</a></li>
+<li class="chapter" data-level="5" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>5</b> Data management and analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="data.html"><a href="data.html#analytical-approach-for-estimating-coverage-indicators"><i class="fa fa-check"></i><b>5.1</b> Analytical approach for estimating coverage indicators</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li></li>
@@ -142,7 +144,44 @@
             <section class="normal" id="section-">
 <div id="data" class="section level1">
 <h1><span class="header-section-number">5</span> Data management and analysis</h1>
+<p>Data will be collected using an electronic data entry system based on the <strong>Open Data Kit (ODK)</strong> standard that runs on the Android® operating software (OS) platform for mobile devices. The study instrument (see Section <a href="questionnaire.html#questionnaire">4</a>) will be encoded into the electronic data entry system platform and will be served out of either a local computer server or a remote/cloud-based server<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Each study team will be provided with mobile devices running on Android® OS that have been configured with an application that will receive the electronic data form. All measurements and answers by respondents will then be recorded on the mobile devices and will then be transmitted to the local server or the remote server whenever there is a mobile phone and / or WiFi signal.</p>
+<p>Appropriate data check mechanisms will be put in place using the data check systems available with the ODK system. Spot checks by study supervisor/s will be done in the field to ensure that enumerators are performing the measurements correctly, administering the study instrument correctly and entering all data accordingly. Further checks will be performed by the survey manager on the data as needed as they are received by the local server or remote server.</p>
+<p>Data analysis will be done using R language for statistical computing <span class="citation">(<span class="citeproc-not-found" data-reference-id="R:2018"><strong>???</strong></span>)</span> through bespoke analytic scripts put together into application-based workflow which can be used by non-R users. The application that will be created for this study will be designed such that an automatic reporting format is produced including maps, figures and tables of results.</p>
+<div id="analytical-approach-for-estimating-coverage-indicators" class="section level2">
+<h2><span class="header-section-number">5.1</span> Analytical approach for estimating coverage indicators</h2>
+<p>It is important to note that data analysis procedures need to account for the sample design. All major statistical analysis software can do this (details vary). There are two things to note:</p>
+<ul>
+<li>This survey is a two-stage sample. Subjects are sampled from a small number of primary sampling units (PSUs).</li>
+<li>This survey is <strong>not</strong> prior weighted. This means that per-PSU sampling weights will be needed. These are usually the populations of the PSU.</li>
+</ul>
+<p>This sample design will need to be specified to your statistical analysis software. Failing this, the analysis may produce estimates that place undue weight to observations from smaller communities with confidence intervals with lower than nominal coverage (i.e. they will be too narrow).</p>
+<p>For this survey, the <em>blocked weighted bootstrap</em> estimation approach will be used:</p>
+<ul>
+<li><strong>Blocked</strong> : The block corresponds to the PSU or cluster.</li>
+<li><strong>Weighted</strong> : The sampling procedure for this survey does not use population proportional sampling to weight the sample prior to data collection as is done with SMART type surveys. This means that a posterior weighting procedure is required. The “roulette wheel” algorithm to weight (i.e. by population) the selection probability of PSUs in bootstrap replicates will be utilised.</li>
+</ul>
+<p>A total of <code>m'</code> PSUs are sampled <em>with-replacement</em> from the survey dataset where <code>m'</code> is the number of PSUs in the survey sample. Individual records within each PSU are then sampled <em>with-replacement</em>. A total of n’ records are sampled <em>with-replacement</em> from each of the selected PSUs where <code>n'</code> is the number of individual records in a selected PSU. The resulting collection of records replicates the original survey in terms of both sample design and sample size. A large number of replicate surveys are taken (mininum of <span class="math inline">\(r = 399\)</span> replicate surveys but this can be changed). The required statistic (e.g. the mean of an indicator value) is applied to each replicate survey. The reported estimate consists of the 50th (point estimate), 2.5th (lower 95% confidence limit), and the 97.5th (upper 95% confidence limit) percentiles of the distribution of the statistic observed across all replicate surveys. The blocked weighted bootstrap procedure is outlined in Figure <a href="data.html#fig:indicators31">5.1</a>.</p>
+<p>The principal advantages of using a bootstrap estimator are:</p>
+<ul>
+<li><p>Bootstrap estimators work well with small sample sizes.</p></li>
+<li><p>The method is <em>non-parametric</em> and uses empirical rather than theoretical distributions. There are no assumptions of things like normality to worry about.</p></li>
+<li><p>The method allows estimation of the sampling distribution of almost any statistic using only simple computational methods.</p></li>
+</ul>
 
+<div class="figure" style="text-align: center"><span id="fig:indicators31"></span>
+<img src="figures/bbw.png" alt="The blocked weighted bootstrap used by the standard RAM-OP software" width="703" />
+<p class="caption">
+Figure 5.1: The blocked weighted bootstrap used by the standard RAM-OP software
+</p>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>This will depend on what resources are available to the Liberia Institute of Statistics and Geo-Information Services. Valid International has resources to implement either a local server or a remote server solution.<a href="data.html#fnref4" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
