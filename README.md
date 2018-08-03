@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/validmeasures/liberiaS3M.svg?branch=master)](https://travis-ci.org/validmeasures/liberiaS3M)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/validmeasures/liberiaS3M?branch=master&svg=true)](https://ci.appveyor.com/project/validmeasures/liberiaS3M)
+[![DOI](https://zenodo.org/badge/137984397.svg)](https://zenodo.org/badge/latestdoi/137984397)
 
 
 The **Simple Spatial Survey Method (S3M)** was developed from the CSAS coverage survey method as a response to the widespread adoption of community management of acute malnutrition (CMAM) by ministries of health. Large-scale programs need a large-scale survey method and S3M was developed to meet that need.
