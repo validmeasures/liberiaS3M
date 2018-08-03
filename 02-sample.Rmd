@@ -775,7 +775,7 @@ If you are investigating multiple indicators which apply to different groups of 
 
 ### Stage 2 sampling for CMAM coverage survey
 
-For the survey for CMAM coverage, an active and adaptive (snowball) case-finding method can be used in stage 2 sampling to find all or nearly all SAM cases by MUAC in the stage 1 sample [@Myatt:2012tt]. However, given that the Liberia CMAM programme uses both MUAC and weight-for-height as independent criteria for SAM, it is uncertain whether the use of active and adaptive case finding using weight-for-height will find all or nearly all SAM cases by weight-for-height[^1]. It is therefore recommended that a full census of children aged 6-59 months in the selected villages in the stage 1 sample be conducted to ensure exhaustivity. This will also be the approach to use in urban areas given that active and adaptive case finding has been known to fail in finding all SAM cases when implemented in urban areas [@Myatt:2012tt]. As an example, the only other known coverage survey conducted in Liberia is that which was conducted by Accion contra la faim in 2011 to assess coverage of CMAM in Greater Monrovia [@AccionContralaFaim:2011vu]. In this survey, it was unclear as to wehther both MUAC and weight-for-height was used to identify SAM but both active adaptive case finding and mass screening was used to ensure that all or nearly all CAM cases are found. Doing both approaches will be too resource-intensive. A good census sample taken house-to-house or door-to-door should be sufficient. 
+For the survey for CMAM coverage, an active and adaptive (snowball) case-finding method can be used in stage 2 sampling to find all or nearly all SAM cases by MUAC in the stage 1 sample [@Myatt:2012tt]. However, given that the Liberia CMAM programme uses both MUAC and weight-for-height as independent criteria for SAM, it is uncertain whether the use of active and adaptive case finding using weight-for-height will find all or nearly all SAM cases by weight-for-height[^1]. It is therefore recommended that a full census of children aged 6-59 months in the selected villages in the stage 1 sample be conducted to ensure exhaustivity. This will also be the approach to use in urban areas given that active and adaptive case finding has been known to fail in finding all SAM cases when implemented in urban areas [@Myatt:2012tt]. As an example, the only other known coverage survey conducted in Liberia is that which was conducted by Accion contra la faim in 2011 to assess coverage of CMAM in Greater Monrovia [@AccionContralaFaim:2011vu]. In this survey, it was unclear as to whether both MUAC and weight-for-height was used to identify SAM but both active adaptive case finding and mass screening was used to ensure that all or nearly all CAM cases are found. Doing both approaches will be too resource-intensive. A good census sample taken house-to-house or door-to-door should be sufficient. 
 
 ### Stage 2 sampling for children 6-59 months and their mothers
 
@@ -861,9 +861,9 @@ This indicator requires a sample of under 5 children who have SAM. SAM children 
 
 ### Survey for children aged 6-59 months and their mothers
 
-For vitamin A supplementation, micronutrient powder supplementation, IYCF counselling and ferrous sulfate-folic acid supplementation the sample size of 192 would be the target sample size for each of these indicators.
+For vitamin A supplementation, micronutrient powder supplementation, IYCF counselling and ferrous sulphate-folic acid supplementation the sample size of 192 would be the target sample size for each of these indicators.
 
-However, given that this is a compound sample such that the MNP supplementatation indicator is only for chilren 6-23 months old, the 192 sample will need to be inflated for the sample of children 6-59 months old big enough to ensure that at least 192 children aged 6-23 months will be inlcuded in the sample. The factor by which to inflate the sample size for children 6-59 months old can be estimated as follows:
+However, given that this is a compound sample such that the MNP supplementation indicator is only for children 6-23 months old, the 192 sample will need to be inflated for the sample of children 6-59 months old big enough to ensure that at least 192 children aged 6-23 months will be included in the sample. The factor by which to inflate the sample size for children 6-59 months old can be estimated as follows:
 
 &nbsp;
 
@@ -879,7 +879,7 @@ So, our sample size for the survey for children 6-59 months old and their mother
 
 Currently, the requirements for the survey is to provide coverage estimates for Montserrado rural districts and the whole Grand Bassa county. Urban areas have been specifically excluded.
 
-Given that urban areas would most likely have different characteristics than rural areas, it is more reasonable to treat urban areas as a separate survey area. If urban areas are to be sampled, then urben areas should have its own sample with the same minimum sample size as described above. The implication of this would be an extra survey for each and every urban area to be assessed.
+Given that urban areas would most likely have different characteristics than rural areas, it is more reasonable to treat urban areas as a separate survey area. If urban areas are to be sampled, then urban areas should have its own sample with the same minimum sample size as described above. The implication of this would be an extra survey for each and every urban area to be assessed.
 
 ## Overall sampling frame {#samplingframe}
 
@@ -887,9 +887,9 @@ Given the stage 1 sampling, stage 2 sampling and sample size considerations desc
 
 ### Sampling frame for the CMAM coverage survey
 
-Using an S3M approach to stage 1 sampling, thirty (30) stage 1 sampling points will be identified. This is an adapation of S3M such that instead of first specifying a $d$ value, a minimum number of stage 1 samples is specified based on which the hexagonal grid across each county will be drawn. This would mean that each county will be divided into 30 hexagonal, non-overlapping grids to identify 30 sampling points as the stage 1 sample. If estimates for urban areas will be required, then the urban areas of each county will be separated and a separate grid of 30 hexagons will be drawn on the map of the urban areas.
+Using an S3M approach to stage 1 sampling, thirty (30) stage 1 sampling points will be identified. This is an adaptation of S3M such that instead of first specifying a $d$ value, a minimum number of stage 1 samples is specified based on which the hexagonal grid across each county will be drawn. This would mean that each county will be divided into 30 hexagonal, non-overlapping grids to identify 30 sampling points as the stage 1 sample. If estimates for urban areas will be required, then the urban areas of each county will be separated and a separate grid of 30 hexagons will be drawn on the map of the urban areas.
 
-To determine how many villages near the 30 sampling points to select for the stage 1 sample, it would require estimating how many villages will need to be sampled to obtain the target sampel size of 96 SAM children in each county (and urban areas if inlcuded). This can be estimated as follows:
+To determine how many villages near the 30 sampling points to select for the stage 1 sample, it would require estimating how many villages will need to be sampled to obtain the target sample size of 96 SAM children in each county (and urban areas if included). This can be estimated as follows:
 
 &nbsp;
 
@@ -897,11 +897,11 @@ $$ n_{villages} ~ = ~ \frac{\text{Target sample size}}{n_{\text{average village 
 
 &nbsp;
 
-The average village population can be estimated using per village population in Grand Bassa county and Rural Montserrado provided by the Liberia Institute of Statistics and Geo-informatio Services to UNICEF. Using this data, the average village population in Grand Bassa (including urban areas) is 521 and the average village population in Rural Montserrado is 474.
+The average village population can be estimated using per village population in Grand Bassa county and Rural Montserrado provided by the Liberia Institute of Statistics and Geo-information Services to UNICEF. Using this data, the average village population in Grand Bassa (including urban areas) is 521 and the average village population in Rural Montserrado is 474.
 
-The proportion of children under 5 can be estimated using data from teh [US Census Bureau](https://www.census.gov/data-tools/demo/idb/region.php?N=%20Results%20&T=15&A=separate&RT=0&Y=2018&R=-1&C=LI) on estimated population for single years. Using this data, the estimated proportion of under five children is about 17%.
+The proportion of children under 5 can be estimated using data from the [US Census Bureau](https://www.census.gov/data-tools/demo/idb/region.php?N=%20Results%20&T=15&A=separate&RT=0&Y=2018&R=-1&C=LI) on estimated population for single years. Using this data, the estimated proportion of under five children is about 17%.
 
-The SAM prevalence can be estimated as 3% (based on communcaiton with UNICEF). This is most likely a high estimate considering that this is the estimate for the whole country and not specific to the counties. Also, seasonality of SAM prevalence will need to be taken into account. If the period in which the survey is to be conducted is as season for low prevalence of SAM, this should considered in the estimation. So, it might be good to use a lower estimate for SAM to ensure there is enough villages sampled to get the target. An estimate of 1.5% (or even lower) is recommended.
+The SAM prevalence can be estimated as 3% (based on communication with UNICEF). This is most likely a high estimate considering that this is the estimate for the whole country and not specific to the counties. Also, seasonality of SAM prevalence will need to be taken into account. If the period in which the survey is to be conducted is as season for low prevalence of SAM, this should considered in the estimation. So, it might be good to use a lower estimate for SAM to ensure there is enough villages sampled to get the target. An estimate of 1.5% (or even lower) is recommended.
 
 Using these values, the number of villages needed to sample in each county (and urban areas if included) can be calculated for each county as follows:
 
@@ -969,7 +969,7 @@ n_{\text{Sampling interval}} & ~ = ~ \frac{\text{Total number of houses/doors}}{
 
 Given the overall sampling frame for SAM coverage survey and survey for children 6-59 months and their mothers, the estimated time to complete the whole survey will be based on the total number of villages to sample and based on an assumed/estimated rate of completion of a single village by single survey team.
 
-A total of 90 villages will need to be sampled per county (and per urban area if included). Assuming that a single survey team can enumerate one village in a day, then the following lenght of survey in days can be considered based on number of survey teams:
+A total of 90 villages will need to be sampled per county (and per urban area if included). Assuming that a single survey team can enumerate one village in a day, then the following lent of survey in days can be considered based on number of survey teams:
 
 &nbsp;
 

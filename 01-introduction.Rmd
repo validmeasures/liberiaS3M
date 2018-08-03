@@ -20,6 +20,6 @@ This document concentrates on using S3M to assess the need for and coverage of:
 
 * Micronutrient powder supplementation;
 
-* Ferrous sulfate-folic acid supplementation; and,
+* Ferrous sulphate-folic acid supplementation; and,
 
 * Infant and young child feeding counselling.
