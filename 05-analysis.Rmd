@@ -1,5 +1,16 @@
 # Data management and analysis {#data}
 
+Data will be collected using an electronic data entry system based on the **Open Data Kit (ODK)** standard that runs on the Android® operating software (OS) platform for mobile devices. The study instrument (see Section \@ref(questionnaire)) will be encoded into the electronic data entry system platform and will be served out of either a local computer server or a remote/cloud-based server[^4]. Each study team will be provided with mobile devices running on Android® OS that have been configured with an application that will receive the electronic data form. All measurements and answers by respondents will then be recorded on the mobile devices and will then be transmitted to the local server or the remote server whenever there is a mobile phone and / or WiFi signal.
+
+Appropriate data check mechanisms will be put in place using the data check systems available with the ODK system. Spot checks by study supervisor/s will be done in the field to ensure that enumerators are performing the measurements correctly, administering the study instrument correctly and entering all data accordingly. Further checks will be performed by the survey manager on the data as needed as they are received by the local server or remote server.
+
+Data analysis will be done using R language for statistical computing [@R:2018] through bespoke analytic scripts put together into application-based workflow which can be used by non-R users. The application that will be created for this study will be designed such that an automatic reporting format is produced including maps, figures and tables of results.
+
+## Analysis
 
 
 
+
+
+
+[^4]: This will depend on what resources are available to the Liberia Institute of Statistics and Geo-Information Services. Valid International has resources to implement either a local server or a remote server solution.
