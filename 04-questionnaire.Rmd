@@ -6,7 +6,7 @@ The following are sample/template questionnaires used for the two types of surve
 
 CMAM coverage surveys use primarily use two forms. The first form is used to collect coverage data from SAM children found during the survey. Given that this survey will use house-to-house/door-to-door sampling for stage 2, then it would be necessary to record all data from all children that are measured with MUAC, weight-for-height and oedema. The following tabular form can be used for this purpose:
 
-&nbsp;
+\newpage
 
 ```{r samform, echo = FALSE, fig.cap = "SAM coverage survey sample/template form", out.width = "90%", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("forms/samForm.png")
@@ -16,14 +16,13 @@ knitr::include_graphics("forms/samForm.png")
 
 The data collected using the tabular forms will allow estimation of coverage. They do not, however, allow you to know the reasons for coverage failure. To collect this data we apply a “barriers” questionnaire to the mothers/carers of uncovered SAM cases. Here is an example of a barriers questionnaire:
 
-&nbsp;
+\newpage
 
 ```{r sambarriers, echo = FALSE, fig.cap = "SAM coverage barriers survey sample/template form", out.width = "90%", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("forms/samBarriersForm.png")
 ```
 
-&nbsp;
-
+\newpage
 
 ## Survey for children 6-59 months and their mothers
 

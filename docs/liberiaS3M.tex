@@ -90,7 +90,7 @@ assessing coverage of health and nutrition programmes in Liberia}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-03}
+    \date{2018-08-07}
 
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
@@ -458,7 +458,7 @@ point (see Figure \ref{fig:distance1}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=16.67in]{figures/step2} 
+{\centering \includegraphics{figures/step2} 
 
 }
 
@@ -634,7 +634,7 @@ the procedure outlined below.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=16.67in]{figures/step2a} 
+{\centering \includegraphics{figures/step2a} 
 
 }
 
@@ -945,7 +945,7 @@ in a staggered fashion. Alternate intersections of the grid in the x
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=21.46in]{figures/grid2a} 
+{\centering \includegraphics{figures/grid2a} 
 
 }
 
@@ -1042,7 +1042,7 @@ Avoid large triangles.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=23.97in]{figures/grid3a} 
+{\centering \includegraphics{figures/grid3a} 
 
 }
 
@@ -1241,7 +1241,7 @@ parts or segments, such as a community made up of several clusters:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=9.72in]{figures/stage2sample3} 
+{\centering \includegraphics{figures/stage2sample3} 
 
 }
 
@@ -1252,7 +1252,7 @@ or a community made up of several ribbons:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=9.72in]{figures/stage2sample4} 
+{\centering \includegraphics{figures/stage2sample4} 
 
 }
 
@@ -1263,7 +1263,7 @@ or a mixed community:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=9.72in]{figures/stage2sample5} 
+{\centering \includegraphics{figures/stage2sample5} 
 
 }
 
@@ -1670,6 +1670,7 @@ current cases. For example, a coverage survey found:
 programme with good case-finding and recruitment and short lengths of
 stay}\tabularnewline
 \toprule
+\endhead
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 Number of current cases\strut
 \end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft
@@ -1728,6 +1729,7 @@ yield very different results. For example:
 programme with good case-finding and recruitment and short lengths of
 stay}\tabularnewline
 \toprule
+\endhead
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 Number of current cases\strut
 \end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft
@@ -2118,7 +2120,7 @@ stage 2, then it would be necessary to record all data from all children
 that are measured with MUAC, weight-for-height and oedema. The following
 tabular form can be used for this purpose:
 
-~
+\newpage
 
 \begin{figure}[H]
 
@@ -2137,7 +2139,7 @@ coverage failure. To collect this data we apply a ``barriers''
 questionnaire to the mothers/carers of uncovered SAM cases. Here is an
 example of a barriers questionnaire:
 
-~
+\newpage
 
 \begin{figure}[H]
 
@@ -2148,7 +2150,7 @@ example of a barriers questionnaire:
 \caption{SAM coverage barriers survey sample/template form}\label{fig:sambarriers}
 \end{figure}
 
-~
+\newpage
 
 \hypertarget{survey-for-children-6-59-months-and-their-mothers}{%
 \section{Survey for children 6-59 months and their
@@ -2164,21 +2166,24 @@ questionnaire.
 }
 
 \caption{Children 6-59 months old and their mothers survey sample/template form}\label{fig:childform1}
-\end{figure}\begin{figure}[H]
+\end{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.9\linewidth]{forms/childForm2} 
 
 }
 
 \caption{Children 6-59 months old and their mothers survey sample/template form}\label{fig:childform1}
-\end{figure}\begin{figure}[H]
+\end{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.9\linewidth]{forms/childForm3} 
 
 }
 
 \caption{Children 6-59 months old and their mothers survey sample/template form}\label{fig:childform1}
-\end{figure}\begin{figure}[H]
+\end{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.9\linewidth]{forms/childForm4} 
 
@@ -2213,6 +2218,24 @@ performing the measurements correctly, administering the study
 instrument correctly and entering all data accordingly. Further checks
 will be performed by the survey manager on the data as needed as they
 are received by the local server or remote server.
+
+The digital data collection forms based on the Open Data Kit (ODK)
+standard using XLSform and XML is available at
+\url{https://github.com/validmeasures/liberiaS3Mforms}. The form
+faithfully replicates the paper-based forms described in Section
+\ref{questionnaire}. The form also faithfully replicates the sampling
+design described by the survey design such that proposed sampling
+interval within a primary sampling unit (PSU) is implemented as the
+survey team goes house-to-house finding SAM cases. The modules on IFA
+supplementation, IYCF counselling, vitamin A supplementation and MNP
+supplementation coverage appear appropriately on the digital forms when
+the correct household based on the sampling interval is being
+interviewed. The forms also appear appropriately based on eligibility of
+the child/mother as respnodents to the specific survey modules.
+
+These forms can be viewed and tested using an Android-based mobile
+device. Instructions for usage can be found at
+\url{https://github.com/validmeasures/liberiaS3Mforms}.
 
 Data analysis will be done using R language for statistical computing
 \citep{R:2018} through bespoke analytic scripts put together into
@@ -2297,12 +2320,76 @@ The principal advantages of using a bootstrap estimator are:
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=9.76in]{figures/bbw} 
+{\centering \includegraphics{figures/bbw} 
 
 }
 
 \caption{The blocked weighted bootstrap used by the standard RAM-OP software}\label{fig:indicators31}
 \end{figure}
+
+\hypertarget{analytical-approach-for-mapping-coverage-indicators}{%
+\section{Analytical approach for mapping coverage
+indicators}\label{analytical-approach-for-mapping-coverage-indicators}}
+
+The indicator mapping will create a surface map of indicator values
+using spatial interpolation. There are various approaches and methods of
+spatial interpolation, the main differences are determined by the
+weights applied to the point dataset to estimate values at each of the
+unknown points of the surface map. For the Liberia coverage survey,
+spatial interpolation will be performed using the inverse distance
+weighting (IDW) method. As the name implies, the IDW method uses weights
+that are inversely proportional to the distance of a point being
+estimated from the sampling point locations
+\citep{isaaks1989applied, diggle2007mbg, diggle2013statistical}. This
+can be mathematically demonstrated as follows:
+
+~
+
+\[\begin{aligned}
+\hat{v} & ~ = ~ \frac{\sum_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\sum_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
+\\
+where: & \\
+\\
+d_1 \ldots d_n  & ~ = ~ \text{distances from each of the } n \text{ sampling point locations to the point being estimated} \\
+p & ~ = ~ \text{power of the distance} \\
+v_1 \ldots v_n & ~ = ~ \text{sample values}
+\end{aligned}\]
+
+~
+
+The power of the distance \texttt{p} is an important aspect of the IDW
+method for point estimation. The influence of \texttt{p} to the weights
+applied to the point estimation is such that as \texttt{p} approaches 0,
+the weights become more similar, thereby giving more weight to the
+nearest sample values. As \texttt{p} approaches \(\infty\), the weights
+become more different from each other, thereby giving more weight to the
+closest sample. The power of the distance \texttt{p} has been
+traditionally set at 2 for convenience and ease of calculations. In
+theory, given a set \texttt{p}, IDW calculations can be performed using
+manual calculations aided by a spreadsheet and / or a calculator as it
+requires fewer calculations. For the Liberia Coverage Survey, \texttt{p}
+will be initially set at 2 and then cross-validation (see below) will be
+applied to optimise \texttt{p} to a value that minimises the estimation
+errors at each of the sampling point locations.
+
+Cross-validation is a technique applied to validate predictive models.
+It assesses how accurately the predictive model performs in practice.
+IDW is one of the simplest model-based interpolation methods available,
+but ideally would still require a form of cross-validation to determine
+the optimal value of the distance power \texttt{p} (described above).
+
+A two-fold cross validation \citep{bivand2008applied} in which data
+points are randomly split into two sets of equal size, with one set
+assigned as the validation data for testing the model, and the other set
+as the training data. The validation data is then interpolated using the
+IDW method with an initial \texttt{p} of 2 and the resulting predictions
+were compared with the training data. Comparison is made using the sum
+of the squared residuals between the predicted values and the observed
+values to report errors. Optimisation is then performed by replicating
+the two-fold cross validation process 100 times using randomly generated
+values for \texttt{p}. Out of these replicates, the value of \texttt{p}
+that provided prediction results with the minimum errors is selected as
+the distance power for the eventual interpolation performed.
 
 \bibliography{book.bib}
 
