@@ -36,7 +36,7 @@ The principal advantages of using a bootstrap estimator are:
 
 \newpage
 
-```{r indicators31, echo = FALSE, fig.cap = "The blocked weighted bootstrap used by the standard RAM-OP software", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r indicators31, echo = FALSE, fig.cap = "The blocked weighted bootstrap", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("figures/bbw.png")
 ```
 
@@ -47,11 +47,11 @@ The indicator mapping will create a surface map of indicator values using spatia
 &nbsp;
 
 $$\begin{aligned}
-\hat{v} & ~ = ~ \frac{\sum_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\sum_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
+\hat{v} & ~ = ~ \frac{\displaystyle \sum\limits_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\displaystyle \sum\limits_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
 \\
 where: & \\
 \\
-d_1 \ldots d_n  & ~ = ~ \text{distances from each of the } n \text{ sampling point locations to the point being estimated} \\
+d_1 \ldots d_n & ~ = ~ \text{distances from each } n \text{ sampling points to estimation point} \\
 p & ~ = ~ \text{power of the distance} \\
 v_1 \ldots v_n & ~ = ~ \text{sample values}
 \end{aligned}$$
