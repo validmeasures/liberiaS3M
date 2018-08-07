@@ -4,6 +4,10 @@ Data will be collected using an electronic data entry system based on the **Open
 
 Appropriate data check mechanisms will be put in place using the data check systems available with the ODK system. Spot checks by study supervisor/s will be done in the field to ensure that enumerators are performing the measurements correctly, administering the study instrument correctly and entering all data accordingly. Further checks will be performed by the survey manager on the data as needed as they are received by the local server or remote server.
 
+The digital data collection forms based on the Open Data Kit (ODK) standard using XLSform and XML is available at https://github.com/validmeasures/liberiaS3Mforms. The form faithfully replicates the paper-based forms described in Section \@ref(questionnaire). The form also faithfully replicates the sampling design described by the survey design such that proposed sampling interval within a primary sampling unit (PSU) is implemented as the survey team goes house-to-house finding SAM cases. The modules on IFA supplementation, IYCF counselling, vitamin A supplementation and MNP supplementation coverage appear appropriately on the digital forms when the correct household based on the sampling interval is being interviewed. The forms also appear appropriately based on eligibility of the child/mother as respnodents to the specific survey modules.
+
+These forms can be viewed and tested using an Android-based mobile device. Instructions for usage can be found at https://github.com/validmeasures/liberiaS3Mforms.
+
 Data analysis will be done using R language for statistical computing [@R:2018] through bespoke analytic scripts put together into application-based workflow which can be used by non-R users. The application that will be created for this study will be designed such that an automatic reporting format is produced including maps, figures and tables of results.
 
 ## Analytical approach for estimating coverage indicators
@@ -36,6 +40,29 @@ The principal advantages of using a bootstrap estimator are:
 knitr::include_graphics("figures/bbw.png")
 ```
 
+## Analytical approach for mapping coverage indicators
+
+The indicator mapping will create a surface map of indicator values using spatial interpolation. There are various approaches and methods of spatial interpolation, the main differences are determined by the weights applied to the point dataset to estimate values at each of the unknown points of the surface map. For the Liberia coverage survey, spatial interpolation will be performed using the inverse distance weighting (IDW) method. As the name implies, the IDW method uses weights that are inversely proportional to the distance of a point being estimated from the sampling point locations [@isaaks1989applied; @diggle2007mbg; @diggle2013statistical]. This can be mathematically demonstrated as follows:
+
+&nbsp;
+
+$$\begin{aligned}
+\hat{v} & ~ = ~ \frac{\sum_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\sum_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
+\\
+where: & \\
+\\
+d_1 \ldots d_n  & ~ = ~ \text{distances from each of the } n \text{ sampling point locations to the point being estimated} \\
+p & ~ = ~ \text{power of the distance} \\
+v_1 \ldots v_n & ~ = ~ \text{sample values}
+\end{aligned}$$
+
+&nbsp;
+
+The power of the distance `p` is an important aspect of the IDW method for point estimation. The influence of `p` to the weights applied to the point estimation is such that as `p` approaches 0, the weights become more similar, thereby giving more weight to the nearest sample values.  As `p` approaches $\infty$, the weights become more different from each other, thereby giving more weight to the closest sample. The power of the distance `p` has been traditionally set at 2 for convenience and ease of calculations. In theory, given a set `p`, IDW calculations can be performed using manual calculations aided by a spreadsheet and / or a calculator as it requires fewer calculations. For the Liberia Coverage Survey, `p` will be initially set at 2 and then cross-validation (see below) will be applied to optimise `p` to a value that minimises the estimation errors at each of the sampling point locations.
+
+Cross-validation is a technique applied to validate predictive models. It assesses how accurately the predictive model performs in practice. IDW is one of the simplest model-based interpolation methods available, but ideally would still require a form of cross-validation to determine the optimal value of the distance power `p` (described above).
+
+A two-fold cross validation [@bivand2008applied] in which data points are randomly split into two sets of equal size, with one set assigned as the validation data for testing the model, and the other set as the training data. The validation data is then interpolated using the IDW method with an initial `p` of 2 and the resulting predictions were compared with the training data. Comparison is made using the sum of the squared residuals between the predicted values and the observed values to report errors. Optimisation is then performed by replicating the two-fold cross validation process 100 times using randomly generated values for `p`. Out of these replicates, the value of `p` that provided prediction results with the minimum errors is selected as the distance power for the eventual interpolation performed.
 
 
 
