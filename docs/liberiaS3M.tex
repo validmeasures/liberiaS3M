@@ -25,7 +25,7 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia},
+            pdftitle={Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia},
             pdfauthor={Valid International},
             colorlinks=true,
             linkcolor=blue,
@@ -81,7 +81,7 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{Notes on a design of a simple spatial sampling method (S3M) for
+  \title{Notes on the design of a simple spatial sampling method (S3M) for
 assessing coverage of health and nutrition programmes in Liberia}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
@@ -458,7 +458,7 @@ point (see Figure \ref{fig:distance1}.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/step2} 
+{\centering \includegraphics[width=16.67in]{figures/step2} 
 
 }
 
@@ -634,7 +634,7 @@ the procedure outlined below.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/step2a} 
+{\centering \includegraphics[width=16.67in]{figures/step2a} 
 
 }
 
@@ -945,7 +945,7 @@ in a staggered fashion. Alternate intersections of the grid in the x
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/grid2a} 
+{\centering \includegraphics[width=21.46in]{figures/grid2a} 
 
 }
 
@@ -1042,7 +1042,7 @@ Avoid large triangles.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/grid3a} 
+{\centering \includegraphics[width=23.97in]{figures/grid3a} 
 
 }
 
@@ -1241,7 +1241,7 @@ parts or segments, such as a community made up of several clusters:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/stage2sample3} 
+{\centering \includegraphics[width=9.72in]{figures/stage2sample3} 
 
 }
 
@@ -1252,7 +1252,7 @@ or a community made up of several ribbons:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/stage2sample4} 
+{\centering \includegraphics[width=9.72in]{figures/stage2sample4} 
 
 }
 
@@ -1263,7 +1263,7 @@ or a mixed community:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/stage2sample5} 
+{\centering \includegraphics[width=9.72in]{figures/stage2sample5} 
 
 }
 
@@ -1670,7 +1670,6 @@ current cases. For example, a coverage survey found:
 programme with good case-finding and recruitment and short lengths of
 stay}\tabularnewline
 \toprule
-\endhead
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 Number of current cases\strut
 \end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft
@@ -1729,7 +1728,6 @@ yield very different results. For example:
 programme with good case-finding and recruitment and short lengths of
 stay}\tabularnewline
 \toprule
-\endhead
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 Number of current cases\strut
 \end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\raggedleft
@@ -2166,24 +2164,21 @@ questionnaire.
 }
 
 \caption{Children 6-59 months old and their mothers survey sample/template form}\label{fig:childform1}
-\end{figure}
-\begin{figure}[H]
+\end{figure}\begin{figure}[H]
 
 {\centering \includegraphics[width=0.9\linewidth]{forms/childForm2} 
 
 }
 
 \caption{Children 6-59 months old and their mothers survey sample/template form}\label{fig:childform1}
-\end{figure}
-\begin{figure}[H]
+\end{figure}\begin{figure}[H]
 
 {\centering \includegraphics[width=0.9\linewidth]{forms/childForm3} 
 
 }
 
 \caption{Children 6-59 months old and their mothers survey sample/template form}\label{fig:childform1}
-\end{figure}
-\begin{figure}[H]
+\end{figure}\begin{figure}[H]
 
 {\centering \includegraphics[width=0.9\linewidth]{forms/childForm4} 
 
@@ -2320,11 +2315,11 @@ The principal advantages of using a bootstrap estimator are:
 
 \begin{figure}[H]
 
-{\centering \includegraphics{figures/bbw} 
+{\centering \includegraphics[width=9.76in]{figures/bbw} 
 
 }
 
-\caption{The blocked weighted bootstrap used by the standard RAM-OP software}\label{fig:indicators31}
+\caption{The blocked weighted bootstrap}\label{fig:indicators31}
 \end{figure}
 
 \hypertarget{analytical-approach-for-mapping-coverage-indicators}{%
@@ -2346,11 +2341,11 @@ can be mathematically demonstrated as follows:
 ~
 
 \[\begin{aligned}
-\hat{v} & ~ = ~ \frac{\sum_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\sum_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
+\hat{v} & ~ = ~ \frac{\displaystyle \sum\limits_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\displaystyle \sum\limits_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
 \\
 where: & \\
 \\
-d_1 \ldots d_n  & ~ = ~ \text{distances from each of the } n \text{ sampling point locations to the point being estimated} \\
+d_1 \ldots d_n & ~ = ~ \text{distances from each } n \text{ sampling points to estimation point} \\
 p & ~ = ~ \text{power of the distance} \\
 v_1 \ldots v_n & ~ = ~ \text{sample values}
 \end{aligned}\]

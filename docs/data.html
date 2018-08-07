@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia</title>
-  <meta name="description" content="Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia">
+  <title>Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia</title>
+  <meta name="description" content="Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
+  <meta property="og:title" content="Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://design.validmeasures.com/liberiaS3M" />
   <meta property="og:image" content="http://design.validmeasures.com/liberiaS3Mfigures/s3mlogo.png" />
-  <meta property="og:description" content="Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
+  <meta property="og:description" content="Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
+  <meta name="twitter:title" content="Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
   
-  <meta name="twitter:description" content="Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
+  <meta name="twitter:description" content="Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia" />
   <meta name="twitter:image" content="http://design.validmeasures.com/liberiaS3Mfigures/s3mlogo.png" />
 
 <meta name="author" content="Valid International">
@@ -130,7 +130,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on a design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia</a>
           </h1>
         </div>
 
@@ -167,22 +167,22 @@
 </ul>
 
 <div class="figure" style="text-align: center"><span id="fig:indicators31"></span>
-<img src="figures/bbw.png" alt="The blocked weighted bootstrap used by the standard RAM-OP software"  />
+<img src="figures/bbw.png" alt="The blocked weighted bootstrap" width="703" />
 <p class="caption">
-Figure 5.1: The blocked weighted bootstrap used by the standard RAM-OP software
+Figure 5.1: The blocked weighted bootstrap
 </p>
 </div>
 </div>
 <div id="analytical-approach-for-mapping-coverage-indicators" class="section level2">
 <h2><span class="header-section-number">5.2</span> Analytical approach for mapping coverage indicators</h2>
-<p>The indicator mapping will create a surface map of indicator values using spatial interpolation. There are various approaches and methods of spatial interpolation, the main differences are determined by the weights applied to the point dataset to estimate values at each of the unknown points of the surface map. For the Liberia coverage survey, spatial interpolation will be performed using the inverse distance weighting (IDW) method. As the name implies, the IDW method uses weights that are inversely proportional to the distance of a point being estimated from the sampling point locations <span class="citation">(Isaaks and Srivastava <a href="#ref-isaaks1989applied">1989</a>; Diggle and Ribeiro <a href="#ref-diggle2007mbg">2007</a>; Diggle <a href="#ref-diggle2013statistical">2013</a>)</span>. This can be mathematically demonstrated as follows:</p>
+<p>The indicator mapping will create a surface map of indicator values using spatial interpolation. There are various approaches and methods of spatial interpolation, the main differences are determined by the weights applied to the point dataset to estimate values at each of the unknown points of the surface map. For the Liberia coverage survey, spatial interpolation will be performed using the inverse distance weighting (IDW) method. As the name implies, the IDW method uses weights that are inversely proportional to the distance of a point being estimated from the sampling point locations <span class="citation">(Isaaks and Srivastava <a href="#ref-isaaks1989applied">1989</a>; Peter J. Diggle and Ribeiro <a href="#ref-diggle2007mbg">2007</a>; P.J. Diggle <a href="#ref-diggle2013statistical">2013</a>)</span>. This can be mathematically demonstrated as follows:</p>
 <p> </p>
 <p><span class="math display">\[\begin{aligned}
-\hat{v} &amp; ~ = ~ \frac{\sum_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\sum_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
+\hat{v} &amp; ~ = ~ \frac{\displaystyle \sum\limits_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\displaystyle \sum\limits_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
 \\
 where: &amp; \\
 \\
-d_1 \ldots d_n  &amp; ~ = ~ \text{distances from each of the } n \text{ sampling point locations to the point being estimated} \\
+d_1 \ldots d_n &amp; ~ = ~ \text{distances from each } n \text{ sampling points to estimation point} \\
 p &amp; ~ = ~ \text{power of the distance} \\
 v_1 \ldots v_n &amp; ~ = ~ \text{sample values}
 \end{aligned}\]</span></p>
