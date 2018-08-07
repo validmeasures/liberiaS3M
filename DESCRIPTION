@@ -1,5 +1,5 @@
 Package: liberiaS3M
-Title: Notes on a design of a simple spatial sampling method (S3M) for assessing 
+Title: Notes on the design of a simple spatial sampling method (S3M) for assessing 
     coverage of health and nutrition programmes in Liberia
 Version: 0.1.0
 Authors@R: person("Ernest", "Guevarra", comment = c(ORCID = "0000-0002-4887-4415"), 
