@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-08-03">
+<meta name="date" content="2018-08-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -115,6 +115,7 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>5</b> Data management and analysis</a><ul>
 <li class="chapter" data-level="5.1" data-path="data.html"><a href="data.html#analytical-approach-for-estimating-coverage-indicators"><i class="fa fa-check"></i><b>5.1</b> Analytical approach for estimating coverage indicators</a></li>
+<li class="chapter" data-level="5.2" data-path="data.html"><a href="data.html#analytical-approach-for-mapping-coverage-indicators"><i class="fa fa-check"></i><b>5.2</b> Analytical approach for mapping coverage indicators</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -141,6 +142,8 @@
 <h1><span class="header-section-number">5</span> Data management and analysis</h1>
 <p>Data will be collected using an electronic data entry system based on the <strong>Open Data Kit (ODK)</strong> standard that runs on the Android® operating software (OS) platform for mobile devices. The study instrument (see Section <a href="questionnaire.html#questionnaire">4</a>) will be encoded into the electronic data entry system platform and will be served out of either a local computer server or a remote/cloud-based server<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Each study team will be provided with mobile devices running on Android® OS that have been configured with an application that will receive the electronic data form. All measurements and answers by respondents will then be recorded on the mobile devices and will then be transmitted to the local server or the remote server whenever there is a mobile phone and / or WiFi signal.</p>
 <p>Appropriate data check mechanisms will be put in place using the data check systems available with the ODK system. Spot checks by study supervisor/s will be done in the field to ensure that enumerators are performing the measurements correctly, administering the study instrument correctly and entering all data accordingly. Further checks will be performed by the survey manager on the data as needed as they are received by the local server or remote server.</p>
+<p>The digital data collection forms based on the Open Data Kit (ODK) standard using XLSform and XML is available at <a href="https://github.com/validmeasures/liberiaS3Mforms" class="uri">https://github.com/validmeasures/liberiaS3Mforms</a>. The form faithfully replicates the paper-based forms described in Section <a href="questionnaire.html#questionnaire">4</a>. The form also faithfully replicates the sampling design described by the survey design such that proposed sampling interval within a primary sampling unit (PSU) is implemented as the survey team goes house-to-house finding SAM cases. The modules on IFA supplementation, IYCF counselling, vitamin A supplementation and MNP supplementation coverage appear appropriately on the digital forms when the correct household based on the sampling interval is being interviewed. The forms also appear appropriately based on eligibility of the child/mother as respnodents to the specific survey modules.</p>
+<p>These forms can be viewed and tested using an Android-based mobile device. Instructions for usage can be found at <a href="https://github.com/validmeasures/liberiaS3Mforms" class="uri">https://github.com/validmeasures/liberiaS3Mforms</a>.</p>
 <p>Data analysis will be done using R language for statistical computing <span class="citation">(R Core Team <a href="#ref-R:2018">2018</a>)</span> through bespoke analytic scripts put together into application-based workflow which can be used by non-R users. The application that will be created for this study will be designed such that an automatic reporting format is produced including maps, figures and tables of results.</p>
 <div id="analytical-approach-for-estimating-coverage-indicators" class="section level2">
 <h2><span class="header-section-number">5.1</span> Analytical approach for estimating coverage indicators</h2>
@@ -164,11 +167,29 @@
 </ul>
 
 <div class="figure" style="text-align: center"><span id="fig:indicators31"></span>
-<img src="figures/bbw.png" alt="The blocked weighted bootstrap used by the standard RAM-OP software" width="703" />
+<img src="figures/bbw.png" alt="The blocked weighted bootstrap used by the standard RAM-OP software"  />
 <p class="caption">
 Figure 5.1: The blocked weighted bootstrap used by the standard RAM-OP software
 </p>
 </div>
+</div>
+<div id="analytical-approach-for-mapping-coverage-indicators" class="section level2">
+<h2><span class="header-section-number">5.2</span> Analytical approach for mapping coverage indicators</h2>
+<p>The indicator mapping will create a surface map of indicator values using spatial interpolation. There are various approaches and methods of spatial interpolation, the main differences are determined by the weights applied to the point dataset to estimate values at each of the unknown points of the surface map. For the Liberia coverage survey, spatial interpolation will be performed using the inverse distance weighting (IDW) method. As the name implies, the IDW method uses weights that are inversely proportional to the distance of a point being estimated from the sampling point locations <span class="citation">(Isaaks and Srivastava <a href="#ref-isaaks1989applied">1989</a>; Diggle and Ribeiro <a href="#ref-diggle2007mbg">2007</a>; Diggle <a href="#ref-diggle2013statistical">2013</a>)</span>. This can be mathematically demonstrated as follows:</p>
+<p> </p>
+<p><span class="math display">\[\begin{aligned}
+\hat{v} &amp; ~ = ~ \frac{\sum_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\sum_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
+\\
+where: &amp; \\
+\\
+d_1 \ldots d_n  &amp; ~ = ~ \text{distances from each of the } n \text{ sampling point locations to the point being estimated} \\
+p &amp; ~ = ~ \text{power of the distance} \\
+v_1 \ldots v_n &amp; ~ = ~ \text{sample values}
+\end{aligned}\]</span></p>
+<p> </p>
+<p>The power of the distance <code>p</code> is an important aspect of the IDW method for point estimation. The influence of <code>p</code> to the weights applied to the point estimation is such that as <code>p</code> approaches 0, the weights become more similar, thereby giving more weight to the nearest sample values. As <code>p</code> approaches <span class="math inline">\(\infty\)</span>, the weights become more different from each other, thereby giving more weight to the closest sample. The power of the distance <code>p</code> has been traditionally set at 2 for convenience and ease of calculations. In theory, given a set <code>p</code>, IDW calculations can be performed using manual calculations aided by a spreadsheet and / or a calculator as it requires fewer calculations. For the Liberia Coverage Survey, <code>p</code> will be initially set at 2 and then cross-validation (see below) will be applied to optimise <code>p</code> to a value that minimises the estimation errors at each of the sampling point locations.</p>
+<p>Cross-validation is a technique applied to validate predictive models. It assesses how accurately the predictive model performs in practice. IDW is one of the simplest model-based interpolation methods available, but ideally would still require a form of cross-validation to determine the optimal value of the distance power <code>p</code> (described above).</p>
+<p>A two-fold cross validation <span class="citation">(Bivand, Pebesma, and Gómez-Rubio <a href="#ref-bivand2008applied">2013</a>)</span> in which data points are randomly split into two sets of equal size, with one set assigned as the validation data for testing the model, and the other set as the training data. The validation data is then interpolated using the IDW method with an initial <code>p</code> of 2 and the resulting predictions were compared with the training data. Comparison is made using the sum of the squared residuals between the predicted values and the observed values to report errors. Optimisation is then performed by replicating the two-fold cross validation process 100 times using randomly generated values for <code>p</code>. Out of these replicates, the value of <code>p</code> that provided prediction results with the minimum errors is selected as the distance power for the eventual interpolation performed.</p>
 
 </div>
 </div>
@@ -176,6 +197,18 @@ Figure 5.1: The blocked weighted bootstrap used by the standard RAM-OP software
 <div id="refs" class="references">
 <div id="ref-R:2018">
 <p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-isaaks1989applied">
+<p>Isaaks, E.H., and R.M. Srivastava. 1989. <em>Applied Geostatistics</em>. Oxford University Press. <a href="https://books.google.co.uk/books?id=vC2dcXFLI3YC" class="uri">https://books.google.co.uk/books?id=vC2dcXFLI3YC</a>.</p>
+</div>
+<div id="ref-diggle2007mbg">
+<p>Diggle, Peter J., and Paulo J. Ribeiro. 2007. <em>Model-Based Geostatistics.</em> Springer Series in Statistics. Springer.</p>
+</div>
+<div id="ref-diggle2013statistical">
+<p>Diggle, P.J. 2013. <em>Statistical Analysis of Spatial and Spatio-Temporal Point Patterns, Third Edition</em>. Chapman &amp; Hall/Crc Monographs on Statistics &amp; Applied Probability. Taylor &amp; Francis. <a href="https://books.google.co.uk/books?id=XR8bAAAAQBAJ" class="uri">https://books.google.co.uk/books?id=XR8bAAAAQBAJ</a>.</p>
+</div>
+<div id="ref-bivand2008applied">
+<p>Bivand, R.S., E.J. Pebesma, and V. Gómez-Rubio. 2013. <em>Applied Spatial Data Analysis with R</em>. Use R! Springer New York. <a href="https://books.google.co.uk/books?id=4gg8yx\_lcj0C" class="uri">https://books.google.co.uk/books?id=4gg8yx\_lcj0C</a>.</p>
 </div>
 </div>
 <div class="footnotes">
