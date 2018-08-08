@@ -977,6 +977,7 @@ Table: (\#tab:surveydays) Estimated length of full survey in days given number o
 
 +------------------------------+----------------------+----------------------+----------------------+
 | **Number of survey teams**   | **Length of survey** | **Length of survey** | **Length of survey** |
+|                              |                      |                      |                      |
 |                              | (per county/area)    | (2 counties)         | (2 rural, 1 urban)   |
 +==============================+:====================:+:====================:+:====================:+
 | 5 survey teams               | 18 days              | 36 days              | 54 days              |
@@ -988,4 +989,4 @@ Table: (\#tab:surveydays) Estimated length of full survey in days given number o
 
 &nbsp;
 
-[^1]: Capture and re-capture studies done to test the sensitivity of active and adaptive case-finding as a sampling approach to find all or nearly all SAM cases were all implemented using MUAC as the indicator for SAM (see [@Wegerdt:2006ux]). 
+[^1]: Capture and re-capture studies done to test the sensitivity of active and adaptive case-finding as a sampling approach to find all or nearly all SAM cases were all implemented using MUAC as the indicator for SAM (see @Wegerdt:2006ux). 
