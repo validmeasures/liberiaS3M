@@ -889,6 +889,72 @@ Given the stage 1 sampling, stage 2 sampling and sample size considerations desc
 
 Using an S3M approach to stage 1 sampling, thirty (30) stage 1 sampling points will be identified. This is an adaptation of S3M such that instead of first specifying a $d$ value, a minimum number of stage 1 samples is specified based on which the hexagonal grid across each county will be drawn. This would mean that each county will be divided into 30 hexagonal, non-overlapping grids to identify 30 sampling points as the stage 1 sample. If estimates for urban areas will be required, then the urban areas of each county will be separated and a separate grid of 30 hexagons will be drawn on the map of the urban areas.
 
+UNICEF has selected Greater Monrovia District and Grand Bassa County as the areas for the Liberia survey.
+
+The Liberia Institute of Statistics and Geo-Informatic Services (LISGIS) has provided PDF maps of Greater Monrovia District and Grand Bassa County shown below.
+
+&nbsp;
+
+```{r sample20, echo = FALSE, fig.cap = "Map of Greater Monrovia", fig.align = "center", fig.pos = "H", fig.retina = 1}
+knitr::include_graphics("figures/greaterMonroviaEA.png")
+```
+
+&nbsp;
+
+```{r sample21, echo = FALSE, fig.cap = "Map of Grand Bassa", fig.align = "center", fig.pos = "H", fig.retina = 1}
+knitr::include_graphics("figures/grandBassaEA.png")
+```
+
+&nbsp;
+
+Thirty hexagonal grids are then laid on top of these maps.
+
+&nbsp;
+
+```{r sample22, echo = FALSE, eval = TRUE, fig.cap = "Thirty hexagonal grids laid on the  map of Greater Monrovia District", fig.align = "center", fig.pos = "H", fig.retina = 1}
+gm1 <- districts[districts$admin2Name == "Greater Monrovia", ]
+
+gm1sp <- create_sp_grid(x = gm1,
+                        country = "Liberia",
+                        buffer = 1,
+                        n = 30, n.factor = 5, 
+                        type = "s3m", 
+                        fixed = TRUE)
+
+gm1grid <- HexPoints2SpatialPolygons(gm1sp)
+
+par(mar = c(0, 0, 0, 0))
+plot(gm1, lty = 0)
+plot(districts, add = TRUE)
+plot(gm1, lwd = 3, add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(gm1sp, pch = 1, col = "red", cex = 1, add = TRUE)
+plot(gm1grid, lwd = 1, border = "blue", add = TRUE)
+```
+
+&nbsp;
+
+```{r sample23, echo = FALSE, eval = TRUE, fig.cap = "Thirty hexagonal grids laid on the  map of Grand Bassa County", fig.align = "center", fig.pos = "H", fig.retina = 1}
+gb1sp <- create_sp_grid(x = grandbassa1,
+                        country = "Liberia",
+                        buffer = 1,
+                        n = 30, n.factor = 5, 
+                        type = "s3m", 
+                        fixed = TRUE)
+
+gb1grid <- HexPoints2SpatialPolygons(gb1sp)
+
+par(mar = c(0, 0, 0, 0))
+plot(grandbassa1, lty = 0)
+plot(districts, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(settlements, pch = 4, cex = 0.5, lwd = 1, col = "darkgreen", add = TRUE)
+plot(gb1sp, pch = 1, col = "red", cex = 1, add = TRUE)
+plot(gb1grid, lwd = 1, border = "blue", add = TRUE)
+```
+
+&nbsp;
+
 To determine how many villages near the 30 sampling points to select for the stage 1 sample, it would require estimating how many villages will need to be sampled to obtain the target sample size of 96 SAM children in each county (and urban areas if included). This can be estimated as follows:
 
 &nbsp;
