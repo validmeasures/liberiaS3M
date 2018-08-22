@@ -1421,7 +1421,7 @@ County shown below.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=165.14in]{figures/greaterMonroviaEA} 
+{\centering \includegraphics[width=6.94in]{figures/greaterMonroviaEA} 
 
 }
 
@@ -1432,7 +1432,7 @@ County shown below.
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=165.14in]{figures/grandBassaEA} 
+{\centering \includegraphics[width=6.94in]{figures/grandBassaEA} 
 
 }
 
@@ -1468,10 +1468,10 @@ Thirty hexagonal grids are then laid on top of these maps.
 ~
 
 To determine how many villages near the 30 sampling points to select for
-the stage 1 sample, it would require estimating how many villages will
-need to be sampled to obtain the target sample size of 96 SAM children
-in each county (and urban areas if included). This can be estimated as
-follows:
+the stage 1 sample, it would require estimating how many
+villages/localities/communities/enumeration areas will need to be
+sampled to obtain the target sample size of 96 SAM children in each
+county and urban areas. This can be estimated as follows:
 
 ~
 
@@ -1479,12 +1479,14 @@ follows:
 
 ~
 
-The average village population can be estimated using per village
-population in Grand Bassa county and Rural Montserrado provided by the
-Liberia Institute of Statistics and Geo-information Services to UNICEF.
-Using this data, the average village population in Grand Bassa
-(including urban areas) is 521 and the average village population in
-Rural Montserrado is 474.
+The average village population can be estimated using per
+village/locality/community/enumeration area population in Grand Bassa
+county and Greater Monrovia provided by the Liberia Institute of
+Statistics and Geo-information Services to UNICEF.
+
+For Greater Monrovia, the average enumeration area population is 5200.
+For Grand Bassa (including urban areas) is 521 population per
+enumeration area and 100 population per locality/village/community.
 
 The proportion of children under 5 can be estimated using data from the
 \href{https://www.census.gov/data-tools/demo/idb/region.php?N=\%20Results\%20\&T=15\&A=separate\&RT=0\&Y=2018\&R=-1\&C=LI}{US
@@ -1508,7 +1510,7 @@ as follows:
 ~
 
 \[\begin{aligned} 
-n_{\text{villages Grand Bassa}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average village population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
+n_{\text{Grand Bassa enumeration areas}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average enumeration area population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
 \\
 & ~ = ~ \left \lceil \frac{96}{521 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
 \\
@@ -1520,28 +1522,40 @@ n_{\text{villages Grand Bassa}} & ~ = ~ \left \lceil \frac{\text{Target sample s
 ~
 
 \[\begin{aligned} 
-n_{\text{villages Rural Montserrado}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average village population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
+n_{\text{Grand Bassa villages}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average village population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
 \\
-& ~ = ~ \left \lceil \frac{96}{474 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
+& ~ = ~ \left \lceil \frac{96}{100 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
 \\
-& ~ = ~ \left \lceil \frac{96}{1.2087} \right \rceil \\
+& ~ = ~ \left \lceil \frac{96}{0.255} \right \rceil \\
 \\
-& ~ \approx ~ 80
+& ~ \approx ~ 377
 \end{aligned}\]
 
 ~
 
-A total of 73 villages will need to be sampled for Grand Bassa county
-and a total of 80 villages will need to be sampled for Rural
-Montserrado.
+\[\begin{aligned} 
+n_{\text{Grand Monrovia District enumeration areas}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average enumeration area population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
+\\
+& ~ = ~ \left \lceil \frac{96}{5848 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
+\\
+& ~ = ~ \left \lceil \frac{96}{14.9124} \right \rceil \\
+\\
+& ~ \approx ~ 7
+\end{aligned}\]
 
-Given this, it would be ideal to select 3 villages per sampling point as
-the stage 1 sample for the CMAM survey in Grand Bassa and Rural
-Montserrado.
+~
 
-Similar calculations will need to be done for each additional urban area
-to determine how many blocks or enumeration areas will be sampled for
-the urban area to get the required 96 SAM cases sample size.
+A total of 73 enumeration areas (about 377 villages) will need to be
+sampled for Grand Bassa county. So, a total of 3 enumeration areas (or
+about 13 villages) for each of the 30 sampling points should be selected
+for the stage 1 sample for Grand Bassa. Given the huge populations of
+the enumeration areas in Greater Monrovia District, only a total of 7
+enumeration areas will need to be sampled to make the sample size
+target. However, because this is a cluster survey, 7 clusters will
+produce a sample with very low sampling variance which will impact on
+the resulting precision of the indicator results. Hence, it would be
+recommended to maintain the number of sampling clusters to 30
+enumeration areas (one enumeration area per sampling point).
 
 \hypertarget{sampling-frame-for-survey-of-children-aged-6-59-months-and-their-mothers}{%
 \subsection{Sampling frame for survey of children aged 6-59 months and
