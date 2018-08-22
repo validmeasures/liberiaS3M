@@ -1046,9 +1046,7 @@ The list of selected enumeration areas in Greater Monrovia is below:
 &nbsp;
 
 ```{r, echo = FALSE, eval = TRUE}
-kable(x = yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")],
-      booktabs = TRUE,
-      longtable = TRUE)
+yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")]
 
 write.csv(yy, "data/greaterMonroviaSPlist.csv", row.names = FALSE)
 ```
@@ -1095,9 +1093,7 @@ The list of selected sampling points in Grand Bassa is below:
 &nbsp;
 
 ```{r, echo = FALSE, eval = TRUE}
-kable(x = yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")],
-      booktabs = TRUE,
-      longtable = TRUE)
+yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")]
 
 write.csv(yy, "data/grandBassaSPlist.csv", row.names = FALSE)
 ```
