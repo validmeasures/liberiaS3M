@@ -895,13 +895,13 @@ The Liberia Institute of Statistics and Geo-Informatic Services (LISGIS) has pro
 
 &nbsp;
 
-```{r sample20, echo = FALSE, fig.cap = "Map of Greater Monrovia", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r sample20, echo = FALSE, fig.cap = "Map of Greater Monrovia", out.width = "80%", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("figures/greaterMonroviaEA.png")
 ```
 
 &nbsp;
 
-```{r sample21, echo = FALSE, fig.cap = "Map of Grand Bassa", fig.align = "center", fig.pos = "H", fig.retina = 1}
+```{r sample21, echo = FALSE, fig.cap = "Map of Grand Bassa", out.width = "80%", fig.align = "center", fig.pos = "H", fig.retina = 1}
 knitr::include_graphics("figures/grandBassaEA.png")
 ```
 
@@ -976,7 +976,7 @@ Using these values, the number of villages needed to sample in each county (and 
 &nbsp;
 
 $$\begin{aligned} 
-n_{\text{Grand Bassa enumeration areas}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average enumeration area population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
+n_{\text{Grand Bassa EA}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average EA population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
 \\
 & ~ = ~ \left \lceil \frac{96}{521 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
 \\
@@ -1000,7 +1000,7 @@ n_{\text{Grand Bassa villages}} & ~ = ~ \left \lceil \frac{\text{Target sample s
 &nbsp;
 
 $$\begin{aligned} 
-n_{\text{Grand Monrovia District enumeration areas}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average enumeration area population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
+n_{\text{Greater Monrovia District EA}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average EA population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
 \\
 & ~ = ~ \left \lceil \frac{96}{5848 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
 \\
@@ -1013,6 +1013,102 @@ n_{\text{Grand Monrovia District enumeration areas}} & ~ = ~ \left \lceil \frac{
 
 A total of 73 enumeration areas (about 377 villages) will need to be sampled for Grand Bassa county. So, a total of 3 enumeration areas (or about 13 villages) for each of the 30 sampling points should be selected for the stage 1 sample for Grand Bassa. Given the huge populations of the enumeration areas in Greater Monrovia District, only a total of 7 enumeration areas will need to be sampled to make the sample size target. However, because this is a cluster survey, 7 clusters will produce a sample with very low sampling variance which will impact on the resulting precision of the indicator results. Hence, it would be recommended to maintain the number of sampling clusters to 30 enumeration areas (one enumeration area per sampling point).
 
+Based on this, stage 1 sample for Greater Monrovia District can be selected as follows:
+
+&nbsp;
+
+```{r sample24, echo = FALSE, eval = TRUE, fig.cap = "Selected sampling points in Greater Monrovia District", fig.align = "center", fig.pos = "H", fig.align = 1}
+gm1grid <- readOGR(dsn = "data/gm1grid", layer = "gm1grid", verbose = FALSE)
+
+gm1sp <- SpatialPoints(coordinates(gm1grid), 
+                       proj4string = CRS(proj4string(gm1grid)))
+
+gm1loc <- settlements[settlements$admin2Name == "Greater Monrovia", ]
+
+yy <- get_nearest_point(data = gm1loc, 
+                        data.x = "COORD_X", 
+                        data.y = "COORD_Y", 
+                        query = gm1sp)
+
+par(mar = c(0, 0, 0, 0))
+plot(gm1, lty = 0)
+plot(districts, add = TRUE)
+plot(gm1, lwd = 3, add = TRUE)
+plot(gm1loc, pch = 4, cex = 0.3, col = "darkgreen", add = TRUE)
+plot(gm1grid, border = "blue", add = TRUE)
+points(yy[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 2, col = "red")
+```
+
+&nbsp;
+
+The list of selected enumeration areas in Greater Monrovia is below:
+
+&nbsp;
+
+```{r, echo = FALSE, eval = TRUE}
+kable(x = yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")],
+      booktabs = TRUE,
+      longtable = TRUE)
+
+write.csv(yy, "data/greaterMonroviaSPlist.csv", row.names = FALSE)
+```
+
+&nbsp;
+
+```{block2, type = "rmddownload"}
+Download the list of selected enumeration areas in Greater Monrovia District [here](data/greaterMonroviaSPlist.csv).
+```
+
+&nbsp;
+
+The stage 1 sample for Grand Bassa can be selected as follows:
+
+&nbsp;
+
+```{r sample25, echo = FALSE, eval = TRUE, fig.cap = "Selected sampling points in Grand Bassa County", fig.align = "center", fig.pos = "H", fig.align = 1}
+gb1grid <- readOGR(dsn = "data/gb1grid", layer = "gb1grid", verbose = FALSE)
+
+gb1sp <- SpatialPoints(coordinates(gb1grid), 
+                       proj4string = CRS(proj4string(gb1grid)))
+
+gb1loc <- settlements[settlements$admin1Name == "Grand Bassa", ]
+
+yy <- get_nearest_point(data = gb1loc, 
+                        data.x = "COORD_X", 
+                        data.y = "COORD_Y", 
+                        query = gb1sp,
+                        n = 13)
+
+par(mar = c(0, 0, 0, 0))
+plot(grandbassa1, lty = 0)
+plot(districts, add = TRUE)
+plot(grandbassa1, lwd = 3, add = TRUE)
+plot(gb1loc, pch = 4, cex = 0.3, col = "darkgreen", add = TRUE)
+plot(gb1grid, border = "blue", add = TRUE)
+points(yy[ , c("COORD_X", "COORD_Y")], pch = 1, cex = 0.7, col = "red")
+```
+
+&nbsp;
+
+The list of selected sampling points in Grand Bassa is below:
+
+&nbsp;
+
+```{r, echo = FALSE, eval = TRUE}
+kable(x = yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")],
+      booktabs = TRUE,
+      longtable = TRUE)
+
+write.csv(yy, "data/grandBassaSPlist.csv", row.names = FALSE)
+```
+
+&nbsp;
+
+```{block2, type = "rmddownload"}
+Download the list of selected enumeration areas in Grand Bassa County [here](data/grandBassaSPlist.csv).
+```
+
+&nbsp;
 
 ### Sampling frame for survey of children aged 6-59 months and their mothers
 
