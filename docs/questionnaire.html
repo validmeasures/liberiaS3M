@@ -112,6 +112,13 @@
 <li class="chapter" data-level="4" data-path="questionnaire.html"><a href="questionnaire.html"><i class="fa fa-check"></i><b>4</b> Questionnaire</a><ul>
 <li class="chapter" data-level="4.1" data-path="questionnaire.html"><a href="questionnaire.html#cmam-coverage-survey-instruments"><i class="fa fa-check"></i><b>4.1</b> CMAM coverage survey instruments</a></li>
 <li class="chapter" data-level="4.2" data-path="questionnaire.html"><a href="questionnaire.html#survey-for-children-6-59-months-and-their-mothers"><i class="fa fa-check"></i><b>4.2</b> Survey for children 6-59 months and their mothers</a></li>
+<li class="chapter" data-level="4.3" data-path="questionnaire.html"><a href="questionnaire.html#using-open-data-kit"><i class="fa fa-check"></i><b>4.3</b> Using Open Data Kit</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="questionnaire.html"><a href="questionnaire.html#village-form"><i class="fa fa-check"></i><b>4.3.1</b> Village form</a></li>
+<li class="chapter" data-level="4.3.2" data-path="questionnaire.html"><a href="questionnaire.html#coverage-form"><i class="fa fa-check"></i><b>4.3.2</b> Coverage form</a></li>
+<li class="chapter" data-level="4.3.3" data-path="questionnaire.html"><a href="questionnaire.html#usage"><i class="fa fa-check"></i><b>4.3.3</b> Usage</a></li>
+<li class="chapter" data-level="4.3.4" data-path="questionnaire.html"><a href="questionnaire.html#using-odk-aggregator-or-other-similar-odk-servers"><i class="fa fa-check"></i><b>4.3.4</b> 1. Using ODK Aggregator or other similar ODK servers</a></li>
+<li class="chapter" data-level="4.3.5" data-path="questionnaire.html"><a href="questionnaire.html#convert-to-xml-and-transfer-to-mobile-devices-via-usb-cable-connection"><i class="fa fa-check"></i><b>4.3.5</b> 2. Convert to XML and transfer to mobile devices via USB cable connection</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>5</b> Data management and analysis</a><ul>
 <li class="chapter" data-level="5.1" data-path="data.html"><a href="data.html#analytical-approach-for-estimating-coverage-indicators"><i class="fa fa-check"></i><b>5.1</b> Analytical approach for estimating coverage indicators</a></li>
@@ -198,7 +205,58 @@ Figure 4.3: Children 6-59 months old and their mothers survey sample/template fo
 Figure 4.3: Children 6-59 months old and their mothers survey sample/template form
 </p>
 </div>
+</div>
+<div id="using-open-data-kit" class="section level2">
+<h2><span class="header-section-number">4.3</span> Using Open Data Kit</h2>
+<p>Based on the template forms described in the previous sections, a digital data collection system using Open Data Kit (ODK) has been developed. These forms are availabe as a <a href="https://github.com/validmeasures/liberiaS3Mforms">Github repository</a>. The system is composed of two forms.</p>
+<div id="village-form" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Village form</h3>
+<p>This form (<code>liberiaCoverageVillageForm.xlsx</code> and <code>liberiaCoverageVillageForm.xml</code>) collects information on the villages or primary sampling units (PSU) selected for the Liberia Coverage Survey. This information includes:</p>
+<ol style="list-style-type: decimal">
+<li><p>County name (and identifier)</p></li>
+<li><p>Village name (and identifier)</p></li>
+<li><p>Village population size</p></li>
+<li><p>Village geocoordinates</p></li>
+</ol>
+</div>
+<div id="coverage-form" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Coverage form</h3>
+<p>This form (<code>liberiaCoverage.xlsx</code> and <code>liberiaCoverage.xml</code>) collects information on the various coverage indicators assessed in the Liberia Coverage Survey:</p>
+<ol style="list-style-type: decimal">
+<li><p>CMAM coverage</p></li>
+<li><p>Iron-folic acid supplementation coverage</p></li>
+<li><p>IYCF counselling coverage</p></li>
+<li><p>Micronutrient powder supplementation coverage</p></li>
+<li><p>Vitamin A supplementation coverage</p></li>
+</ol>
+<p>The coverage form has been developed in such a way that it implements the survey as per survey design such that the modules for IFA coverage, IYCF counselling coverage, MNP supplementation coverage and vitamin A supplementation coverage are only shown based on the sampling interval for a particular primary sampling unit (PSU) and based on the different eligibitlity requirements for each coverage survey module.</p>
+</div>
+<div id="usage" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Usage</h3>
+<p>For those wanting to test out the forms on their own Android mobile devices, the following applications need to be downloaded and installed from the Google Play Store:</p>
+<ul>
+<li><p>ODK Collect (<a href="https://play.google.com/store/apps/details?id=org.odk.collect.android&amp;hl=en_GB">link</a>)</p></li>
+<li><p>ODK Counter (<a href="https://play.google.com/store/apps/details?id=org.opendatakit.counter&amp;hl=en_GB">link</a>)</p></li>
+</ul>
+<p>Once these applications are isntalled, there are two option for getting the Liberia Coverage Survey forms onto mobile devices.</p>
+</div>
+<div id="using-odk-aggregator-or-other-similar-odk-servers" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> 1. Using ODK Aggregator or other similar ODK servers</h3>
+<p>The XLSForm can be uploaded to a remote server-based ODK Aggregator or other ODK servers such as ONA, SurveyCTO, KoBoToolbox and the like. The form is validated and then converted into XML format which can then be retrieved from the server into mobile devices as blank forms.</p>
+<p>For the purposes of viewing and testing the Liberia Coverage Survey forms, a test server has been setup. To view and/or test the Liberia Coverage Survey forms, ODK Collect in the mobile devices will need to be connected to the server. This is described <a href="https://docs.opendatakit.org/collect-connect-aggregate/">here</a>. The following ODK Aggregate server setttings should be used:</p>
+<p> </p>
+<p><strong>url</strong>: <a href="https://odk.ona.io" class="uri">https://odk.ona.io</a></p>
+<p><strong>username:</strong> validtrial</p>
+<p><strong>password:</strong> zEF-STN-5ze-qom</p>
+<p> </p>
+<p>Once ODK Collect has been connected to the test server, it will now be possible to pull the Liberia Coverage Survey forms into ODK Collect in the mobile device using the instructions found <a href="https://docs.opendatakit.org/collect-forms/">here</a>.</p>
+<p>Once the Liberia Coverage Survey forms have been pulled into the ODK Collect in the mobile device, the forms can be viewed and tested by following the instructions <a href="https://docs.opendatakit.org/collect-filling-forms/">here</a>.</p>
+</div>
+<div id="convert-to-xml-and-transfer-to-mobile-devices-via-usb-cable-connection" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> 2. Convert to XML and transfer to mobile devices via USB cable connection</h3>
+<p>The XML version of this form can then be transferred to the mobile devices (into the device’s <code>odk</code> folder) via local USB connection. This can be done by following the instructions <a href="https://docs.opendatakit.org/collect-forms/#loading-forms-directly">here</a>. The associated media files for the forms (found in the folder called <code>media</code> in this repository) will also need to be transferred to the mobile device. This can be done by following the instructions <a href="https://docs.opendatakit.org/collect-forms/#loading-form-media">here</a>.</p>
 
+</div>
 </div>
 </div>
             </section>
