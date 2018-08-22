@@ -1013,6 +1013,8 @@ n_{\text{Greater Monrovia District EA}} & ~ = ~ \left \lceil \frac{\text{Target 
 
 A total of 73 enumeration areas (about 377 villages) will need to be sampled for Grand Bassa county. So, a total of 3 enumeration areas (or about 13 villages) for each of the 30 sampling points should be selected for the stage 1 sample for Grand Bassa. Given the huge populations of the enumeration areas in Greater Monrovia District, only a total of 7 enumeration areas will need to be sampled to make the sample size target. However, because this is a cluster survey, 7 clusters will produce a sample with very low sampling variance which will impact on the resulting precision of the indicator results. Hence, it would be recommended to maintain the number of sampling clusters to 30 enumeration areas (one enumeration area per sampling point).
 
+\newpage
+
 Based on this, stage 1 sample for Greater Monrovia District can be selected as follows:
 
 &nbsp;
