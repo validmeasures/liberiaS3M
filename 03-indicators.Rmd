@@ -209,7 +209,7 @@ For data collection, enumerators will require:
 
 3. A MUAC tape.
 
-Traditionally, if data collection is done using pen and paper, enumerators are provided with z-score tables for weight-for-height so that they can determine if child is SAM. Since this survey will utilise digital data collection (see Section \@ref(#analysis)), the digital form will determine whether the child is SAM by MUAC and/or weight-for-height and/or oedema and will instruct the enumerators on what to do next if the child is a SAM case.
+Traditionally, if data collection is done using pen and paper, enumerators are provided with z-score tables for weight-for-height so that they can determine if child is SAM. Since this survey will utilise digital data collection (see Section \@ref(data)), the digital form will determine whether the child is SAM by MUAC and/or weight-for-height and/or oedema and will instruct the enumerators on what to do next if the child is a SAM case.
 
 Referral slips will also be needed so that children who are identified as SAM but not in the programme can be referred.
 
