@@ -827,7 +827,7 @@ To select which segments to sample in a very large village or in urban locations
 
 ## Sample size considerations {#samplesize}
 
-In general, the sample size needed for proportion-type indicators such as those to reported for this survey can be calculated using the following equation.
+In general, the sample size needed for proportion-type indicators such as those to be reported for this survey can be calculated using the following equation.
 
 $$\begin{aligned}
 n & ~ = ~ Z^2 ~ \times ~ \frac{p(1 ~ - ~ p)}{c ^ 2} \\
@@ -839,7 +839,7 @@ p & ~ = ~ \text{expected indicator proportion/prevalence} \\
 c & ~ = ~ \text{level of precision}
 \end{aligned}$$
 
-The $Z$ value is usually 1.96 for a 95% confidence interval. The $p$ should usually be based on previous coverage results if available. If not, it is usually appropriate to set $p$ at 50\% (0.5) as this results in the highest sample size estimate. The precision ($c$) for coverage surveys is usually set at ±10% based on standard precision used for immunisation coverage.
+The $Z$ value is usually 1.96 for a 95% confidence interval. The $p$ should usually be based on previous coverage results if available. If not, it is usually appropriate to set $p$ at 50\% (0.5) as this results in the highest sample size estimate. The precision ($c$) for coverage surveys is usually set at ±10\% based on standard precision used for immunisation coverage.
 
 Using these values, the typical sample size needed for coverage surveys is about 96.
 
