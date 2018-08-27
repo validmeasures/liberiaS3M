@@ -905,7 +905,7 @@ knitr::include_graphics("figures/greaterMonroviaEA.png")
 knitr::include_graphics("figures/grandBassaEA.png")
 ```
 
-&nbsp;
+\newpage
 
 Thirty hexagonal grids are then laid on top of these maps.
 
