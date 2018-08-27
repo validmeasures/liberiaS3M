@@ -1092,6 +1092,7 @@ yy <- get_nearest_point(data = gb1ea,
 par(mar = c(0, 0, 0, 0))
 plot(grandbassa1, lty = 0)
 plot(districts, add = TRUE)
+plot(grandBassaEA, lwd = 1, add = TRUE)
 plot(grandbassa1, lwd = 3, add = TRUE)
 plot(gb1loc, pch = 4, cex = 0.3, col = "darkgreen", add = TRUE)
 plot(gb1grid, border = "blue", add = TRUE)
