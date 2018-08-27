@@ -932,7 +932,7 @@ plot(gm1sp, pch = 1, col = "red", cex = 1, add = TRUE)
 plot(gm1grid, lwd = 1, border = "blue", add = TRUE)
 ```
 
-&nbsp;
+\newpage
 
 ```{r sample23, echo = FALSE, eval = TRUE, fig.cap = "Thirty hexagonal grids laid on the  map of Grand Bassa County", fig.align = "center", fig.pos = "H", fig.retina = 1}
 gb1sp <- create_sp_grid(x = grandbassa1,
