@@ -969,7 +969,7 @@ For Greater Monrovia, the average enumeration area population is 5200. For Grand
 
 The proportion of children under 5 can be estimated using data from the [US Census Bureau](https://www.census.gov/data-tools/demo/idb/region.php?N=%20Results%20&T=15&A=separate&RT=0&Y=2018&R=-1&C=LI) on estimated population for single years. Using this data, the estimated proportion of under five children is about 17%.
 
-The SAM prevalence can be estimated as 3% (based on communication with UNICEF). This is most likely a high estimate considering that this is the estimate for the whole country and not specific to the counties. Also, seasonality of SAM prevalence will need to be taken into account. If the period in which the survey is to be conducted is as season for low prevalence of SAM, this should considered in the estimation. So, it might be good to use a lower estimate for SAM to ensure there is enough villages sampled to get the target. An estimate of 1.5% (or even lower) is recommended.
+The SAM prevalence can be estimated as 3% (based on communication with UNICEF). This is most likely a high estimate considering that this is the estimate for the whole country and not specific to the counties. Also, seasonality of SAM prevalence will need to be taken into account. If the period in which the survey is to be conducted is a season for low prevalence of SAM, this should be considered in the estimation. So, it might be good to use a lower estimate for SAM to ensure there is enough villages sampled to get the target. An estimate of 1.5% (or even lower) is recommended.
 
 Using these values, the number of villages needed to sample in each county (and urban areas if included) can be calculated for each county as follows:
 
@@ -1002,16 +1002,16 @@ n_{\text{Grand Bassa villages}} & ~ = ~ \left \lceil \frac{\text{Target sample s
 $$\begin{aligned} 
 n_{\text{Greater Monrovia District EA}} & ~ = ~ \left \lceil \frac{\text{Target sample size}}{n_{\text{average EA population all ages}} ~ \times ~ \% ~ \text{under 5 children} ~ \times ~ \text{SAM prevalence}} \right \rceil \\
 \\
-& ~ = ~ \left \lceil \frac{96}{5848 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
+& ~ = ~ \left \lceil \frac{96}{500 ~ \times ~ 0.17 ~ \times ~ 0.015} \right \rceil \\
 \\
-& ~ = ~ \left \lceil \frac{96}{14.9124} \right \rceil \\
+& ~ = ~ \left \lceil \frac{96}{1.275} \right \rceil \\
 \\
-& ~ \approx ~ 7
+& ~ \approx ~ 76
 \end{aligned}$$
 
 &nbsp;
 
-A total of 73 enumeration areas (about 377 villages) will need to be sampled for Grand Bassa county. So, a total of 3 enumeration areas (or about 13 villages) for each of the 30 sampling points should be selected for the stage 1 sample for Grand Bassa. Given the huge populations of the enumeration areas in Greater Monrovia District, only a total of 7 enumeration areas will need to be sampled to make the sample size target. However, because this is a cluster survey, 7 clusters will produce a sample with very low sampling variance which will impact on the resulting precision of the indicator results. Hence, it would be recommended to maintain the number of sampling clusters to 30 enumeration areas (one enumeration area per sampling point).
+A total of 73 enumeration areas (about 377 villages) will need to be sampled for Grand Bassa county. So, a total of 3 enumeration areas (or about 13 villages) for each of the 30 sampling points should be selected for the stage 1 sample for Grand Bassa. For Greater Monrovia District, a total of 76 enumeration areas will need to be sampled to make the sample size target.
 
 \newpage
 
@@ -1027,14 +1027,20 @@ gm1sp <- SpatialPoints(coordinates(gm1grid),
 
 gm1loc <- settlements[settlements$admin2Name == "Greater Monrovia", ]
 
-yy <- get_nearest_point(data = gm1loc, 
+gm1ea <- data.frame(greaterMonroviaEA@data,
+                    "COORD_X" = coordinates(greaterMonroviaEA)[ , 1],
+                    "COORD_Y" = coordinates(greaterMonroviaEA)[ , 2])
+
+yy <- get_nearest_point(data = gm1ea, 
                         data.x = "COORD_X", 
                         data.y = "COORD_Y", 
-                        query = gm1sp)
+                        query = gm1sp,
+                        n = 3)
 
 par(mar = c(0, 0, 0, 0))
 plot(gm1, lty = 0)
 plot(districts, add = TRUE)
+plot(greaterMonroviaEA, lwd = 1, add = TRUE)
 plot(gm1, lwd = 3, add = TRUE)
 plot(gm1loc, pch = 4, cex = 0.3, col = "darkgreen", add = TRUE)
 plot(gm1grid, border = "blue", add = TRUE)
@@ -1048,7 +1054,7 @@ The list of selected enumeration areas in Greater Monrovia is below:
 &nbsp;
 
 ```{r, echo = FALSE, eval = TRUE}
-yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")]
+yy <- yy[ , c("spid", "CCNAME", "DNAME", "CLNAME", "EFEACODE", "TOTAL", "HH", "COORD_X", "COORD_Y")]
 
 write.csv(yy, "data/greaterMonroviaSPlist.csv", row.names = FALSE)
 ```
@@ -1073,11 +1079,15 @@ gb1sp <- SpatialPoints(coordinates(gb1grid),
 
 gb1loc <- settlements[settlements$admin1Name == "Grand Bassa", ]
 
-yy <- get_nearest_point(data = gb1loc, 
+gb1ea <- data.frame(grandBassaEA@data,
+                    "COORD_X" = coordinates(grandBassaEA)[ , 1],
+                    "COORD_Y" = coordinates(grandBassaEA)[ , 2])
+
+yy <- get_nearest_point(data = gb1ea, 
                         data.x = "COORD_X", 
                         data.y = "COORD_Y", 
                         query = gb1sp,
-                        n = 13)
+                        n = 3)
 
 par(mar = c(0, 0, 0, 0))
 plot(grandbassa1, lty = 0)
@@ -1095,7 +1105,9 @@ The list of selected sampling points in Grand Bassa is below:
 &nbsp;
 
 ```{r, echo = FALSE, eval = TRUE}
-yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")]
+#yy <- yy[ , c("spid", "FNAME", "COORD_X", "COORD_Y", "admin1Name", "admin1Pcod", "admin2Name", "admin2Pcod")]
+
+yy <- yy[ , c("spid", "CCNAME", "DNAME", "CLNAME", "EFEACODE", "TOTAL", "HH", "COORD_X", "COORD_Y")]
 
 write.csv(yy, "data/grandBassaSPlist.csv", row.names = FALSE)
 ```
