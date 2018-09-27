@@ -1,94 +1,94 @@
-"spid","CCNAME","DNAME","CLNAME","EFEACODE","TOTAL","HH","COORD_X","COORD_Y","sname","scode","index","index_key","snumber","map"
-1,"Montserrado","Greater Monrovia","Z1100 King Gray-Elwa",3004553071,689,103,-10.6991255341117,6.24130673111585,"Segment  1","0101",1,1,3,"https://www.google.co.uk/maps/place/6.24130673111585,-10.6991255341117"
-1,"Montserrado","Greater Monrovia","Z1100 King Gray-Elwa",3004553091,758,127,-10.6934276325029,6.2381726551423,"Segment  2","0102",2,2,3,"https://www.google.co.uk/maps/place/6.2381726551423,-10.6934276325029"
-1,"Montserrado","Greater Monrovia","Z1100 King Gray-Elwa",3004553101,374,74,-10.6938325098648,6.23527902776275,"Segment  3","0103",3,3,3,"https://www.google.co.uk/maps/place/6.23527902776275,-10.6938325098648"
-2,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town",3004557251,574,84,-10.6697753864817,6.23425417039307,"Segment  1","0201",4,4,3,"https://www.google.co.uk/maps/place/6.23425417039307,-10.6697753864817"
-2,"Montserrado","Greater Monrovia","Z1100 Kende-jah",3004555081,467,80,-10.6753862877638,6.23169326712187,"Segment  2","0202",5,5,3,"https://www.google.co.uk/maps/place/6.23169326712187,-10.6753862877638"
-2,"Montserrado","Greater Monrovia","Z1100 Kende-jah",3004555091,724,131,-10.6701646331805,6.23053044169502,"Segment  3","0203",6,6,3,"https://www.google.co.uk/maps/place/6.23053044169502,-10.6701646331805"
-3,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town",3004557341,373,83,-10.6400481556092,6.23386092766711,"Segment  1","0301",7,7,3,"https://www.google.co.uk/maps/place/6.23386092766711,-10.6400481556092"
-3,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town",3004557351,444,73,-10.6355481629464,6.23335325266165,"Segment  2","0302",8,8,3,"https://www.google.co.uk/maps/place/6.23335325266165,-10.6355481629464"
-3,"Montserrado","Greater Monrovia","Z1100 Kende-jah",3004555151,296,68,-10.6427067410316,6.22856821916824,"Segment  3","0303",9,9,3,"https://www.google.co.uk/maps/place/6.22856821916824,-10.6427067410316"
-4,"Montserrado","Greater Monrovia","Z1000 Congo Town Old Rd",3004457051,506,92,-10.7183403021029,6.26350308172335,"Segment  1","0401",10,10,3,"https://www.google.co.uk/maps/place/6.26350308172335,-10.7183403021029"
-4,"Montserrado","Greater Monrovia","Z1000 Congo Town Old Rd",3004457131,393,74,-10.7175253499589,6.26061339506761,"Segment  2","0402",11,11,3,"https://www.google.co.uk/maps/place/6.26061339506761,-10.7175253499589"
-4,"Montserrado","Greater Monrovia","Z1000 Congo Town Old Rd",3004457121,582,96,-10.7124783738752,6.25770092543825,"Segment  3","0403",12,12,3,"https://www.google.co.uk/maps/place/6.25770092543825,-10.7124783738752"
-5,"Montserrado","Greater Monrovia","Z1100 Paynesville Joe Bar",3004563151,1039,208,-10.6845950755415,6.26032970251159,"Segment  1","0501",13,13,3,"https://www.google.co.uk/maps/place/6.26032970251159,-10.6845950755415"
-5,"Montserrado","Greater Monrovia","Z1100 Kpelle Town",3004559021,555,98,-10.6887589354048,6.25879930546173,"Segment  2","0502",14,14,3,"https://www.google.co.uk/maps/place/6.25879930546173,-10.6887589354048"
-5,"Montserrado","Greater Monrovia","Z1100 Kpelle Town",3004559051,469,89,-10.6887149849121,6.25654412717225,"Segment  3","0503",15,15,3,"https://www.google.co.uk/maps/place/6.25654412717225,-10.6887149849121"
-6,"Montserrado","Greater Monrovia","Z1100 Duport Road N. East",3004569061,442,72,-10.6592849537212,6.26640561193684,"Segment  1","0601",16,16,3,"https://www.google.co.uk/maps/place/6.26640561193684,-10.6592849537212"
-6,"Montserrado","Greater Monrovia","Z1100 Duport Road South",3004565221,473,89,-10.6636043607001,6.2622508189787,"Segment  2","0602",17,17,3,"https://www.google.co.uk/maps/place/6.2622508189787,-10.6636043607001"
-6,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town",3004557291,527,100,-10.6604210966139,6.25340931181617,"Segment  3","0603",18,18,3,"https://www.google.co.uk/maps/place/6.25340931181617,-10.6604210966139"
-7,"Montserrado","Greater Monrovia","Z700 Ocean View",3004701101,350,74,-10.7917902087028,6.29362846851986,"Segment  1","0701",19,19,3,"https://www.google.co.uk/maps/place/6.29362846851986,-10.7917902087028"
-7,"Montserrado","Greater Monrovia","Z700 Ocean View",3004701091,446,114,-10.7896333094118,6.29313547778848,"Segment  2","0702",20,20,3,"https://www.google.co.uk/maps/place/6.29313547778848,-10.7896333094118"
-7,"Montserrado","Greater Monrovia","Z700 Ocean View",3004701081,422,121,-10.7879753294831,6.29300712371073,"Segment  3","0703",21,21,3,"https://www.google.co.uk/maps/place/6.29300712371073,-10.7879753294831"
-8,"Montserrado","Greater Monrovia","Z800 Wroto Town",3004807071,545,116,-10.7642174386428,6.28555295420293,"Segment  1","0801",22,22,3,"https://www.google.co.uk/maps/place/6.28555295420293,-10.7642174386428"
-8,"Montserrado","Greater Monrovia","Z800 Wroto Town",3004807081,453,102,-10.763596242142,6.28544954207347,"Segment  2","0802",23,23,3,"https://www.google.co.uk/maps/place/6.28544954207347,-10.763596242142"
-8,"Montserrado","Greater Monrovia","Z800 Wroto Town",3004807051,226,56,-10.7635779087885,6.28413259803857,"Segment  3","0803",24,24,3,"https://www.google.co.uk/maps/place/6.28413259803857,-10.7635779087885"
-9,"Montserrado","Greater Monrovia","Z1000 Peace Island",3004454031,415,71,-10.7297823562924,6.27998674126021,"Segment  1","0901",25,25,3,"https://www.google.co.uk/maps/place/6.27998674126021,-10.7297823562924"
-9,"Montserrado","Greater Monrovia","Z1000 Peace Island",3004454011,874,165,-10.7367414393459,6.27770612336309,"Segment  2","0902",26,26,3,"https://www.google.co.uk/maps/place/6.27770612336309,-10.7367414393459"
-9,"Montserrado","Greater Monrovia","Z1000 Peace Island",3004454021,593,122,-10.7329875445082,6.2784678601563,"Segment  3","0903",27,27,3,"https://www.google.co.uk/maps/place/6.2784678601563,-10.7329875445082"
-10,"Montserrado","Greater Monrovia","Z1100 Police Academy",3004556131,564,86,-10.7027054878433,6.28515812972715,"Segment  1","1001",28,28,3,"https://www.google.co.uk/maps/place/6.28515812972715,-10.7027054878433"
-10,"Montserrado","Greater Monrovia","Z1100 Police Academy",3004556141,563,96,-10.7061654024606,6.28321350217547,"Segment  2","1002",29,29,3,"https://www.google.co.uk/maps/place/6.28321350217547,-10.7061654024606"
-10,"Montserrado","Greater Monrovia","Z1100 Police Academy",3004556181,736,132,-10.7031512260867,6.28100084166768,"Segment  3","1003",30,30,3,"https://www.google.co.uk/maps/place/6.28100084166768,-10.7031512260867"
-11,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega",3004575361,527,128,-10.6704147372332,6.2851882646131,"Segment  1","1101",31,31,3,"https://www.google.co.uk/maps/place/6.2851882646131,-10.6704147372332"
-11,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega",3004575351,416,114,-10.672953366981,6.28567725463763,"Segment  2","1102",32,32,3,"https://www.google.co.uk/maps/place/6.28567725463763,-10.672953366981"
-11,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega",3004575391,418,91,-10.6708545187402,6.28242841666152,"Segment  3","1103",33,33,3,"https://www.google.co.uk/maps/place/6.28242841666152,-10.6708545187402"
-12,"Montserrado","Greater Monrovia","Z800 New Matadi",3004802111,457,99,-10.7712003290714,6.30549442327094,"Segment  1","1201",34,34,3,"https://www.google.co.uk/maps/place/6.30549442327094,-10.7712003290714"
-12,"Montserrado","Greater Monrovia","Z800 New Matadi",3004802091,477,106,-10.7746504327016,6.30614743470636,"Segment  2","1202",35,35,3,"https://www.google.co.uk/maps/place/6.30614743470636,-10.7746504327016"
-12,"Montserrado","Greater Monrovia","Z800 New Matadi",3004802081,377,84,-10.7763256190893,6.30299445928905,"Segment  3","1203",36,36,3,"https://www.google.co.uk/maps/place/6.30299445928905,-10.7763256190893"
-13,"Montserrado","Greater Monrovia","Z1200 Mangrove Island",3004655071,382,75,-10.7469671721658,6.3195466667953,"Segment  1","1301",37,37,3,"https://www.google.co.uk/maps/place/6.3195466667953,-10.7469671721658"
-13,"Montserrado","Greater Monrovia","Z1200 Mangrove Island",3004655081,484,89,-10.7461630246222,6.31768609902553,"Segment  2","1302",38,38,3,"https://www.google.co.uk/maps/place/6.31768609902553,-10.7461630246222"
-13,"Montserrado","Greater Monrovia","Z1200 Mangrove Island",3004655091,449,92,-10.7443751464668,6.3155335053027,"Segment  3","1303",39,39,3,"https://www.google.co.uk/maps/place/6.3155335053027,-10.7443751464668"
-14,"Montserrado","Greater Monrovia","Z1100 Zinc Factory",3004572051,522,93,-10.7171493688676,6.31096108065976,"Segment  1","1401",40,40,3,"https://www.google.co.uk/maps/place/6.31096108065976,-10.7171493688676"
-14,"Montserrado","Greater Monrovia","Z1100 Zinc Factory",3004572041,400,99,-10.7197491789288,6.31056942568464,"Segment  2","1402",41,41,3,"https://www.google.co.uk/maps/place/6.31056942568464,-10.7197491789288"
-14,"Montserrado","Greater Monrovia","Z1100 Zinc Factory",3004572061,287,44,-10.7152546321301,6.31056385097501,"Segment  3","1403",42,42,3,"https://www.google.co.uk/maps/place/6.31056385097501,-10.7152546321301"
-15,"Montserrado","Greater Monrovia","Z1100 Morris Farm",3004562171,867,142,-10.6881458956595,6.3131547799453,"Segment  1","1501",43,43,3,"https://www.google.co.uk/maps/place/6.3131547799453,-10.6881458956595"
-15,"Montserrado","Greater Monrovia","Z1100 Morris Farm",3004562161,612,131,-10.6882073570986,6.31131507394503,"Segment  2","1502",44,44,3,"https://www.google.co.uk/maps/place/6.31131507394503,-10.6882073570986"
-15,"Montserrado","Greater Monrovia","Z1100 Morris Farm",3004562031,820,161,-10.6847015227411,6.31021227161303,"Segment  3","1503",45,45,3,"https://www.google.co.uk/maps/place/6.31021227161303,-10.6847015227411"
-16,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega",3004575021,639,115,-10.6547175796385,6.32004757761171,"Segment  1","1601",46,46,3,"https://www.google.co.uk/maps/place/6.32004757761171,-10.6547175796385"
-16,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega",3004575051,346,55,-10.6584108436295,6.3147441799657,"Segment  2","1602",47,47,3,"https://www.google.co.uk/maps/place/6.3147441799657,-10.6584108436295"
-16,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega",3004575061,1239,193,-10.6522907838836,6.30992003936266,"Segment  3","1603",48,48,3,"https://www.google.co.uk/maps/place/6.30992003936266,-10.6522907838836"
-17,"Montserrado","Greater Monrovia","Z200 Jamaica Road",3004201211,311,83,-10.7916399414485,6.33938784562639,"Segment  1","1701",49,49,3,"https://www.google.co.uk/maps/place/6.33938784562639,-10.7916399414485"
-17,"Montserrado","Greater Monrovia","Z300 Free Port Development",3004309021,521,105,-10.7929302323265,6.33661663484756,"Segment  2","1702",50,50,3,"https://www.google.co.uk/maps/place/6.33661663484756,-10.7929302323265"
-17,"Montserrado","Greater Monrovia","Z300 Free Port Development",3004309011,574,128,-10.7930882372861,6.3354981805439,"Segment  3","1703",51,51,3,"https://www.google.co.uk/maps/place/6.3354981805439,-10.7930882372861"
-18,"Montserrado","Greater Monrovia","Z1300 SOS Transit",3004756071,546,104,-10.7613212293921,6.33890087924004,"Segment  1","1801",52,52,3,"https://www.google.co.uk/maps/place/6.33890087924004,-10.7613212293921"
-18,"Montserrado","Greater Monrovia","Z1300 SOS Transit",3004756081,950,157,-10.7640215792187,6.339125226879,"Segment  2","1802",53,53,3,"https://www.google.co.uk/maps/place/6.339125226879,-10.7640215792187"
-18,"Montserrado","Greater Monrovia","Z1300 Iron Factory",3004753031,689,123,-10.7629433917103,6.33541238844322,"Segment  3","1803",54,54,3,"https://www.google.co.uk/maps/place/6.33541238844322,-10.7629433917103"
-19,"Montserrado","Greater Monrovia","Z1200 Day Break Mouth Open",3004658031,272,70,-10.7322430194789,6.33996367307831,"Segment  1","1901",55,55,3,"https://www.google.co.uk/maps/place/6.33996367307831,-10.7322430194789"
-19,"Montserrado","Greater Monrovia","Z1200 Day Break Mouth Open",3004658021,933,164,-10.7344471536556,6.33937469915965,"Segment  2","1902",56,56,3,"https://www.google.co.uk/maps/place/6.33937469915965,-10.7344471536556"
-19,"Montserrado","Greater Monrovia","Z1200 Day Break Mouth Open",3004658071,498,94,-10.7338083222132,6.33573209595757,"Segment  3","1903",57,57,3,"https://www.google.co.uk/maps/place/6.33573209595757,-10.7338083222132"
-20,"Montserrado","Greater Monrovia","Z1200 Chicken Soup Factory",3004662391,272,49,-10.7151891897493,6.33870108960351,"Segment  1","2001",58,58,3,"https://www.google.co.uk/maps/place/6.33870108960351,-10.7151891897493"
-20,"Montserrado","Greater Monrovia","Z1100 City View",3004578131,784,142,-10.6970339677832,6.33011834276099,"Segment  2","2002",59,59,3,"https://www.google.co.uk/maps/place/6.33011834276099,-10.6970339677832"
-20,"Montserrado","Greater Monrovia","Z1100 Rock Hill",3004576161,669,123,-10.7071610941396,6.3303757294382,"Segment  3","2003",60,60,3,"https://www.google.co.uk/maps/place/6.3303757294382,-10.7071610941396"
-21,"Montserrado","Greater Monrovia","Z1100 Barnard Farm",3004582011,631,119,-10.6628870263474,6.3325618268231,"Segment  1","2101",61,61,3,"https://www.google.co.uk/maps/place/6.3325618268231,-10.6628870263474"
-21,"Montserrado","Greater Monrovia","Z1100 Barnard Farm",3004582021,813,145,-10.6697040174871,6.33454242728552,"Segment  2","2102",62,62,3,"https://www.google.co.uk/maps/place/6.33454242728552,-10.6697040174871"
-21,"Montserrado","Greater Monrovia","Z1100 Barnard Farm",3004582031,622,102,-10.6690045291434,6.32674052598276,"Segment  3","2103",63,63,3,"https://www.google.co.uk/maps/place/6.32674052598276,-10.6690045291434"
-22,"Montserrado","Greater Monrovia","Z200 Gbandi Town",3004208041,399,89,-10.7789004052868,6.36673831051435,"Segment  1","2201",64,64,3,"https://www.google.co.uk/maps/place/6.36673831051435,-10.7789004052868"
-22,"Montserrado","Greater Monrovia","Z200 Gbandi Town",3004208061,349,99,-10.7790812829194,6.36538037828923,"Segment  2","2202",65,65,3,"https://www.google.co.uk/maps/place/6.36538037828923,-10.7790812829194"
-22,"Montserrado","Greater Monrovia","Z200 Gbandi Town",3004208071,350,78,-10.7792656555907,6.36434097602947,"Segment  3","2203",66,66,3,"https://www.google.co.uk/maps/place/6.36434097602947,-10.7792656555907"
-23,"Montserrado","Greater Monrovia","Z1300 Old Field Gulf/Sign Boar",3004760041,551,95,-10.7521043246956,6.36276029145962,"Segment  1","2301",67,67,3,"https://www.google.co.uk/maps/place/6.36276029145962,-10.7521043246956"
+"spid","CCNAME","DNAME","CLNAME","EFEACODE","TOTAL","HH","COORD_X","COORD_Y"
+1,"Montserrado","Greater Monrovia","Z1100 King Gray-Elwa","3004553071",689,103,-10.6991255341117,6.24130673111585
+1,"Montserrado","Greater Monrovia","Z1100 King Gray-Elwa","3004553091",758,127,-10.6934276325029,6.2381726551423
+1,"Montserrado","Greater Monrovia","Z1100 King Gray-Elwa","3004553101",374,74,-10.6938325098648,6.23527902776275
+2,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town","3004557251",574,84,-10.6697753864817,6.23425417039307
+2,"Montserrado","Greater Monrovia","Z1100 Kende-jah","3004555081",467,80,-10.6753862877638,6.23169326712187
+2,"Montserrado","Greater Monrovia","Z1100 Kende-jah","3004555091",724,131,-10.6701646331805,6.23053044169502
+3,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town","3004557341",373,83,-10.6400481556092,6.23386092766711
+3,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town","3004557351",444,73,-10.6355481629464,6.23335325266165
+3,"Montserrado","Greater Monrovia","Z1100 Kende-jah","3004555151",296,68,-10.6427067410316,6.22856821916824
+4,"Montserrado","Greater Monrovia","Z1000 Congo Town Old Rd","3004457051",506,92,-10.7183403021029,6.26350308172335
+4,"Montserrado","Greater Monrovia","Z1000 Congo Town Old Rd","3004457131",393,74,-10.7175253499589,6.26061339506761
+4,"Montserrado","Greater Monrovia","Z1000 Congo Town Old Rd","3004457121",582,96,-10.7124783738752,6.25770092543825
+5,"Montserrado","Greater Monrovia","Z1100 Paynesville Joe Bar","3004563151",1039,208,-10.6845950755415,6.26032970251159
+5,"Montserrado","Greater Monrovia","Z1100 Kpelle Town","3004559021",555,98,-10.6887589354048,6.25879930546173
+5,"Montserrado","Greater Monrovia","Z1100 Kpelle Town","3004559051",469,89,-10.6887149849121,6.25654412717225
+6,"Montserrado","Greater Monrovia","Z1100 Duport Road N. East","3004569061",442,72,-10.6592849537212,6.26640561193684
+6,"Montserrado","Greater Monrovia","Z1100 Duport Road South","3004565221",473,89,-10.6636043607001,6.2622508189787
+6,"Montserrado","Greater Monrovia","Z1100 Rehab/Borbor Town","3004557291",527,100,-10.6604210966139,6.25340931181617
+7,"Montserrado","Greater Monrovia","Z700 Ocean View","3004701101",350,74,-10.7917902087028,6.29362846851986
+7,"Montserrado","Greater Monrovia","Z700 Ocean View","3004701091",446,114,-10.7896333094118,6.29313547778848
+7,"Montserrado","Greater Monrovia","Z700 Ocean View","3004701081",422,121,-10.7879753294831,6.29300712371073
+8,"Montserrado","Greater Monrovia","Z800 Wroto Town","3004807071",545,116,-10.7642174386428,6.28555295420293
+8,"Montserrado","Greater Monrovia","Z800 Wroto Town","3004807081",453,102,-10.763596242142,6.28544954207347
+8,"Montserrado","Greater Monrovia","Z800 Wroto Town","3004807051",226,56,-10.7635779087885,6.28413259803857
+9,"Montserrado","Greater Monrovia","Z1000 Peace Island","3004454031",415,71,-10.7297823562924,6.27998674126021
+9,"Montserrado","Greater Monrovia","Z1000 Peace Island","3004454011",874,165,-10.7367414393459,6.27770612336309
+9,"Montserrado","Greater Monrovia","Z1000 Peace Island","3004454021",593,122,-10.7329875445082,6.2784678601563
+10,"Montserrado","Greater Monrovia","Z1100 Police Academy","3004556131",564,86,-10.7027054878433,6.28515812972715
+10,"Montserrado","Greater Monrovia","Z1100 Police Academy","3004556141",563,96,-10.7061654024606,6.28321350217547
+10,"Montserrado","Greater Monrovia","Z1100 Police Academy","3004556181",736,132,-10.7031512260867,6.28100084166768
+11,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega","3004575361",527,128,-10.6704147372332,6.2851882646131
+11,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega","3004575351",416,114,-10.672953366981,6.28567725463763
+11,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega","3004575391",418,91,-10.6708545187402,6.28242841666152
+12,"Montserrado","Greater Monrovia","Z800 New Matadi","3004802111",457,99,-10.7712003290714,6.30549442327094
+12,"Montserrado","Greater Monrovia","Z800 New Matadi","3004802091",477,106,-10.7746504327016,6.30614743470636
+12,"Montserrado","Greater Monrovia","Z800 New Matadi","3004802081",377,84,-10.7763256190893,6.30299445928905
+13,"Montserrado","Greater Monrovia","Z1200 Mangrove Island","3004655071",382,75,-10.7469671721658,6.3195466667953
+13,"Montserrado","Greater Monrovia","Z1200 Mangrove Island","3004655081",484,89,-10.7461630246222,6.31768609902553
+13,"Montserrado","Greater Monrovia","Z1200 Mangrove Island","3004655091",449,92,-10.7443751464668,6.3155335053027
+14,"Montserrado","Greater Monrovia","Z1100 Zinc Factory","3004572051",522,93,-10.7171493688676,6.31096108065976
+14,"Montserrado","Greater Monrovia","Z1100 Zinc Factory","3004572041",400,99,-10.7197491789288,6.31056942568464
+14,"Montserrado","Greater Monrovia","Z1100 Zinc Factory","3004572061",287,44,-10.7152546321301,6.31056385097501
+15,"Montserrado","Greater Monrovia","Z1100 Morris Farm","3004562171",867,142,-10.6881458956595,6.3131547799453
+15,"Montserrado","Greater Monrovia","Z1100 Morris Farm","3004562161",612,131,-10.6882073570986,6.31131507394503
+15,"Montserrado","Greater Monrovia","Z1100 Morris Farm","3004562031",820,161,-10.6847015227411,6.31021227161303
+16,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega","3004575021",639,115,-10.6547175796385,6.32004757761171
+16,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega","3004575051",346,55,-10.6584108436295,6.3147441799657
+16,"Montserrado","Greater Monrovia","Z1100 Kemah Town/Omega","3004575061",1239,193,-10.6522907838836,6.30992003936266
+17,"Montserrado","Greater Monrovia","Z200 Jamaica Road","3004201211",311,83,-10.7916399414485,6.33938784562639
+17,"Montserrado","Greater Monrovia","Z300 Free Port Development","3004309021",521,105,-10.7929302323265,6.33661663484756
+17,"Montserrado","Greater Monrovia","Z300 Free Port Development","3004309011",574,128,-10.7930882372861,6.3354981805439
+18,"Montserrado","Greater Monrovia","Z1300 SOS Transit","3004756071",546,104,-10.7613212293921,6.33890087924004
+18,"Montserrado","Greater Monrovia","Z1300 SOS Transit","3004756081",950,157,-10.7640215792187,6.339125226879
+18,"Montserrado","Greater Monrovia","Z1300 Iron Factory","3004753031",689,123,-10.7629433917103,6.33541238844322
+19,"Montserrado","Greater Monrovia","Z1200 Day Break Mouth Open","3004658031",272,70,-10.7322430194789,6.33996367307831
+19,"Montserrado","Greater Monrovia","Z1200 Day Break Mouth Open","3004658021",933,164,-10.7344471536556,6.33937469915965
+19,"Montserrado","Greater Monrovia","Z1200 Day Break Mouth Open","3004658071",498,94,-10.7338083222132,6.33573209595757
+20,"Montserrado","Greater Monrovia","Z1200 Chicken Soup Factory","3004662391",272,49,-10.7151891897493,6.33870108960351
+20,"Montserrado","Greater Monrovia","Z1100 City View","3004578131",784,142,-10.6970339677832,6.33011834276099
+20,"Montserrado","Greater Monrovia","Z1100 Rock Hill","3004576161",669,123,-10.7071610941396,6.3303757294382
+21,"Montserrado","Greater Monrovia","Z1100 Barnard Farm","3004582011",631,119,-10.6628870263474,6.3325618268231
+21,"Montserrado","Greater Monrovia","Z1100 Barnard Farm","3004582021",813,145,-10.6697040174871,6.33454242728552
+21,"Montserrado","Greater Monrovia","Z1100 Barnard Farm","3004582031",622,102,-10.6690045291434,6.32674052598276
+22,"Montserrado","Greater Monrovia","Z200 Gbandi Town","3004208041",399,89,-10.7789004052868,6.36673831051435
+22,"Montserrado","Greater Monrovia","Z200 Gbandi Town","3004208061",349,99,-10.7790812829194,6.36538037828923
+22,"Montserrado","Greater Monrovia","Z200 Gbandi Town","3004208071",350,78,-10.7792656555907,6.36434097602947
+23,"Montserrado","Greater Monrovia","Z1300 Old Field Gulf/Sign Boar","3004760041",551,95,-10.7521043246956,6.36276029145962
 23,"Montserrado","Greater Monrovia","Z1400 Behwein Community
-",3004857021,796,155,-10.7467174738219,6.3628983676039,"Segment  2","2302",68,68,3,"https://www.google.co.uk/maps/place/6.3628983676039,-10.7467174738219"
-23,"Montserrado","Greater Monrovia","Z1300 Old Field Gulf/Sign Boar",3004760051,502,88,-10.7512473001436,6.36045864687461,"Segment  3","2303",69,69,3,"https://www.google.co.uk/maps/place/6.36045864687461,-10.7512473001436"
+","3004857021",796,155,-10.7467174738219,6.3628983676039
+23,"Montserrado","Greater Monrovia","Z1300 Old Field Gulf/Sign Boar","3004760051",502,88,-10.7512473001436,6.36045864687461
 24,"Montserrado","Greater Monrovia","Z1400 Kaba Town
-",3004858101,578,90,-10.7192913695154,6.36485731424473,"Segment  1","2401",70,70,3,"https://www.google.co.uk/maps/place/6.36485731424473,-10.7192913695154"
+","3004858101",578,90,-10.7192913695154,6.36485731424473
 24,"Montserrado","Greater Monrovia","Z1400 Kaba Town
-",3004858021,430,73,-10.7224097852118,6.36688983977122,"Segment  2","2402",71,71,3,"https://www.google.co.uk/maps/place/6.36688983977122,-10.7224097852118"
+","3004858021",430,73,-10.7224097852118,6.36688983977122
 24,"Montserrado","Greater Monrovia","Z1400 Kaba Town
-",3004858111,471,66,-10.719234030322,6.36008448233428,"Segment  3","2403",72,72,3,"https://www.google.co.uk/maps/place/6.36008448233428,-10.719234030322"
-25,"Montserrado","Greater Monrovia","Z1600 Cassava Hill",3004961011,389,100,-10.7063974369175,6.38162495005299,"Segment  1","2501",73,73,2,"https://www.google.co.uk/maps/place/6.38162495005299,-10.7063974369175"
+","3004858111",471,66,-10.719234030322,6.36008448233428
+25,"Montserrado","Greater Monrovia","Z1600 Cassava Hill","3004961011",389,100,-10.7063974369175,6.38162495005299
 25,"Montserrado","Greater Monrovia","Z1400 Kaba Town
-",3004858091,530,83,-10.7120139815969,6.36594413751516,"Segment  2","2502",74,74,2,"https://www.google.co.uk/maps/place/6.36594413751516,-10.7120139815969"
-26,"Montserrado","Greater Monrovia","Z100 Tweh Farm",3004104051,342,68,-10.7846293520756,6.38910225370941,"Segment  1","2601",75,75,3,"https://www.google.co.uk/maps/place/6.38910225370941,-10.7846293520756"
-26,"Montserrado","Greater Monrovia","Z100 Tweh Farm",3004104061,578,157,-10.7852354418531,6.38799894822554,"Segment  2","2602",76,76,3,"https://www.google.co.uk/maps/place/6.38799894822554,-10.7852354418531"
-26,"Montserrado","Greater Monrovia","Z100 Tweh Farm",3004104121,621,90,-10.7872509734824,6.38539034718533,"Segment  3","2603",77,77,3,"https://www.google.co.uk/maps/place/6.38539034718533,-10.7872509734824"
-27,"Montserrado","Greater Monrovia","Z1600 Caldwell Market",3004956011,489,100,-10.7661663499726,6.39428526099737,"Segment  1","2701",78,78,3,"https://www.google.co.uk/maps/place/6.39428526099737,-10.7661663499726"
-27,"Montserrado","Greater Monrovia","Z1600 Central Caldwell",3004954041,444,80,-10.7676594487763,6.39002849849424,"Segment  2","2702",79,79,3,"https://www.google.co.uk/maps/place/6.39002849849424,-10.7676594487763"
-27,"Montserrado","Greater Monrovia","Z1600 Central Caldwell",3004954051,557,106,-10.7630146023302,6.3916194942848,"Segment  3","2703",80,80,3,"https://www.google.co.uk/maps/place/6.3916194942848,-10.7630146023302"
-28,"Montserrado","Greater Monrovia","Z1600 Samukai Town",3004960011,126,41,-10.7309181907442,6.40080110009282,"Segment  1","2801",81,81,3,"https://www.google.co.uk/maps/place/6.40080110009282,-10.7309181907442"
-28,"Montserrado","Greater Monrovia","Z1600 Upper Caldwell",3004959031,516,98,-10.7344191557977,6.39151942755257,"Segment  2","2802",82,82,3,"https://www.google.co.uk/maps/place/6.39151942755257,-10.7344191557977"
-28,"Montserrado","Greater Monrovia","Z1600 Upper Caldwell",3004959021,732,107,-10.7385847989472,6.39168061371822,"Segment  3","2803",83,83,3,"https://www.google.co.uk/maps/place/6.39168061371822,-10.7385847989472"
-29,"Montserrado","Greater Monrovia","Z1600 Samukai Town",3004960061,500,101,-10.7236054905769,6.39438223218828,"Segment  1","2901",84,84,2,"https://www.google.co.uk/maps/place/6.39438223218828,-10.7236054905769"
-29,"Montserrado","Greater Monrovia","Z1600 Samukai Town",3004960051,191,57,-10.7260135914978,6.39848774994427,"Segment  2","2902",85,85,2,"https://www.google.co.uk/maps/place/6.39848774994427,-10.7260135914978"
-30,"Montserrado","Greater Monrovia","Z1600 Dixville Water Side",3004958011,430,89,-10.73372082467,6.40897795205612,"Segment  1","3001",86,86,3,"https://www.google.co.uk/maps/place/6.40897795205612,-10.73372082467"
-30,"Montserrado","Greater Monrovia","Z1600 Samukai Town",3004960031,354,87,-10.7282824238296,6.40220378519229,"Segment  2","3002",87,87,3,"https://www.google.co.uk/maps/place/6.40220378519229,-10.7282824238296"
-30,"Montserrado","Greater Monrovia","Z1600 Samukai Town",3004960041,319,83,-10.7284159101113,6.40093758614056,"Segment  3","3003",88,88,3,"https://www.google.co.uk/maps/place/6.40093758614056,-10.7284159101113"
+","3004858091",530,83,-10.7120139815969,6.36594413751516
+26,"Montserrado","Greater Monrovia","Z100 Tweh Farm","3004104051",342,68,-10.7846293520756,6.38910225370941
+26,"Montserrado","Greater Monrovia","Z100 Tweh Farm","3004104061",578,157,-10.7852354418531,6.38799894822554
+26,"Montserrado","Greater Monrovia","Z100 Tweh Farm","3004104121",621,90,-10.7872509734824,6.38539034718533
+27,"Montserrado","Greater Monrovia","Z1600 Caldwell Market","3004956011",489,100,-10.7661663499726,6.39428526099737
+27,"Montserrado","Greater Monrovia","Z1600 Central Caldwell","3004954041",444,80,-10.7676594487763,6.39002849849424
+27,"Montserrado","Greater Monrovia","Z1600 Central Caldwell","3004954051",557,106,-10.7630146023302,6.3916194942848
+28,"Montserrado","Greater Monrovia","Z1600 Samukai Town","3004960011",126,41,-10.7309181907442,6.40080110009282
+28,"Montserrado","Greater Monrovia","Z1600 Upper Caldwell","3004959031",516,98,-10.7344191557977,6.39151942755257
+28,"Montserrado","Greater Monrovia","Z1600 Upper Caldwell","3004959021",732,107,-10.7385847989472,6.39168061371822
+29,"Montserrado","Greater Monrovia","Z1600 Samukai Town","3004960061",500,101,-10.7236054905769,6.39438223218828
+29,"Montserrado","Greater Monrovia","Z1600 Samukai Town","3004960051",191,57,-10.7260135914978,6.39848774994427
+30,"Montserrado","Greater Monrovia","Z1600 Dixville Water Side","3004958011",430,89,-10.73372082467,6.40897795205612
+30,"Montserrado","Greater Monrovia","Z1600 Samukai Town","3004960031",354,87,-10.7282824238296,6.40220378519229
+30,"Montserrado","Greater Monrovia","Z1600 Samukai Town","3004960041",319,83,-10.7284159101113,6.40093758614056
