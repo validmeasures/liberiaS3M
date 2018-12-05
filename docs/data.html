@@ -25,7 +25,7 @@
 <meta name="author" content="Valid International">
 
 
-<meta name="date" content="2018-08-27">
+<meta name="date" content="2018-09-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -191,7 +191,7 @@ Figure 5.1: The blocked weighted bootstrap
 </div>
 <div id="analytical-approach-for-mapping-coverage-indicators" class="section level2">
 <h2><span class="header-section-number">5.2</span> Analytical approach for mapping coverage indicators</h2>
-<p>The indicator mapping will create a surface map of indicator values using spatial interpolation. There are various approaches and methods of spatial interpolation, the main differences are determined by the weights applied to the point dataset to estimate values at each of the unknown points of the surface map. For the Liberia coverage survey, spatial interpolation will be performed using the inverse distance weighting (IDW) method. As the name implies, the IDW method uses weights that are inversely proportional to the distance of a point being estimated from the sampling point locations <span class="citation">(Isaaks and Srivastava <a href="#ref-isaaks1989applied">1989</a>; Peter J. Diggle and Ribeiro <a href="#ref-diggle2007mbg">2007</a>; P.J. Diggle <a href="#ref-diggle2013statistical">2013</a>)</span>. This can be mathematically demonstrated as follows:</p>
+<p>The indicator mapping will create a surface map of indicator values using spatial interpolation. There are various approaches and methods of spatial interpolation, the main differences are determined by the weights applied to the point dataset to estimate values at each of the unknown points of the surface map. For the Liberia coverage survey, spatial interpolation will be performed using the inverse distance weighting (IDW) method. As the name implies, the IDW method uses weights that are inversely proportional to the distance of a point being estimated from the sampling point locations <span class="citation">(Isaaks and Srivastava <a href="#ref-isaaks1989applied">1989</a>; Diggle and Ribeiro <a href="#ref-diggle2007mbg">2007</a>; Diggle <a href="#ref-diggle2013statistical">2013</a>)</span>. This can be mathematically demonstrated as follows:</p>
 <p> </p>
 <p><span class="math display">\[\begin{aligned}
 \hat{v} &amp; ~ = ~ \frac{\displaystyle \sum\limits_{i = 1}^{n} \frac{1}{d_{i}^{p}}v_{i}}{\displaystyle \sum\limits_{i = 1}^{n}\frac{1}{d_{i}^{p}}} \\
