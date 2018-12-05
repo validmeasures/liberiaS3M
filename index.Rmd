@@ -17,7 +17,7 @@ citecolor: blue
 urlcolor: blue
 fontsize: 12pt
 always_allow_html: yes
-url: http\://design.validmeasures.com/liberiaS3M
+url: https\://validmeasures.org/liberiaS3M
 cover-image: figures/s3mlogo.png
 description: "Notes on the design of a simple spatial sampling method (S3M) for assessing coverage of health and nutrition programmes in Liberia"
 ---
